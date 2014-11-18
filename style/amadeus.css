@@ -59,6 +59,27 @@ body {
 	width: 125px;
 	height: 125px;
 	margin: 3px;
+	cursor: pointer;
+}
+
+/* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
+/* But the color is defined in .group# figure:before */
+.images figure:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	-moz-transition: background .3s linear;
+	-webkit-transition: background .3s linear;
+	-o-transition: background .3s linear;
+	transition: background .3s linear;
+}
+
+.images figure:hover:before {
+	background: none;
 }
 
 .images figure img {
@@ -71,14 +92,30 @@ body {
 	background-color: #8C3;
 }
 
+.group1 figure:before {
+	background: rgba(150,255,0, 0.5);
+}
+
 .group2 figure {
 	background-color: #C38;
+}
+
+.group2 figure:before {
+	background: rgba(255, 0, 150, 0.5);
 }
 
 .group3 figure {
 	background-color: #3C8;
 }
 
+.group3 figure:before {
+	background: rgba(0,255,150, 0.5);
+}
+
 .group4 figure {
 	background-color: #38C;
+}
+
+.group4 figure:before {
+	background: rgba(0,150,255, 0.5);
 }
