@@ -1,0 +1,84 @@
+html {
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+body {
+	background-color: #222;
+	max-width: 700px;
+	height: 100%;
+	margin: 0 auto 0 auto;
+}
+
+.tiles {
+	background-color: #222;
+	overflow-y: auto;
+}
+
+.description {
+	height: 200px;
+	background-color: #333;
+	overflow-y: auto;
+	color: #bbb;
+}
+
+.description article {
+	padding: 10px;
+}
+
+.description header {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.description #group1 {
+	color: #bfb;
+}
+
+.description #group2 {
+	color: #bbf;
+}
+
+.description #group3 {
+	color: #fbb;
+}
+
+.description #group4 {
+	color: #bfb;
+}
+
+.images {
+	float: left;
+	clear: left;
+}
+
+.images figure {
+	float: left;
+	position: relative;
+	width: 125px;
+	height: 125px;
+	margin: 3px;
+}
+
+.images figure img {
+	width: 125px;
+	height: 125px;
+	border: 0 none;
+}
+
+.group1 figure {
+	background-color: #8C3;
+}
+
+.group2 figure {
+	background-color: #C38;
+}
+
+.group3 figure {
+	background-color: #3C8;
+}
+
+.group4 figure {
+	background-color: #38C;
+}
