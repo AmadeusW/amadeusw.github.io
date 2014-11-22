@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset='utf-8'/>
-		<title>Amadeus Wieczorek</title> 
-		<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
-		<link type="text/css" rel="stylesheet" href="style/colorbox.css" /> 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="../jquery.colorbox.js"></script>
-		<script>
-			$(document).ready(function(){
-				$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
-				$(".colorbox-group2").colorbox({rel:'colorbox-group2'});
-				$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
-				$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
-				$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
-			};
-		</script>
-	</head>
+<head>
+	<meta charset='utf-8'/>
+	<title>Amadeus Wieczorek</title> 
+	<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
+	<link type="text/css" rel="stylesheet" href="style/colorbox.css" /> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../jquery.colorbox.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
+			$(".colorbox-group2").colorbox({rel:'colorbox-group2'});
+			$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
+			$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
+			$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+		};
+	</script>
+</head>
 
-	<body>
+<body>
 
-	<div class="description">
-		<article id="group1">
-			<header>Amadeus Wieczorek</header>
-			<p>Hi Bianca,</p>
-			<p>I love you tons, and I can't wait to see you in 4 weeks!</p>
-			<!--
-			<p>My name is Amadeus and I am a recent graduate from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>-->
-			<!--<p>I enjoy software engineering, working with hardware and programming for high performance, fully utilizing available hardware resources.</p>
-			<p>I am also interested in cognitive science, particularly how machines can leverage human perception to enhance learning and life quality, but also how can we learn from organisms to enhance the machines.</p>-->
-		</section>
-	</div>
-
+<div class="pointer"></div>
 	<div class="tiles">
-		<section class="images group1">
-			<figure><a class="colorbox-group1">Amadeus Wieczorek</a></figure>
-			<figure><a class="colorbox-group1"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group1"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group1"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+		<section class="images">
+			<div class="wide-tile"><a href="#"><img src="images/Amadeusz.jpg" /></a></div>
 		</section>
+		<section class="images">
+			<div class="wide-tile"><a href="#"><img src="images/Ambilight.jpg" /></a></div>
+		</section>		
 		<section class="images group2">
 			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
 			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
@@ -51,6 +40,41 @@
 			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
 			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
 		</section>
+		<section class="images group4">
+			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+		</section>		
+	</div>
+
+	<div class="description">
+		<article id="group1">
+			<header>Amadeus Wieczorek</header>
+			<nav>
+				<ul>
+					<li><a href="#" class="selected">ABOUT ME</a></li>
+					<li><a href="#">RESUME</a></li>
+				</ul>
+			</nav>
+			<p>My name is Amadeus and I am a recent graduate from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>
+			<p>I enjoy software engineering, working with hardware and programming for high performance, fully utilizing available hardware resources.</p>
+			<p>I am also interested in cognitive science, particularly how machines can leverage human perception to enhance learning and life quality, but also how can we learn from organisms to enhance the machines.</p>
+		</article>
+
+		<article id="group2">
+			<header>Ambilight clone</header>
+			<nav>
+				<ul>
+					<li><a href="#">WHAT IS IT</a></li>
+					<li><a href="#" class="selected">MAKING OF</a></li>
+					<li><a href="#">TECH SPECS</a></li>
+				</ul>
+			</nav>
+			<p>My name is Amadeus and I am a recent graduate from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>
+			<p>I enjoy software engineering, working with hardware and programming for high performance, fully utilizing available hardware resources.</p>
+			<p>I am also interested in cognitive science, particularly how machines can leverage human perception to enhance learning and life quality, but also how can we learn from organisms to enhance the machines.</p>
+		</article>			
 	</div>
 
 	<!-- StatCounter Analytics -->

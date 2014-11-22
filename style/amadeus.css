@@ -5,61 +5,103 @@ html {
 }
 
 body {
-	background-color: #222;
+	background-color: #999;
 	max-width: 700px;
 	height: 100%;
 	margin: 0 auto 0 auto;
-}
-
-.tiles {
-	background-color: #222;
-	overflow-y: auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	line-height: 200%;
 }
 
 .description {
-	height: 200px;
-	background-color: #333;
+	background-color: #dde0dd;
 	overflow-y: auto;
-	color: #bbb;
+	color: #200;
+	width: 60%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;	
+	border-left: 2px solid #eee;
 }
 
 .description article {
-	padding: 10px;
+	padding: 40px;
+	float: left;
+	max-width: 500px;
 }
 
 .description header {
+	font-size: 36px;
+	margin: 0;
+}
+
+.description nav {
+	margin: 10px 0 30px 0;
+	font-size: 16px;
+}
+
+.description nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.description nav li {
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 30px;
 	font-weight: bold;
-	font-size: 1.2em;
 }
 
-.description #group1 {
-	color: #bfb;
+.description nav a.selected {
+	border-bottom: 3px solid #f44;
 }
 
-.description #group2 {
-	color: #bbf;
+.description nav a {
+	text-decoration: none;
+	color: #000;
 }
 
-.description #group3 {
-	color: #fbb;
+.description nav a:hover {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 3px solid #a0f;
 }
 
-.description #group4 {
-	color: #bfb;
+.tiles {
+	background-color: #224;
+	overflow-y: auto;
+	width: 40%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	position: absolute;
 }
 
 .images {
-	float: left;
-	clear: left;
+	float: right;
+	clear: right;
+	margin-top: 20px;
+	margin-right: 60px;
+}
+
+.images:first-child {
+	margin-top: 150px;
 }
 
 .images figure {
-	float: left;
+	float: right;
 	position: relative;
 	width: 125px;
 	height: 125px;
 	margin: 3px;
 	cursor: pointer;
+}
+
+.images .wide-tile {
+	width: 600px;
+	height: 125px;
 }
 
 /* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
