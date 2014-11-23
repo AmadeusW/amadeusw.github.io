@@ -18,7 +18,7 @@ body {
 	background-color: #dde0dd;
 	overflow-y: auto;
 	color: #200;
-	width: 60%;
+	width: 66%;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -69,44 +69,22 @@ body {
 	border-bottom: 3px solid #a0f;
 }
 
-.tiles {
-	background-color: #224;
-	overflow-y: auto;
-	width: 40%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	position: absolute;
+.thumbnails {
+
 }
 
-.images {
-	float: right;
-	clear: right;
-	margin-top: 20px;
-	margin-right: 60px;
-}
-
-.images:first-child {
-	margin-top: 150px;
-}
-
-.images figure {
-	float: right;
+.thumbnails figure {
+	float: left;
 	position: relative;
 	width: 125px;
 	height: 125px;
-	margin: 3px;
+	margin: 0px;
 	cursor: pointer;
-}
-
-.images .wide-tile {
-	width: 600px;
-	height: 125px;
 }
 
 /* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
 /* But the color is defined in .group# figure:before */
-.images figure:before {
+.thumbnails figure:before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -114,20 +92,92 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	-moz-transition: background .3s linear;
-	-webkit-transition: background .3s linear;
-	-o-transition: background .3s linear;
-	transition: background .3s linear;
+	-moz-transition: background .1s linear;
+	-webkit-transition: background .1s linear;
+	-o-transition: background .1s linear;
+	transition: background .1s linear;
 }
 
-.images figure:hover:before {
+.thumbnails figure:hover:before {
 	background: none;
 }
 
-.images figure img {
+.thumbnails img {
 	width: 125px;
 	height: 125px;
+	margin: 0;
 	border: 0 none;
+}
+
+.tiles {
+	background-color: #224;
+	overflow: hidden;
+	width: 34%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.tiles section {
+	float: right;
+	clear: right;
+	margin: 0 0px 0 0;
+}
+
+.tiles section:first-child {
+	margin-top: 0px;
+}
+
+.tiles figure {
+	float: right;
+	position: relative;
+	width: 600px;
+	height: 125px;
+	margin: 0px;
+	cursor: pointer;
+}
+
+/* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
+/* But the color is defined in .group# figure:before */
+.tiles figure:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	-moz-transition: background .1s linear;
+	-webkit-transition: background .1s linear;
+	-o-transition: background .1s linear;
+	transition: background .1s linear;
+}
+
+.tiles figure:hover:before {
+	background: none;
+}
+
+.tiles figure img {
+	width: 600px;
+	height: 125px;
+	border: 0 none;
+}
+
+.tile1 figure:before {
+	background: rgba(20,80,100, 0.5);
+}
+
+.tile2 figure:before {
+	background: rgba(20, 70, 150, 0.5);
+}
+
+.tile3 figure:before {
+	background: rgba(180,60,0, 0.5);
+}
+
+.tile4 figure:before {
+	background: rgba(150,90,30 , 0.5);
 }
 
 .group1 figure {

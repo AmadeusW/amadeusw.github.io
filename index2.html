@@ -5,8 +5,9 @@
 	<title>Amadeus Wieczorek</title> 
 	<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
 	<link type="text/css" rel="stylesheet" href="style/colorbox.css" /> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="../jquery.colorbox.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jquery.colorbox.js"></script>
+	<script src="amadeus.js"></script>
 	<script>
 		$(document).ready(function(){
 			$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
@@ -14,7 +15,7 @@
 			$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
 			$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
 			$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
-		};
+		});
 	</script>
 </head>
 
@@ -22,47 +23,49 @@
 
 <div class="pointer"></div>
 	<div class="tiles">
-		<section class="images">
-			<div class="wide-tile"><a href="#"><img src="images/Amadeusz.jpg" /></a></div>
+		<section class="tile1">
+			<figure><a id="article1link"><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
-		<section class="images">
-			<div class="wide-tile"><a href="#"><img src="images/Ambilight.jpg" /></a></div>
+		<section class="tile2">
+			<figure><a id="article2link"><img src="images/Ambilight.jpg" /></a></figure>
 		</section>		
-		<section class="images group2">
-			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+		<section class="tile3">
+			<figure><a><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
-		<section class="images group3">
-			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group3"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+		<section class="tile4">
+			<figure><a href="#"><img src="images/Ambilight.jpg" /></a></figure>
+		</section>	
+		<section class="tile5">
+			<figure><a><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
-		<section class="images group4">
-			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-			<figure><a class="colorbox-group4"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-		</section>		
+		<section class="tile6">
+			<figure><a href="#"><img src="images/Ambilight.jpg" /></a></figure>
+		</section>	
 	</div>
 
 	<div class="description">
-		<article id="group1">
-			<header>Amadeus Wieczorek</header>
+		<article id="article1">
+			<header id="test">Amadeus Wieczorek</header>
 			<nav>
 				<ul>
 					<li><a href="#" class="selected">ABOUT ME</a></li>
 					<li><a href="#">RESUME</a></li>
 				</ul>
 			</nav>
+			<section class="body">
 			<p>My name is Amadeus and I am a recent graduate from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>
 			<p>I enjoy software engineering, working with hardware and programming for high performance, fully utilizing available hardware resources.</p>
 			<p>I am also interested in cognitive science, particularly how machines can leverage human perception to enhance learning and life quality, but also how can we learn from organisms to enhance the machines.</p>
+			</section>
+			<section class="thumbnails group2">
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+			</section>
 		</article>
 
-		<article id="group2">
+		<article id="artile2">
 			<header>Ambilight clone</header>
 			<nav>
 				<ul>
