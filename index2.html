@@ -6,22 +6,16 @@
 	<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
 	<link type="text/css" rel="stylesheet" href="style/colorbox.css" /> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="jquery.colorbox.js"></script>
+	<script src="script/jquery.colorbox-min.js"></script>
+	<script src="script/amadeus.js"></script>
 	
 	<script>
-	/*
 		$(document).ready(function(){
 			$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
 			$(".colorbox-group2").colorbox({rel:'colorbox-group2'});
 			$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
 			$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
 			$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
-		});*/
-		$(document).ready(function(){
-
-		  alert("hi");
-		  $("#test").hide();
-
 		});
 	</script>
 </head>
@@ -31,13 +25,13 @@
 <div class="pointer"></div>
 	<div class="tiles">
 		<section class="tile1">
-			<figure><a id="article1link"><img src="images/Amadeusz.jpg" /></a></figure>
+			<figure id="article1link"><img src="images/Amadeusz.jpg"/></figure>
 		</section>
 		<section class="tile2">
-			<figure><a id="article2link"><img src="images/Ambilight.jpg" /></a></figure>
+			<figure id="article2link"><img src="images/Ambilight.jpg" /></figure>
 		</section>		
 		<section class="tile3">
-			<figure><a><img src="images/Amadeusz.jpg" /></a></figure>
+			<figure><a id="article2link"><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
 		<section class="tile4">
 			<figure><a href="#"><img src="images/Ambilight.jpg" /></a></figure>
@@ -87,7 +81,6 @@
 		</article>			
 	</div>
 
-	<script src="amadeus.js"></script>
 	<!-- StatCounter Analytics -->
 	<script type="text/javascript">
 		//<![CDATA[
