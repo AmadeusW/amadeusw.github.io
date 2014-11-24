@@ -17,8 +17,8 @@ body {
 .description {
 	background-color: #dde0dd;
 	overflow-y: auto;
-	color: #200;
-	width: 66%;
+	color: #322;
+	width: 67%;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -29,7 +29,7 @@ body {
 .description article {
 	padding: 40px;
 	float: left;
-	max-width: 500px;
+	max-width: 600px;
 }
 
 .description header {
@@ -112,7 +112,7 @@ body {
 .tiles {
 	background-color: #224;
 	overflow: hidden;
-	width: 34%;
+	width: 33%;
 	top: 0;
 	left: 0;
 	bottom: 0;
