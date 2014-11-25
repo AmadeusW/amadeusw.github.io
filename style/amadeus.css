@@ -29,6 +29,7 @@ body {
 .description article {
 	float: left;
 	max-width: 600px;
+	padding-right: 40px;
 }
 
 .description section {
