@@ -9,13 +9,13 @@ body {
 	max-width: 700px;
 	height: 100%;
 	margin: 0 auto 0 auto;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: 'Muli', 'Tahoma', 'Geneva', sans-serif;
 	font-size: 18px;
 	line-height: 200%;
 }
 
 .description {
-	background-color: #dde0dd;
+	background-color: #edf0ed;
 	overflow-y: auto;
 	color: #322;
 	width: 67%;
@@ -27,18 +27,21 @@ body {
 }
 
 .description article {
-	padding: 40px;
 	float: left;
 	max-width: 600px;
 }
 
+.description section {
+	margin: 0 0 0 40px;
+}
+
 .description header {
 	font-size: 36px;
-	margin: 0;
+	margin: 40px 0 0 40px;
 }
 
 .description nav {
-	margin: 10px 0 30px 0;
+	margin: 10px 0 30px 40px;
 	font-size: 16px;
 }
 
@@ -58,15 +61,17 @@ body {
 	border-bottom: 3px solid #f44;
 }
 
-.description nav a {
+.description nav a {	
 	text-decoration: none;
 	color: #000;
+	cursor: pointer;
 }
 
 .description nav a:hover {
 	color: #000;
 	text-decoration: none;
 	border-bottom: 3px solid #a0f;
+	cursor: pointer;
 }
 
 .thumbnails {
