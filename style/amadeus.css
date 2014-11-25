@@ -34,6 +34,7 @@ body {
 
 .description section {
 	margin: 0 0 0 40px;
+	font-family: 'Tahoma', 'Geneva', sans-serif;
 }
 
 .description header {
@@ -144,6 +145,13 @@ body {
 	cursor: pointer;
 }
 
+.tiles figure span {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	color: #eef;
+}
+
 /* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
 /* But the color is defined in .group# figure:before */
 .tiles figure:before {
@@ -164,10 +172,8 @@ body {
 	background: none;
 }
 
-.tiles figure img {
-	width: 600px;
-	height: 125px;
-	border: 0 none;
+#article1link {
+	background-image: url("../images/Amadeusz.jpg");
 }
 
 .tile1 figure:before {
