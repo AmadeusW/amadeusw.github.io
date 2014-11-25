@@ -1,42 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset='utf-8'/>
 	<title>Amadeus Wieczorek</title> 
-	<link type="text/css" rel="stylesheet" href="style.css" /> 
-	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
+	<link type="text/css" rel="stylesheet" href="style/colorbox.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="script/jquery.colorbox-min.js"></script>
+	<script src="script/amadeus.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
+			$(".colorbox-group2").colorbox({rel:'colorbox-group2'});
+			$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
+			$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
+			$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+		});
+	</script>
 </head>
+
 <body>
-	<article>
-		<header>Amadeus Wieczorek</header>
-		<section>
-			<header>About me</header>
-			<p>Hi there,</p>
-			<p>My name is Amadeus and I am a recent graduate from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>
-			<!--<p>I enjoy software engineering, working with hardware and programming for high performance, fully utilizing available hardware resources.</p>
-			<p>I am also interested in cognitive science, particularly how machines can leverage human perception to enhance learning and life quality, but also how can we learn from organisms to enhance the machines.</p>-->
+
+<div class="pointer"></div>
+	<div class="tiles">
+		<section class="tile1">
+			<figure id="article1link"><img src="images/Amadeusz.jpg"/></figure>
 		</section>
-		<section>				
-			<!--<p>Currently I'm working with my classmate <a href="http://joshvarty.com" target="_blank">Josh</a> on <a href="http://codeconnect.io" target="_blank">Code Connect</a>, a Visual Studio extension that changes the way a programmer interacts with the IDE. Built as the Fourth Year Design Project, it's best described in the <a href="http://youtu.be/nbezr3yDJtQ" target="_blank">concept video</a>:</p>
-			<figure>
-				<iframe width="560" height="315" src="http://www.youtube.com/embed/nbezr3yDJtQ" frameborder="0" allowfullscreen></iframe>
-			</figure>-->
-			<p>I'm a co-founder of <a href="http://codeconnect.io" target="_blank">Code Connect</a> with <a href="http://joshvarty.com" target="_blank">Josh</a>. Code Connect is a Visual Studio extension that changes the way a programmer interacts with the code to unravel its complexity. Now we are ready to <a href="http://youtu.be/CuQ8NJOypqs" target="_blank">show our progress</a> and hear your feedback:</p>
-			<figure>
-				<iframe width="560" height="315" src="//www.youtube.com/embed/CuQ8NJOypqs" frameborder="0" allowfullscreen></iframe>
-			</figure>
-			<p>You may want to see a <a href="http://youtu.be/nbezr3yDJtQ" target="_blank">concept video</a> from before we had a working prototype. If you would like to hear updates on our progress, sign up at <a href="http://codeconnect.io/">codeconnect.io</a></p>
+		<section class="tile2">
+			<figure id="article2link"><img src="images/Ambilight.jpg" /></figure>
+		</section>		
+		<section class="tile3">
+			<figure><a id="article2link"><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
-		<section>			
-			<p>Another project, <a href="http://youtu.be/3cwZmXn_8CU" target="_blank">Aurora</a>, is a clone of Philips Ambilight; written in C# and C++/CLI, built with a Teensy board, LED strand and acrylic cut to shape of the screen.</p>
-			<figure>
-				<iframe width="560" height="315" src="http://www.youtube.com/embed/3cwZmXn_8CU" frameborder="0" allowfullscreen></iframe>
-			</figure>
+		<section class="tile4">
+			<figure><a href="#"><img src="images/Ambilight.jpg" /></a></figure>
+		</section>	
+		<section class="tile5">
+			<figure><a><img src="images/Amadeusz.jpg" /></a></figure>
 		</section>
-		<section>
-			<header>Contact</header>
-			<p>See my <a href="AmadeusWieczorek.pdf" target="_blank">PDF resume</a>, view my <a href="http://ca.linkedin.com/in/amadeusamadeus">linkedIn profile</a>, and feel free to send me an email at the address from my resume!</p>
-		</section>
-	</article>
+		<section class="tile6">
+			<figure><a href="#"><img src="images/Ambilight.jpg" /></a></figure>
+		</section>	
+	</div>
+
+	<div class="description">
+		<article id="article1">
+			<header>Amadeus Wieczorek</header>
+			<nav>
+				<ul>
+					<li><a id="a1s1link">ABOUT ME</a></li>
+					<li><a id="a1s2link">RESUME</a></li>
+				</ul>
+			</nav>
+			<section class="body" id="a1s1">
+				<p>My name is Amadeus and I am a co-founder of Code Connect. I graduated from Computer Engineering student at University of Waterloo with a minor in Cognitive Science.</p>
+				<p>I enjoy rock climbing.</p>
+			</section>
+			<section class="body" id="a1s2">
+				<p>Ohh the resume!</p>
+			</section>			
+			<section class="thumbnails group2">
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+				<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
+			</section>
+		</article>
+
+		<article id="article2">
+			<header>Ambilight clone</header>
+			<nav>
+				<ul>
+					<li><a id="a2s1link">WHAT IS IT</a></li>
+					<li><a id="a2s2link">MAKING OF</a></li>
+					<li><a id="a2s3link">TECH SPECS</a></li>
+				</ul>
+			</nav>
+			<section class="body" id="a2s1">
+				<p>What is it!?</p>
+			</section>
+			<section class="body" id="a2s2">
+				<p>Making of.</p>
+			</section>
+			<section class="body" id="a2s3">
+				<p>Almost 20 fps!</p>
+			</section>
+		</article>			
+	</div>
 
 	<!-- StatCounter Analytics -->
 	<script type="text/javascript">
