@@ -2,7 +2,7 @@ $(document).ready(function(){
   a1();
   $( "#article1link" ).click(a1);
   $( "#article2link" ).click(a2);
-  $( "#article3link" ).click(a5);
+  $( "#article3link" ).click(a3);
   $( "#article4link" ).click(a4);
   $( "#article5link" ).click(a5);
   $( "#article6link" ).click(a6);
@@ -202,10 +202,12 @@ function a6s2() {
 function showSection(id) {
   $( "#" + id ).stop().show()
     .css({
-      'marginLeft': '30px',
+      'paddingLeft': '30px',
+      'paddingRight': '10px',
        'opacity': '0'})
     .animate({
-      'marginLeft': '40px',
+      'paddingLeft': '40px',
+      'paddingRight': '0px',
       'opacity': '1'
     }, 'slow');
   $( "#" + id + "link").addClass("selected");    
@@ -219,20 +221,20 @@ function hideSection(id) {
 function showArticle(id) {
   $( "#"+id+" > header" ).stop()
     .css({
-      'marginLeft': '60px',
+      'paddingLeft': '60px',
       'opacity': '0'
     })
     .animate({
-      'marginLeft': '40px',
+      'paddingLeft': '40px',
       'opacity': '1'
     }, 'slow');
   $( "#"+id+" > nav" ).stop()
     .css({
-      'marginLeft': '80px',
+      'paddingLeft': '80px',
       'opacity': '0'
     })
     .animate({
-      'marginLeft': '40px',
+      'paddingLeft': '40px',
       'opacity': '1'
     }, 'slow');    
 }
