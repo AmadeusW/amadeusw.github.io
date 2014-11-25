@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  showArticle1();
-  $( "#article1link" ).click(showArticle1);
-  $( "#article2link" ).click(showArticle2);
+  a1();
+  $( "#article1link" ).click(a1);
+  $( "#article2link" ).click(a2);
   $( "#a1s1link" ).click(a1s1);
   $( "#a1s2link" ).click(a1s2);
   $( "#a2s1link" ).click(a2s1);
@@ -9,83 +9,18 @@ $(document).ready(function(){
   $( "#a2s3link" ).click(a2s3);
 });
 
-function showArticle1() {
+function a1() {
   $("#article1").show();
   $("#article2").hide();
   a1s1();
-  $( "#article1 > header" ).stop()
-    .css({
-      'marginLeft': '60px',
-      'opacity': '0'
-    })
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');
-  $( "#article1 > nav" ).stop()
-    .css({
-      'marginLeft': '80px',
-      'opacity': '0'
-    })
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');    
+  showArticle("article1");
 }
 
-function a1s1() {
-  $( "#a1s2").stop().hide();
-  $( "#a1s1" ).stop().show()
-    .css({
-      'marginLeft': '30px',
-       'opacity': '0'})
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');
-  $( "#a1s1link").addClass("selected");
-  $( "#a1s2link").removeClass("selected");
-}
-
-function showArticle2() {
+function a2() {
   $("#article1").hide();
   $("#article2").show();
   a2s1();
-  $( "#article2 > header" ).stop()
-    .css({
-      'marginLeft': '60px',
-      'opacity': '0'
-    })
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');
-  $( "#article2 > nav" ).stop()
-    .css({
-      'marginLeft': '80px',
-      'opacity': '0'
-    })
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');      
-}
-
-function showSection(id) {
-  $( "#" + id ).stop().show()
-    .css({
-      'marginLeft': '30px',
-       'opacity': '0'})
-    .animate({
-      'marginLeft': '40px',
-      'opacity': '1'
-    }, 'slow');
-  $( "#" + id + "link").addClass("selected");    
-}
-
-function hideSection(id) {
-  $( "#" + id ).stop().hide();
-  $( "#" + id + "link").removeClass("selected");
+  showArticle("article2");
 }
 
 function a1s1() {
@@ -114,4 +49,42 @@ function a2s3() {
   hideSection("a2s1");
   hideSection("a2s2");
   showSection("a2s3");
+}
+
+function showSection(id) {
+  $( "#" + id ).stop().show()
+    .css({
+      'marginLeft': '30px',
+       'opacity': '0'})
+    .animate({
+      'marginLeft': '40px',
+      'opacity': '1'
+    }, 'slow');
+  $( "#" + id + "link").addClass("selected");    
+}
+
+function hideSection(id) {
+  $( "#" + id ).stop().hide();
+  $( "#" + id + "link").removeClass("selected");
+}
+
+function showArticle(id) {
+  $( "#"+id+" > header" ).stop()
+    .css({
+      'marginLeft': '60px',
+      'opacity': '0'
+    })
+    .animate({
+      'marginLeft': '40px',
+      'opacity': '1'
+    }, 'slow');
+  $( "#"+id+" > nav" ).stop()
+    .css({
+      'marginLeft': '80px',
+      'opacity': '0'
+    })
+    .animate({
+      'marginLeft': '40px',
+      'opacity': '1'
+    }, 'slow');    
 }
