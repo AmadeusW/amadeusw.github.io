@@ -121,7 +121,7 @@ body {
 }
 
 .tiles {
-	background-color: #224;
+	background-color: #042654;
 	overflow: hidden;
 	width: 33%;
 	top: 0;
@@ -152,19 +152,16 @@ body {
 	width: 100%;
 	height: 125px;
 	margin: 0px;
-	color: #bbe;	
 }
 
-.tiles section > div:hover {
-	color: #99a;
-}
-
+/* The text over each tile */
 .tiles section > div > span {
-	display: block;
-
+	color: #ddf;
 	text-align: right;
 	line-height: 25px;
+	text-shadow: 0px 0px 4px #000;
 
+	display: block;
 	position: absolute;
 	right: 15px;
 	bottom: 2px;
@@ -205,52 +202,52 @@ body {
 /* Tint overlays: */
 
 .tile1 div:before {
-	background: rgba(0,00,50, 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 .tile2 div:before {
-	background: rgba(20, 40, 70, 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 .tile3 div:before {
-	background: rgba(30, 70, 120, 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 .tile4 div:before {
-	background: rgba(40, 90, 150 , 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 .tile5 div:before {
-	background: rgba(50,120,180, 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 .tile6 div:before {
-	background: rgba(60,150,200 , 0.5);
+	background: rgba(4, 38, 86, 0.5);
 }
 
 /* Background images:; */
 .tile1 {
-	background-image: url("../images/Amadeusz.jpg");
+	background-image: url("../images/a1.png");
 }
 
 .tile2 {
-	background-image: url("../images/Ambilight.jpg");
+	background-image: url("../images/a2.png");
 }
 
 .tile3 {
-	background-image: url("../images/Amadeusz.jpg");
+	background-image: url("../images/a3.png");
 }
 
 .tile4 {
-	background-image: url("../images/Ambilight.jpg");
+	background-image: url("../images/a4.png");
 }
 
 .tile5 {
-	background-image: url("../images/Amadeusz.jpg");
+	background-image: url("../images/a5.png");
 }
 
 .tile6 {
-	background-image: url("../images/Ambilight.jpg");
+	background-image: url("../images/a6.png");
 }
 
 /* Images in the text body */
