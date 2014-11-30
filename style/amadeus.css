@@ -7,6 +7,7 @@ html {
 body {
 	background-color: #112;
 	max-width: 1300px;
+	max-height: 1250px;
 	height: 100%;
 	position: relative; /* to contain titles and description */
 	margin: 0 auto 0 auto;
@@ -122,7 +123,8 @@ body {
 }
 
 .tiles {
-	background-color: #042654;
+	/* background-color: #042654; */
+	background-color: #244674;
 	overflow: hidden;
 	width: 33%;
 	top: 0;
@@ -223,6 +225,10 @@ body {
 }
 
 .tile6 div:before {
+	background: rgba(4, 38, 86, 0.5);
+}
+
+.tileN div:before {
 	background: rgba(4, 38, 86, 0.5);
 }
 
