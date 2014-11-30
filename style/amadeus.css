@@ -6,7 +6,7 @@ html {
 
 body {
 	background-color: #112;
-	max-width: 1300px;
+	max-width: 1150px;
 	max-height: 1250px;
 	height: 100%;
 	position: relative; /* to contain titles and description */
