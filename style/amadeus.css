@@ -5,9 +5,10 @@ html {
 }
 
 body {
-	background-color: #999;
-	max-width: 700px;
+	background-color: #112;
+	max-width: 1300px;
 	height: 100%;
+	position: relative; /* to contain titles and description */
 	margin: 0 auto 0 auto;
 	font-family: 'Muli', 'Tahoma', 'Geneva', sans-serif;
 	font-size: 18px;
