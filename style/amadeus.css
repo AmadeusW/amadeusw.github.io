@@ -290,3 +290,17 @@ body {
 .group4 figure:before {
 	background: rgba(0,150,255, 0.5);
 }
+
+.eof {
+       margin-left: 10px;
+       position: relative;
+       top: 0px;
+       background-color: #f44;
+       width: 10px;
+       height: 10px;
+       cursor: default;
+}
+
+.eof:hover {
+	background-color: #a0f;
+}
