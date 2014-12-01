@@ -304,3 +304,8 @@ body {
 .eof:hover {
 	background-color: #a0f;
 }
+
+::selection
+{
+	background: #ddd;
+}
