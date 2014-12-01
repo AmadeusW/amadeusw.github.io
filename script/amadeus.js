@@ -9,6 +9,7 @@ $(document).ready(function(){
 
   $( "#a1s1link" ).click(a1s1);
   $( "#a1s2link" ).click(a1s2);
+  $( "#a1s3link" ).click(a1s3);
 
   $( "#a2s1link" ).click(a2s1);
   $( "#a2s2link" ).click(a2s2);  
@@ -100,11 +101,19 @@ function a6() {
 function a1s1() {
   showSection("a1s1");
   hideSection("a1s2");
+  hideSection("a1s3");
 }
 
 function a1s2() {
   hideSection("a1s1");
   showSection("a1s2");
+  hideSection("a1s3");
+}
+
+function a1s3() {  
+  showSection("a1s1");
+  hideSection("a1s2");
+  showSection("a1s3");
 }
 
 function a2s1() {
