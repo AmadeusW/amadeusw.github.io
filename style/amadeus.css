@@ -1,32 +1,116 @@
 html {
-	height: 100%;
-	overflow: hidden;
-	margin: 0;
+    background-color: #112;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
 }
 
 body {
-	background-color: #112;
-	max-width: 1150px;
+	/*
 	max-height: 1250px;
-	height: 100%;
-	position: relative; /* to contain titles and description */
-	margin: 0 auto 0 auto;
+	*/
+    max-width: 1150px;
+    margin: 0px auto 0px auto;
+    position: relative;
+    height: 100%;
+
 	font-family: 'Muli', 'Tahoma', 'Geneva', sans-serif;
 	font-size: 18px;
 	line-height: 200%;
 }
 
+#background {
+    position: absoulte;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+#description_background {
+    background: #edf0ed;
+    position: absolute;
+    width: 67%;
+    left: 33%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#tiles_background {
+    background: #244674;
+    position: absolute;
+    width: 33%;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    right: 67%;
+}
+
+#foreground {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#container_tiles {
+    float: left;
+    width: 33%;
+    height: 100%;
+    right: 67%;
+    background: #244674;
+	border-right: 2px solid #eef;
+}
+
+#container_description {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background: #edf0ed;
+    position: relative;
+}
+
 .description {
-	background-color: #edf0ed;
-	overflow-y: auto;
+    float: left;
+    width: 67%;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+
 	color: #322;
+
+	/*
+	overflow-y: auto;
 	width: 67%;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	position: absolute;	
-	border-left: 2px solid #eee;
+	*/
 }
+
+.tiles {
+    float: left;
+    width: 100%;
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    background-color: #244674;
+
+	/*
+	width: 33%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	*/
+}
+
+
 
 .description article {
 	float: left;
@@ -122,16 +206,7 @@ body {
 	border: 0 none;
 }
 
-.tiles {
-	/* background-color: #042654; */
-	background-color: #244674;
-	overflow: hidden;
-	width: 33%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	position: absolute;
-}
+
 
 .tiles section {
 	float: right;
@@ -305,7 +380,6 @@ body {
 	background-color: #a0f;
 }
 
-::selection
-{
+::selection {
 	background: #ddd;
 }
