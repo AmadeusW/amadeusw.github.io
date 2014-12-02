@@ -111,7 +111,7 @@ function a1s2() {
 }
 
 function a1s3() {  
-  showSection("a1s1");
+  hideSection("a1s1");
   hideSection("a1s2");
   showSection("a1s3");
 }
