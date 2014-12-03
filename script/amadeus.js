@@ -1,3 +1,7 @@
+// Used to control the direction of animation
+var newSectionId = 0;
+var lastSectionId = 0;
+
 $(document).ready(function(){
   a1();
   $( "#article1link" ).click(a1);
@@ -99,120 +103,165 @@ function a6() {
 }
 
 function a1s1() {
+  newSectionId = 1;
   showSection("a1s1");
   hideSection("a1s2");
   hideSection("a1s3");
+  lastSectionId = 1;
 }
 
 function a1s2() {
+  newSectionId = 2;
   hideSection("a1s1");
   showSection("a1s2");
   hideSection("a1s3");
+  lastSectionId = 2;
 }
 
 function a1s3() {  
+  newSectionId = 3;
   hideSection("a1s1");
   hideSection("a1s2");
   showSection("a1s3");
+  lastSectionId = 3;
 }
 
 function a2s1() {
+  newSectionId = 1;
   showSection("a2s1");
   hideSection("a2s2");
   hideSection("a2s3");
   hideSection("a2s4");
+  lastSectionId = 1;
 }
 
 function a2s2() {
+  newSectionId = 2;
   hideSection("a2s1");
   showSection("a2s2");
   hideSection("a2s3");
   hideSection("a2s4");
+  lastSectionId = 2;
 }
 
 function a2s3() {
+  newSectionId = 3;
   hideSection("a2s1");
   hideSection("a2s2");
   showSection("a2s3");
   hideSection("a2s4");
+  lastSectionId = 3;
 }
 
 function a2s4() {
+  newSectionId = 4;
   hideSection("a2s1");
   hideSection("a2s2");
   hideSection("a2s3");
   showSection("a2s4");
+  lastSectionId = 4;
 }
 
 function a3s1() {
+  newSectionId = 1;
   showSection("a3s1");
   hideSection("a3s2");
   hideSection("a3s3");
+  lastSectionId = 1;
 }
 
 function a3s2() {
+  newSectionId = 2;
   hideSection("a3s1");
   showSection("a3s2");
   hideSection("a3s3");
+  lastSectionId = 2;
 }
 
 function a3s3() {
+  newSectionId = 3;
   hideSection("a3s1");
   hideSection("a3s2");
   showSection("a3s3");
+  lastSectionId = 3;
 }
 
 function a4s1() {
+  newSectionId = 1;
   showSection("a4s1");
   hideSection("a4s2");
   hideSection("a4s3");
+  lastSectionId = 1;
 }
 
 function a4s2() {
+  newSectionId = 2;
   hideSection("a4s1");
   showSection("a4s2");
   hideSection("a4s3");
+  lastSectionId = 2;
 }
 
 function a4s3() {
+  newSectionId = 3;
   hideSection("a4s1");
   hideSection("a4s2");
   showSection("a4s3");
+  lastSectionId = 3;
 }
 
 function a5s1() {
+  newSectionId = 1;
   showSection("a5s1");
   hideSection("a5s2");
   hideSection("a5s3");
+  lastSectionId = 1;
 }
 
 function a5s2() {
+  newSectionId = 2;
   hideSection("a5s1");
   showSection("a5s2");
   hideSection("a5s3");
+  lastSectionId = 2;
 }
 
 function a5s3() {
+  newSectionId = 3;
   hideSection("a5s1");
   hideSection("a5s2");
   showSection("a5s3");
+  lastSectionId = 3;
 }
 
 function a6s1() {
+  newSectionId = 1;
   showSection("a6s1");
   hideSection("a6s2");
+  lastSectionId = 1;
 }
 
 function a6s2() {
+  newSectionId = 2;
   hideSection("a6s1");
   showSection("a6s2");
+  lastSectionId = 2;
 }
 
 function showSection(id) {
+
+  var initialPaddingLeft = '30px';
+  var initialPaddingRight = '10px';
+  if (newSectionId > lastSectionId)
+  {
+    initialPaddingLeft = '50px';
+    initialPaddingRight = '-10px';
+  }
+
   $( "#" + id ).stop().show()
     .css({
-      'paddingLeft': '30px',
-      'paddingRight': '10px',
+      'paddingLeft': initialPaddingLeft,
+      'paddingRight': initialPaddingRight,
        'opacity': '0'})
     .animate({
       'paddingLeft': '40px',
