@@ -1,10 +1,10 @@
 html {
     background-color: #112;
-    right: 0;
-    left: 0;
+    position: absolute;
     top: 0;
     bottom: 0;
-    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 body {
@@ -21,11 +21,20 @@ body {
 	line-height: 200%;
 }
 
+#background_container {
+	position: fixed;
+	z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 #background {
-    position: absoulte;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
+    position: relative;
+	height: 100%;    
+	max-width: 1150px;
+    margin: 0px auto 0px auto;
 }
 
 #description_background {
@@ -49,68 +58,24 @@ body {
 }
 
 #foreground {
-    position: absolute;
+	position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     right: 0;
 }
 
-#container_tiles {
-    float: left;
-    width: 33%;
-    height: 100%;
-    right: 67%;
-    background: #244674;
-	border-right: 2px solid #eef;
-}
-
-#container_description {
-    clear: left;
-    float: left;
-    width: 100%;
-    overflow: hidden;
-    background: #edf0ed;
-    position: relative;
-}
-
 .description {
     float: left;
     width: 67%;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
-
 	color: #322;
-
-	/*
-	overflow-y: auto;
-	width: 67%;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	position: absolute;	
-	*/
 }
 
 .tiles {
     float: left;
-    width: 100%;
-    position: relative;
-    left: 0;
-    overflow: hidden;
+    width: 33%;
     background-color: #244674;
-
-	/*
-	width: 33%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	position: absolute;
-	*/
 }
-
-
 
 .description article {
 	float: left;
