@@ -298,6 +298,13 @@ body {
 	border: 0 none;
 }
 
+.group2s2:before {
+	background: rgba(50,100,250, 0.5);
+}
+
+.group3s1:before {
+	background: rgba(130,0,0, 0.5);
+}
 
 .group3s2:before {
 	background: rgba(230,30,230, 0.5);
@@ -315,43 +322,7 @@ body {
 	background: rgba(30,230,30, 0.5);
 }
 
-.group2 figure {
-	background-color: #C38;
-}
 
-.group2 figure:before {
-	background: rgba(255, 0, 150, 0.5);
-}
-
-.group3 figure {
-	background-color: #3C8;
-}
-
-.group3 figure:before {
-	background: rgba(0,255,150, 0.5);
-}
-
-.group4 figure {
-	background-color: #38C;
-}
-
-.group4 figure:before {
-	background: rgba(0,150,255, 0.5);
-}
-
-.eof {
-       margin-left: 10px;
-       position: relative;
-       top: 0px;
-       background-color: #f44;
-       width: 10px;
-       height: 10px;
-       cursor: default;
-}
-
-.eof:hover {
-	background-color: #a0f;
-}
 
 ::selection {
 	background: #ddd;
@@ -408,4 +379,12 @@ body {
 
 abbr {
 	text-shadow: 1px 1px #dde0dd;
+}
+
+a {
+	text-decoration: 
+}
+
+a.visited {
+
 }
