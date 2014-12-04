@@ -405,3 +405,7 @@ body {
 	font-family: 'Tahoma', 'Geneva', sans-serif;
 	font-size: 14px;
 }
+
+abbr {
+	text-shadow: 1px 1px #dde0dd;
+}
