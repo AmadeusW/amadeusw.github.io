@@ -268,7 +268,8 @@ function showSection(id) {
       'paddingRight': '10px',
       'opacity': '1'
     }, 'slow');
-  $( "#" + id + "link").addClass("selected");    
+  $( "#" + id + "link").addClass("selected"); 
+  ga('send', 'event', 'menu', 'navigation', 'section', id);
 }
 
 function hideSection(id) {
