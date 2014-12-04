@@ -79,7 +79,7 @@ body {
 
 .description article {
 	float: left;
-	max-width: 600px;
+	max-width: 670px; /* Actually we can go as far as 770px */
 	padding-right: 40px;
 	display: none; /* Initially, all articles are hidden */
 }

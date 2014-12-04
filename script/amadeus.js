@@ -251,11 +251,11 @@ function a6s2() {
 function showSection(id) {
 
   var initialPaddingLeft = '30px';
-  var initialPaddingRight = '10px';
+  var initialPaddingRight = '20px';
   if (newSectionId > lastSectionId)
   {
     initialPaddingLeft = '50px';
-    initialPaddingRight = '-10px';
+    initialPaddingRight = '0px';
   }
 
   $( "#" + id ).stop().show()
@@ -265,7 +265,7 @@ function showSection(id) {
        'opacity': '0'})
     .animate({
       'paddingLeft': '40px',
-      'paddingRight': '0px',
+      'paddingRight': '10px',
       'opacity': '1'
     }, 'slow');
   $( "#" + id + "link").addClass("selected");    
@@ -288,7 +288,7 @@ function showArticle(id) {
     }, 'slow');
   $( "#"+id+" > nav" ).stop()
     .css({
-      'paddingLeft': '80px',
+      'paddingLeft': '70px',
       'opacity': '0'
     })
     .animate({
