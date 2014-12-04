@@ -269,7 +269,7 @@ function showSection(id) {
       'opacity': '1'
     }, 'slow');
   $( "#" + id + "link").addClass("selected"); 
-  ga('send', 'event', 'menu', 'navigation', 'section', id);
+  ga('send', 'event', 'menu', 'navigation', id);
 }
 
 function hideSection(id) {
