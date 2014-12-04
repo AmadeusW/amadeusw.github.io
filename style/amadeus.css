@@ -131,47 +131,6 @@ body {
 	cursor: pointer;
 }
 
-.thumbnails {
-
-}
-
-.thumbnails figure {
-	float: left;
-	position: relative;
-	width: 125px;
-	height: 125px;
-	margin: 0px;
-	cursor: pointer;
-}
-
-/* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
-/* But the color is defined in .group# figure:before */
-.thumbnails figure:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	-moz-transition: background .1s linear;
-	-webkit-transition: background .1s linear;
-	-o-transition: background .1s linear;
-	transition: background .1s linear;
-}
-
-.thumbnails figure:hover:before {
-	background: none;
-}
-
-.thumbnails img {
-	width: 125px;
-	height: 125px;
-	margin: 0;
-	border: 0 none;
-}
-
-
 
 .tiles section {
 	float: right;
@@ -299,12 +258,49 @@ body {
 
 /* Images in the text body */
 
-.group1 figure {
-	background-color: #8C3;
+.thumbnails {
+
 }
 
-.group1 figure:before {
-	background: rgba(150,255,0, 0.5);
+.thumbnails a {
+	float: left;
+	position: relative;
+	width: 125px;
+	height: 125px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+/* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
+/* But the color is defined in .group# figure:before */
+.thumbnails a:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	-moz-transition: background .1s linear;
+	-webkit-transition: background .1s linear;
+	-o-transition: background .1s linear;
+	transition: background .1s linear;
+}
+
+.thumbnails a:hover:before {
+	background: none;
+}
+
+.thumbnails img {
+	width: 125px;
+	height: 125px;
+	margin: 0;
+	border: 0 none;
+}
+
+
+.group3s2:before {
+	background: rgba(230,30,230, 0.5);
 }
 
 .group2 figure {

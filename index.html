@@ -13,11 +13,8 @@
 	
 	<script>
 		$(document).ready(function(){
-			$(".colorbox-group1").colorbox({rel:'colorbox-group1'});
-			$(".colorbox-group2").colorbox({rel:'colorbox-group2'});
-			$(".colorbox-group3").colorbox({rel:'colorbox-group3'});
-			$(".colorbox-group4").colorbox({rel:'colorbox-group4'});
-			$(".colorbox-youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+			$(".group3s2").colorbox({fixed: true, rel:'group3s2'});
+			$(".colorbox-youtube").colorbox({fixed: true, iframe:true, innerWidth:640, innerHeight:390});
 		});
 	</script>
 </head>
@@ -82,12 +79,6 @@
 						</div>
 					</a>
 				</section>			
-				<section class="thumbnails group2">
-					<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-					<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-					<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-					<figure><a class="colorbox-group2"><img src="https://avatars0.githubusercontent.com/u/1673956?v=3&s=460" /></a></figure>
-				</section>
 			</article>
 
 			<article id="article2">
@@ -135,8 +126,18 @@
 				</section>
 				<section class="body" id="a3s2">
 					<p>Before ordering the LEDs and the Teensy board, I've built a simulator which takes screenshots, computes the color output and paints it in a window. You can see it in the first picture.</p>
-					<p>The next stage was to program the Teensy board, solder the LED strands and attach them to the screen. I used a piece of cardboard to hold the LEDs and tin foil to reflect more light towards the wall.</p>
+					<p>The next stage was to program the Teensy board, solder the LED strands and attach them to the screen. Initially, I used a piece of cardboard to hold the LEDs and tin foil to reflect more light towards the wall.</p>
 					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each of the holes was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: first, by cutting out two arcs between opposite corners, and then with a finishing straight cut.<span class="eof">&nbsp;</span></p>
+					<div class="thumbnails">
+						<a class="group3s2" href="images/WP_000427.jpg" title="Temporary mounting in cardboard"><img src="images/thumb_WP_000427.png" /></a>
+						<a class="group3s2" href="images/WP_000741.jpg" title="Planning the cuts"><img src="images/thumb_WP_000741.png" /></a>
+						<a class="group3s2" href="images/WP_000742.jpg" title="Making the rectangular cut-out"><img src="images/thumb_WP_000742.png" /></a>
+						<a class="group3s2" href="images/WP_000743.jpg" title="Drilling holes"><img src="images/thumb_WP_000743.png" /></a>
+						<a class="group3s2" href="images/WP_000749.jpg" title="Attaching the LEDs"><img src="images/thumb_WP_000749.png" /></a>
+						<a class="group3s2" href="images/WP_000750.jpg" title="Finished mounting"><img src="images/thumb_WP_000750.png" /></a>
+						<a class="group3s2" href="images/WP_000751.jpg" title="Finished mounting"><img src="images/thumb_WP_000751.png" /></a>
+						<a class="group3s2" href="images/WP_000753.jpg" title="Side view and the rectangular cut-out in action"><img src="images/thumb_WP_000753.png" /></a>
+					</div>
 				</section>
 				<section class="body" id="a3s3">
 					<p>The app takes screenshots and finds average color of each sector of the screen at a maximum rate of 19fps.</p>
@@ -174,7 +175,7 @@
 					<ul>
 						<li><a id="a5s1link">PETREL</a></li>
 						<li><a id="a5s2link">WEB</a></li>
-						<li><a id="a5s3link">ONE MORE THING</a></li>
+						<!--<li><a id="a5s3link">ONE MORE THING</a></li>-->
 					</ul>
 				</nav>
 				<section class="body" id="a5s1">
@@ -185,11 +186,12 @@
 				<section class="body" id="a5s2">
 					<h4>Code Connect's website</h4>
 					<p><a href="http://codeconnect.io/">Code Connect's website</a></p>
-					<h4>This website</h4>
-					<p>TODO: link to blog post</p>
+					<h4>My portfolio</h4>
+					<p><a href="http://amadeusw.com/">This very website</a></p>
+					<p>Check back soon for links to blog posts about underlying CSS and JS</p>
 				</section>
 				<section class="body" id="a5s3">
-					<p>To do.</p>
+					<p>Check back soon!.</p>
 				</section>
 			</article>	
 
