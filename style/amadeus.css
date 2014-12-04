@@ -375,8 +375,8 @@ body {
 	z-index: 11;
 }
 
-.resume_link:hover {
-	background: #f00;
+.resume_link {
+	display: block;
 }
 
 .resume_link:hover .page1 {
