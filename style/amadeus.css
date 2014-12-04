@@ -348,3 +348,47 @@ body {
 ::selection {
 	background: #ddd;
 }
+
+.resume_container {
+	margin: 0 0 0 50px;
+	position: relative;
+	width: 240px;
+	height: 250px;
+}
+
+.resume_container img {
+	-moz-transition: all .1s linear;
+	-webkit-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+	box-shadow: 2px 2px 5px #bbb;
+	position: absolute;	
+}
+
+.page1 {
+	margin: 20px 0 0 40px;
+	z-index: 12;
+}
+
+.page2 {
+	margin: 30px 0 0 50px;
+	z-index: 11;
+}
+
+.resume_link:hover {
+	background: #f00;
+}
+
+.resume_link:hover .page1 {
+	-ms-transform: rotate(25deg) translate(20px,-10px);
+    -webkit-transform: rotate(25deg) translate(20px,-10px);
+    -moz-transform: rotate(25deg) translate(20px,-10px);
+    transform: rotate(25deg) translate(20px,-10px);
+}
+
+.resume_link:hover .page2 {
+	-ms-transform: rotate(-15deg) translate(-20px,-15px);
+    -webkit-transform: rotate(-15deg) translate(-20px,-15px);
+    -moz-transform: rotate(-15deg) translate(-20px,-15px);
+    transform: rotate(-15deg) translate(-20px,-15px);	
+}
