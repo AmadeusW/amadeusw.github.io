@@ -94,18 +94,18 @@
 					</ul>
 				</nav>
 				<section class="body" id="a2s1">
-					<p>A large chunk of a developers' work time is spent reading code: We begin in a single file, where we read a function line by line. But then the program execution continues in another method, perhaps even in another file and another project. So we jump there and resume reading. And then we jump again, and again, until we understand how the program works.</p>
+					<p>A large chunk of a developer's work time is spent reading code: We begin in a single file, where we read a function line by line. But then the program execution continues in another method, perhaps even in another file and another project. So we jump there and resume reading. And then we jump again, and again, until we understand how the program works.</p>
 					<p>Developers must maintain a mental model of these relationships that exist within the source code. I believe that by being free from this mentally intensive task, we can be more productive and able to focus on creative aspects of software design.</p>
-					<p>The idea of <a href="http://codeconnect.io/" target="_blank">Code Connect</a> was conceived when Josh (co-creator) and I had to quickly learn and understand the source code at each of our internships. We found two products that strengthened our idea: <a target="_blank" href="http://www.andrewbragdon.com/codebubbles_site.asp">Code Bubbles</a> and <a target="_blank" href="https://www.kickstarter.com/projects/ibdknox/light-table">Kickstarter video for Light Table</a> (at 3:00 mark). <span class="eof">&nbsp;</span></p>
+					<p>The idea of <a href="http://codeconnect.io/" target="_blank">Code Connect</a> was conceived when Josh (co-creator) and I had to quickly learn and understand the source code at each of our internships. We found two products that strengthened our idea: <a target="_blank" href="http://www.andrewbragdon.com/codebubbles_site.asp">Code Bubbles</a> and <a target="_blank" href="https://www.kickstarter.com/projects/ibdknox/light-table">Kickstarter video for Light Table</a> (at 3:00 mark).</p>
 				</section>
 				<section class="body" id="a2s2">
 					<p><a href="http://codeconnect.io/" target="_blank">Code Connect</a> is a code exploration tool that visualizes C# code on a function by function basis, allowing the developer to see where each piece of code lies in the big picture of the entire program: functions called by the piece of code are displayed to the left, and functions that lead to this piece of code are displayed on the left. This visualisation of the call stack takes place without running the program.</p>
 					<p>The function by function approach helps developers unravel complex or unfamiliar code. Developers use Code Connect to understand decompiled or obfuscated code. Developers use it to easier grasp the way software works.</p>
-					<p>Initially, we believed that Code Connect shines with large projects. But when we built Code Connect and started using it, we discovered that it's useful for small projects as well - we used it to understand even small changes committed by other developer.<span class="eof">&nbsp;</span></p>
+					<p>Initially, we believed that Code Connect shines with large projects. But when we built Code Connect and started using it, we discovered that it's useful for small projects as well - we used it to understand even small changes committed by other developer.</p>
 				</section>
 				<section class="body" id="a2s3">
 					<p><a href="http://codeconnect.io/" target="_blank">Code Connect</a> is an <a href="https://visualstudiogallery.msdn.microsoft.com/2c025094-2601-450a-8d1b-7786080f0459" target="_blank">extension to Visual Studio 2015</a>. The analysis of the code is possible thanks to the new C# compiler bundled with Visual Studio 2015, codenamed <a target="_blank" href="http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx">Project Roslyn</a>. Project Roslyn allows us to work with the syntax tree and the semantic model underlying the code.</p>
-					<p>The front end is built using WPF, XAML, and strictly adheres to MVVM principles. The processing is done as asynchronously as it is possible, which allows developers to explore truly huge projects with Code Connect. Our performance benchmark is Project Roslyn itself, which boasts <a target="_blank" href="http://source.roslyn.codeplex.com/i.txt">over 2 millions lines of code in over 4,500 documents</a>.<span class="eof">&nbsp;</span></p></p>
+					<p>The front end is built using WPF, XAML, and strictly adheres to MVVM principles. The processing is done as asynchronously as it is possible, which allows developers to explore truly huge projects with Code Connect. Our performance benchmark is Project Roslyn itself, which boasts <a target="_blank" href="http://source.roslyn.codeplex.com/i.txt">over 2 millions lines of code in over 4,500 documents</a>.</p>
 				</section>
 				<section class="body" id="a2s4">
 					<p>Come again soon!</p>
@@ -123,13 +123,13 @@
 				</nav>
 				<section class="body" id="a3s1">
 					<p>A light entertainment system for my room! Ambilight casts colorful lights on the wall behind the screen. The colors correspond to the colors displayed on the screen.</p>
-					<p>It is a clone of <a href="https://en.wikipedia.org/wiki/Ambilight" target="_blank">Philips Ambilight</a>. Written a few years ago (= poorly coded, please don't judge!) in C# and C++/CLI, built with a Teensy board, an LED strand and a sheet of acrylic cut to the shape of the screen.<span class="eof">&nbsp;</span></p>
-					<p>Besides looking great and creating an immersive experience, Ambilight reduces the eye strain associated with looking at a bright screen in an otherwise dark room.<span class="eof">&nbsp;</span></p></p>
+					<p>It is a clone of <a href="https://en.wikipedia.org/wiki/Ambilight" target="_blank">Philips Ambilight</a>. Written a few years ago (= poorly coded, please don't judge!) in C# and C++/CLI, built with a Teensy board, an LED strand and a sheet of acrylic cut to the shape of the screen.</p>
+					<p>Besides looking great and creating an immersive experience, Ambilight reduces the eye strain associated with looking at a bright screen in an otherwise dark room.</p>
 				</section>
 				<section class="body" id="a3s2">
 					<p>Before ordering the LEDs and the Teensy board, I've built a simulator which takes screenshots, computes the color output and paints it in a window. You can see it in the first picture.</p>
 					<p>The next stage was to program the Teensy board, solder the LED strands and attach them to the screen. Initially, I used a piece of cardboard to hold the LEDs and tin foil to reflect more light towards the wall.</p>
-					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each of the holes was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: first, by cutting out two arcs between opposite corners, and then with a finishing straight cut.<span class="eof">&nbsp;</span></p>
+					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each of the holes was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: first, by cutting out two arcs between opposite corners, and then with a finishing straight cut.</p>
 					<div class="thumbnails">
 						<a class="group3s2" href="images/WP_000427.jpg" title="Temporary mounting in cardboard"><img src="images/thumb_WP_000427.png" /></a>
 						<a class="group3s2" href="images/WP_000741.jpg" title="Planning the cuts"><img src="images/thumb_WP_000741.png" /></a>
@@ -143,7 +143,7 @@
 				</section>
 				<section class="body" id="a3s3">
 					<p>The app takes screenshots and finds average color of each sector of the screen at a maximum rate of 19fps.</p>
-					<p>The screenshots are taken using Win32 API, which means that the project doesn't work with video games rendered using DirectX or OpenGL. DirectX screenshot module is very high on a slowly moving roadmap.<span class="eof">&nbsp;</span></p>
+					<p>The screenshots are taken using Win32 API, which means that the project doesn't work with video games rendered using DirectX or OpenGL. DirectX screenshot module is very high on a slowly moving roadmap.</p>
 					<p>The biggest bottleneck is taking the screenshots. I hope that DirectX screenshot module will speed this operation up, allowing to take more screenshots per second - the target is 25 fps, such that each visual detail can be processed and displayed onthe wall.</p>
 					<p>The second bottleneck, which has a noticable impact on the frame rate, is processing the image after taking the screenshot. I need to extract color information for each sector of the screen, but this can be sped up by sampling only each n-th pixel.</p>
 				</section>
