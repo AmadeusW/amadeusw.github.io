@@ -102,7 +102,7 @@
 				<section class="body" id="a2s2">
 					<p><a href="http://codeconnect.io/" target="_blank">Code Connect</a> is a code exploration tool that visualizes C# code on a function by function basis. This helps the developer to see where each piece of code lies in the big picture of the entire program. Functions called by the piece of code are displayed on the right, and functions that lead to this piece of code are displayed on the left. The best news is that this visualisation of the call stack takes place without running the program!</p>
 					<p>The function by function approach helps developers unravel complex or unfamiliar code. Developers use Code Connect to understand decompiled or obfuscated code. Code Connect helps us easily grasp the way software works.</p>
-					<p>Initially, we believed that Code Connect shines with large projects. But when we built Code Connect and started using it, we discovered that it's useful for projects of any size - we use it it to understand even small changes committed by other developer.</p>
+					<p>Initially, we believed that Code Connect shines with large projects. But when we built Code Connect and started using it, we discovered that it's useful for projects of any size - we use it it to understand even small changes committed by other developers.</p>
 					<p>Code Connect beta is available for <a href="https://visualstudiogallery.msdn.microsoft.com/2c025094-2601-450a-8d1b-7786080f0459" target="_blank">download from Visual Studio Gallery</a>.</p>
 					<div class="thumbnails">
 						<a class="group2s2" href="http://www.youtube.com/embed/bTi8nUz6L40?rel=0&amp;wmode=transparent"><img src="images/thumb_cc.png" /></a>
@@ -138,7 +138,7 @@
 				<section class="body" id="a3s2">
 					<p>Before ordering the LEDs and the Teensy board, I've built a simulator which takes screenshots, computes the color output and paints it in a window. You can see it in the first picture.</p>
 					<p>The next stage was to program the Teensy board, solder the LED strands and attach them to the screen. Initially, I used a piece of cardboard to hold the LEDs and tin foil to reflect more light towards the wall.</p>
-					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each of the holes was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: first, by cutting out two arcs between opposite corners, and then with a finishing straight cut.</p>
+					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each hole was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: the first two to cut out two arcs between opposite corners, and a third one being a finishing straight cut.</p>
 					<div class="thumbnails">
 						<a class="group3s2" href="images/WP_000427.jpg" title="Temporary mounting in cardboard"><img src="images/thumb_WP_000427.png" /></a>
 						<a class="group3s2" href="images/WP_000741.jpg" title="Planning the cuts"><img src="images/thumb_WP_000741.png" /></a>
@@ -151,10 +151,10 @@
 					</div>
 				</section>
 				<section class="body" id="a3s3">
-					<p>The app takes screenshots and finds average color of each sector of the screen at a maximum rate of 19fps.</p>
+					<p>The app takes screenshots and finds the average color of each sector of the screen at a maximum rate of 19fps.</p>
 					<p>The screenshots are taken using Win32 API, which means that the project doesn't work with video games rendered using DirectX or OpenGL. DirectX screenshot module is very high on a slowly moving roadmap.</p>
-					<p>The biggest bottleneck is taking the screenshots. I hope that DirectX screenshot module will speed this operation up, allowing to take more screenshots per second - the target is 25 fps, such that each visual detail can be processed and displayed onthe wall.</p>
-					<p>The second bottleneck, which has a noticable impact on the frame rate, is processing the image after taking the screenshot. I need to extract color information for each sector of the screen, but this can be sped up by sampling only each n-th pixel.</p>
+					<p>The biggest bottleneck is taking the screenshots. I hope that DirectX screenshot module will speed this operation up, allowing to take more screenshots per second - the target is 25 fps, such that each visual detail can be processed and displayed on the wall.</p>
+					<p>The second bottleneck, which has a noticable impact on the frame rate, is processing the image after taking the screenshot. I need to extract color information for each sector of the screen, which can be sped up by sampling only each n-th pixel.</p>
 				</section>
 			</article>	
 
@@ -192,7 +192,7 @@
 				<section class="body" id="a5s1">
 					<h4>Schlumberger's Petrel.</h4>
 					<p>I've designed a controller that enables easy manipulation of lights in a three dimensional stage. The interface allows geophysicists to add and remove lights, change their color, set their azimuth and altitude. Each light is represented by a point on the edge of a circle, so that all lights are readily visible, accessible, and can be adjusted using smooth motions. Usually it's fine adjustments of azimuth that cast just the right shadow, which allows geophysicists to spot features of seismic volumes.</p>
-					<p>Later on, I've applied a bump mapping shader to the seismic volumes. This, in combination with adjustable lights, emphasizes prominence of seismic features while taking no CPU cycles! The increasingly powerful GPUs render the seismic volume either way, and adding in calculations of light and shade come at no noticable cost. The performance increased from around one frame per second to real-time rendering at no cost to the CPU.</p>
+					<p>Later on, I've applied a bump mapping shader to the seismic volumes. This, in combination with adjustable lights, emphasizes prominence of seismic features while taking no CPU cycles! The increasingly powerful GPUs render the seismic volume either way, and adding in calculations of light and shade come at no noticeable cost. The performance increased from around one frame per second to real-time rendering at no cost to the CPU.</p>
 					<p>The controller is a part of a system described in the <a href="https://www.google.ca/patents/US20120254781" target="_blank">US 20120254781 patent</a>, and the bump mapping technique is described in the <a href="https://www.google.ca/patents/US20130235696" target="_blank">US 20130235696 patent</a>.</p>
 					<div class="thumbnails">
 						<a class="group5s1" href="images/petrel1.png" title="The light controller"><img src="images/thumb_petrel1.png" /></a>
