@@ -4,7 +4,7 @@ var lastSectionId = 0;
 
 $(document).ready(function(){
   setTimeout(a1, 100);
-  
+
   $( "#article1link" ).click(a1);
   $( "#article2link" ).click(a2);
   $( "#article3link" ).click(a3);
@@ -291,11 +291,9 @@ function showArticle(id) {
   $( "#"+id+" > nav" ).stop()
     .css({
       'paddingLeft': '10px',
-      'opacity': '1'
     })
     .animate({
       'paddingLeft': '40px',
-      'opacity': '1'
     }, 'slow')
     .find( "li" ).each(function(id) {
       $(this).stop().css({
