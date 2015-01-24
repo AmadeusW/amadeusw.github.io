@@ -7,6 +7,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 	<link type="text/css" rel="stylesheet" href="style/amadeus.css" /> 
 	<link type="text/css" rel="stylesheet" href="style/colorbox.css" />
+	<noscript>
+		<link type="text/css" rel="stylesheet" href="style/noscript.css" /> 
+	</noscript>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="script/jquery.colorbox-min.js"></script>
 	<script src="script/amadeus.js"></script>
@@ -66,7 +69,10 @@
 				<section class="body" id="a1s1">
 					<p>Hi there,</p>
 					<p>Welcome to my portfolio! My name is Amadeus and I am a co-founder of Code Connect. I recently graduated from Computer Engineering at University of Waterloo with a minor in Cognitive Science. I enjoy rock climbing, snowboarding and <abbr title="slowly">reading</abbr>.</p>
-					<p>Use the menu on the left to browse through projects I've been working on.</p>
+					<p class="noscript-hidden">Use the menu on the left to browse through projects I've been working on.</p>
+					<noscript>
+						<p><em>To see my portfolio best, enable JavaScript. In the meanwhile, I've displayed all the content on one page for you:</em></p>
+					</noscript>
 				</section>
 				<section class="body" id="a1s2">
 					<p>You can reach me at <abbr title="Replace ☺ with @">hello☺amadeusw.com</abbr></p>
@@ -95,11 +101,13 @@
 					</ul>
 				</nav>
 				<section class="body" id="a2s1">
+					<noscript><h3>Code Connect | Productivity</h3></noscript>
 					<p>A large chunk of a developer's work time is spent reading code: We begin in a single file, where we read a function line by line. But then the program execution continues in another method, perhaps even in another file and another project. So we jump there and resume reading. And then we jump again, and again, until we understand how the program works.</p>
 					<p>Developers must maintain a mental model of these relationships that exist within the source code. I believe that by being free from this mentally intensive task, we can be more productive and able to focus on creative aspects of software design.</p>
 					<p>The idea of <a href="http://codeconnect.io/" target="_blank">Code Connect</a> was conceived when Josh (co-creator) and I had to quickly learn and understand the source code at each of our internships. We found two products that strengthened our idea: <a target="_blank" href="http://www.andrewbragdon.com/codebubbles_site.asp">Code Bubbles</a> and <a target="_blank" href="https://www.kickstarter.com/projects/ibdknox/light-table">Kickstarter video for Light Table</a> (at 3:00 mark).</p>
 				</section>
 				<section class="body" id="a2s2">
+					<noscript><h3>Code Connect | The solution</h3></noscript>
 					<p><a href="http://codeconnect.io/" target="_blank">Code Connect</a> is a code exploration tool that visualizes C# code on a function by function basis. This helps the developer to see where each piece of code lies in the big picture of the entire program. Functions called by the piece of code are displayed on the right, and functions that lead to this piece of code are displayed on the left. The best news is that this visualisation of the call stack takes place without running the program!</p>
 					<p>The function by function approach helps developers unravel complex or unfamiliar code. Developers use Code Connect to understand decompiled or obfuscated code. Code Connect helps us easily grasp the way software works.</p>
 					<p>Initially, we believed that Code Connect shines with large projects. But when we built Code Connect and started using it, we discovered that it's useful for projects of any size - we use it it to understand even small changes committed by other developers.</p>
@@ -110,10 +118,12 @@
 					</div>
 				</section>
 				<section class="body" id="a2s3">
+					<noscript><h3>Code Connect | Tech Specs</h3></noscript>
 					<p><a href="http://codeconnect.io/" target="_blank">Code Connect</a> is an <a href="https://visualstudiogallery.msdn.microsoft.com/2c025094-2601-450a-8d1b-7786080f0459" target="_blank">extension to Visual Studio 2015</a>. The analysis of the code is possible thanks to the new C# compiler bundled with Visual Studio 2015, codenamed <a target="_blank" href="http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx">Project Roslyn</a>. Project Roslyn allows us to work with the syntax tree and the semantic model underlying the code.</p>
 					<p>The front end is built using WPF, XAML, and strictly adheres to MVVM principles. The processing is done as asynchronously as it is possible, which allows developers to explore truly huge projects with Code Connect. Our performance benchmark is Project Roslyn itself, which boasts <a target="_blank" href="http://source.roslyn.codeplex.com/i.txt">over 2 millions lines of code in over 4,500 documents</a>.</p>
 				</section>
 				<section class="body" id="a2s4">
+					<noscript><h3>Code Connect | Making of</h3></noscript>
 					<p>Come again soon!</p>
 				</section>			
 			</article>		
@@ -128,6 +138,7 @@
 					</ul>
 				</nav>
 				<section class="body" id="a3s1">
+					<noscript><h3>Ambilight | What is it?</h3></noscript>
 					<p>A light entertainment system for my room! Ambilight casts colorful lights on the wall behind the screen. The colors correspond to the colors displayed on the screen.</p>
 					<p>It is a clone of <a href="https://en.wikipedia.org/wiki/Ambilight" target="_blank">Philips Ambilight</a>. Written a few years ago (= poorly coded, please don't judge!) in C# and C++/CLI, built with a Teensy board, an LED strand and a sheet of acrylic cut to the shape of the screen.</p>
 					<p>Besides looking great and creating an immersive experience, Ambilight reduces the eye strain associated with looking at a bright screen in an otherwise dark room.</p>
@@ -136,6 +147,7 @@
 					</div>							
 				</section>
 				<section class="body" id="a3s2">
+					<noscript><h3>Ambilight | Making of</h3></noscript>
 					<p>Before ordering the LEDs and the Teensy board, I've built a simulator which takes screenshots, computes the color output and paints it in a window. You can see it in the first picture.</p>
 					<p>The next stage was to program the Teensy board, solder the LED strands and attach them to the screen. Initially, I used a piece of cardboard to hold the LEDs and tin foil to reflect more light towards the wall.</p>
 					<p>Finally, I got a hold of a large sheet of acrylic, and drew locations for LEDs and VESA mount screws. Each hole was drilled with a drill bit as wide as a screw. The LED holes were then widened using a larger drill bit. The screen has a protruding arm which needed to be accommodated for. The rectangular hole was best cut out in three steps: the first two to cut out two arcs between opposite corners, and a third one being a finishing straight cut.</p>
@@ -151,6 +163,7 @@
 					</div>
 				</section>
 				<section class="body" id="a3s3">
+					<noscript><h3>Ambilight | Tech Specs</h3></noscript>
 					<p>The app takes screenshots and finds the average color of each sector of the screen at a maximum rate of 19fps.</p>
 					<p>The screenshots are taken using Win32 API, which means that the project doesn't work with video games rendered using DirectX or OpenGL. DirectX screenshot module is very high on a slowly moving roadmap.</p>
 					<p>The biggest bottleneck is taking the screenshots. I hope that DirectX screenshot module will speed this operation up, allowing to take more screenshots per second - the target is 25 fps, such that each visual detail can be processed and displayed on the wall.</p>
@@ -168,14 +181,17 @@
 					</ul>
 				</nav>
 				<section class="body" id="a4s1">
+					<noscript><h3>Source Browser | What is it?</h3></noscript>
 					<h4>C# in, HTML out.</h4>
 					<p><a href="http://sourcebrowser.io/" target="_blank">Source Browser</a> takes a GitHub repository and turns it into a set of HTML files where methods, fields and types are clickable. This links symbol usages to their definitions, allowing developers to quickly jump to relevant pieces of code.</p>
 					<p>The principle of operation of Source Browser is as follows: The source code is first downloaded and turned into a language agnostic model. Then, a set of transformers acts on the model to generate outputs. Each transformer has only one task. The most important transformers generate the clickable HTML, generate tree views representing folder and file structure and update the Lucene search index.</p>					
 				</section>
 				<section class="body" id="a4s2">
+					<noscript><h3>Source Browser | Inspiration</h3></noscript>
 					<p>Source browser is inspired by <a href="http://referencesource.microsoft.com/" target="_blank">Microsoft Reference Source</a>, which unfortunatelly doesn't allow users to upload their own projects. Reference source allows developers to browse the source code of the .NET framework and of Project Roslyn.</p>
 				</section>
 				<section class="body" id="a4s3">
+					<noscript><h3>Source Browser | Contribute</h3></noscript>
 					<p>Source Browser is an open source project <a href="https://github.com/CodeConnect/SourceBrowser" target="_blank">available on GitHub</a>. We are accepting pull requests and would love your contributions!</p>
 				</section>		
 			</article>	
@@ -222,6 +238,7 @@
 					</ul>
 				</nav>
 				<section class="body" id="a6s1">
+					<noscript><h3>Game mods | Jedi Knight</h3></noscript>
 					<h4>Long time ago (2005) in a galaxy far, far away...</h4>
 					<p>If you ever dreamt of having a lightsaber battle on a giant spiderweb, nine years ago I built a map that allowed just that! It's called <a href="http://jediknight3.filefront.com/file/The_Lost_Temple_v2;46071" target="_blank">The Lost Temple</a> and it had many rooms to run around, shoot, duel, and a bunch of secret rooms full of surprises.</p>
 					<p>But I've always been an Unreal Tournament guy. I really dig rocket launchers. My first attempt at coding a game was modding the game engine to support bigger explosions, headshots and overall more exciting gun play in <em>Jedi Knight</em>. Unfortunately, that was a year before before I've heard of source control or backups; one unfortunate code change introduced an exception that I couldn't get rid of, and I've abandonned the project.</p>
@@ -234,6 +251,7 @@
 					</div>						
 				</section>
 				<section class="body" id="a6s2">
+					<noscript><h3>Game Mods | OpenTTD</h3></noscript>
 					<h4>2006</h4>
 					<p>My first interaction with source control happened in 2006, when I was using SVN to access source code of OpenTTD. It is a C++ clone of Transport Tycoon Deluxe, originally written in 1994 in Assembly.</p>
 					<p>A feature that made it to the main branch of the game was a handy tooltip which showed how many game tiles are affected and what would be the estimated cost of an action if player released the mouse button.</p>

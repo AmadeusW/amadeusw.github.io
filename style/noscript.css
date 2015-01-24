@@ -1,0 +1,23 @@
+.description article {
+	display: block;
+}
+
+.description section {
+	display: block;
+}
+
+.description nav {
+	display: none;
+}
+
+.thumbnails {
+	display: inline-block;
+}
+
+.noscript-hidden {
+	display: none;
+}
+
+.tiles section {	
+	cursor: default;
+}
