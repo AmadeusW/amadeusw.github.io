@@ -378,13 +378,6 @@ body {
 }
 
 abbr {
-	text-shadow: 1px 1px #dde0dd;
-}
-
-a {
-	text-decoration: 
-}
-
-a.visited {
-
+	text-shadow: 2px 2px #dde0dd;
+	border-bottom: dashed 1px;
 }
