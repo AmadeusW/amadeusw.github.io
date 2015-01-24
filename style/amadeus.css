@@ -132,7 +132,7 @@ body {
 }
 
 
-.tiles section {
+.tiles .tile {
 	float: right;
 	clear: right;
 	margin: 0 0px 0 0;
@@ -143,11 +143,11 @@ body {
 	background-position: right;	
 }
 
-.tiles section:first-child {
+.tiles .tile:first-child {
 	margin-top: 0px;
 }
 
-.tiles section > div {
+.tiles .tile > div {
 	float: right;
 	position: relative;
 	max-width: 380px;
@@ -157,7 +157,7 @@ body {
 }
 
 /* The text over each tile */
-.tiles section > div > span {
+.tiles .tile > div > span {
 	color: #ddf;
 	text-align: right;
 	line-height: 25px;
@@ -176,13 +176,13 @@ body {
 }
 
 /* Hide text when the mouse is over */
-.tiles section > div:hover > span {
+.tiles .tile > div:hover > span {
 	opacity: 0;
 }
 
 /* This sets up the tint as per http://www.impressivewebs.com/image-tint-blend-css/ */
 /* But the color is defined in .group# figure:before */
-.tiles div:before {
+.tiles .tile > div:before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -197,7 +197,7 @@ body {
 }
 
 /* Remove the tint overlay */
-.tiles div:hover:before {
+.tiles .tile > div:hover:before {
 	background: none;
 }
 
