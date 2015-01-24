@@ -295,12 +295,12 @@ function showArticle(id) {
     .animate({
       'paddingLeft': '40px',
     }, 'slow')
-    .find( "li" ).each(function(id) {
+    .find( "li" ).each(function(childId) {
       $(this).stop().css({
         'opacity': '0',
         'margin-right': '20px'
       })
-      .delay(100 + id*200)
+      .delay(100 + childId*200)
       .animate({
         'opacity': '1',
         'margin-right': '30px'
