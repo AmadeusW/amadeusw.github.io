@@ -253,7 +253,7 @@ function showSection(id) {
 
   var initialPaddingLeft = '30px';
   var initialPaddingRight = '20px';
-  if (newSectionId > lastSectionId)
+  if (newSectionId >= lastSectionId)
   {
     initialPaddingLeft = '50px';
     initialPaddingRight = '0px';
@@ -281,7 +281,7 @@ function hideSection(id) {
 function showArticle(id) {
   $( "#"+id+" > header" ).stop()
     .css({
-      'paddingLeft': '60px',
+      'paddingLeft': '20px',
       'opacity': '0'
     })
     .animate({
@@ -290,11 +290,22 @@ function showArticle(id) {
     }, 'slow');
   $( "#"+id+" > nav" ).stop()
     .css({
-      'paddingLeft': '70px',
-      'opacity': '0'
+      'paddingLeft': '10px',
+      'opacity': '1'
     })
     .animate({
       'paddingLeft': '40px',
       'opacity': '1'
-    }, 'slow');    
+    }, 'slow')
+    .find( "li" ).each(function(id) {
+      $(this).stop().css({
+        'opacity': '0',
+        'margin-right': '20px'
+      })
+      .delay(100 + id*200)
+      .animate({
+        'opacity': '1',
+        'margin-right': '30'
+      }, 'slow');
+    });
 }
