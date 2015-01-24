@@ -3,7 +3,6 @@ var newSectionId = 0;
 var lastSectionId = 0;
 
 $(document).ready(function(){
-  a1();
   $( "#article1link" ).click(a1);
   $( "#article2link" ).click(a2);
   $( "#article3link" ).click(a3);
@@ -34,6 +33,8 @@ $(document).ready(function(){
 
   $( "#a6s1link" ).click(a6s1);
   $( "#a6s2link" ).click(a6s2);
+
+  a1();
 });
 
 function a1() {
