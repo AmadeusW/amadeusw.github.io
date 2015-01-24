@@ -303,7 +303,7 @@ function showArticle(id) {
       .delay(100 + id*200)
       .animate({
         'opacity': '1',
-        'margin-right': '30'
+        'margin-right': '30px'
       }, 'slow');
     });
 }
