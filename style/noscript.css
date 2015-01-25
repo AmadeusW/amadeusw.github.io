@@ -18,6 +18,6 @@
 	display: none;
 }
 
-.tiles section {	
+.tiles .tile {	
 	cursor: default;
 }
