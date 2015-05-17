@@ -11,7 +11,7 @@ title:            Amadeus' blog
 tagline:          'now updated'
 description:      'More text.'
 url:              https://amadeusw.com
-baseurl:          /
+baseurl:          ''
 
 author:
   name:           'Amadeus Wieczorek'
@@ -23,4 +23,4 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/amadeusw/blog
+  repo:           https://github.com/amadeusw
