@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Amadeus' blog
+tagline:          'now updated'
+description:      'More text.'
+url:              https://amadeusw.com
+baseurl:          /
+
+author:
+  name:           'Amadeus Wieczorek'
+  url:            https://twitter.com/rockmeamadeu
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/amadeusw/blog
