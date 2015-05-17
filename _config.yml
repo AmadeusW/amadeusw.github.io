@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Amadeus' blog
 tagline:          'now updated'
-description:      'More text.'
+description:      'under construction'
 url:              https://amadeusw.com
 baseurl:          ''
 
@@ -21,6 +21,7 @@ paginate:         5
 
 # Custom vars
 version:          2.1.0
+portfolio:        https://amadeusw.com/portfolio
 
 github:
   repo:           https://github.com/amadeusw
