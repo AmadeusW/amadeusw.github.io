@@ -11,7 +11,7 @@ Each message animates twice: first, when it's added to the collection and first 
 
 Both animations are defined as [resources](http://msdn.microsoft.com/en-us/library/system.windows.frameworkelement.resources(v=vs.110).aspx) of [ItemsControl](http://msdn.microsoft.com/en-us/library/system.windows.controls.itemscontrol(v=vs.110).aspx), and invoked by [DataTrigger](http://msdn.microsoft.com/en-us/library/system.windows.datatrigger(v=vs.110).aspx) in [ItemsControl.ItemContainerStyle](http://msdn.microsoft.com/en-us/library/system.windows.controls.itemscontrol.itemcontainerstyle(v=vs.110).aspx). We are using ItemsControl element because it offers the most rendering flexibility.
 
-```xaml
+```xml
 <ItemsControl.Resources>
   <Storyboard x:Key="enterStoryboard">
       <ThicknessAnimation Storyboard.TargetProperty="Margin"
@@ -41,12 +41,7 @@ Both animations are defined as [resources](http://msdn.microsoft.com/en-us/libra
     </Style.Triggers>
   </Style>
 </ItemsControl.ItemContainerStyle>
- 
-<!-- Code excerpts for http://blog.amadeusw.com/practical-animations-in-xaml/
-Source: https://github.com/AmadeusW/MessagePanel/blob/master/MessagePanelControl/MessagePanelControl/MessagePanelControl.xaml -->
 ```
-
-<script src="https://gist.github.com/AmadeusW/b014668c22829ec0de62.js"></script>
 
 The DataTrigger fires the animation whenever property **IsAlive** is found to be **true**. Here, we instantiate it to **true** in each **MessageObject**.
 
@@ -94,12 +89,7 @@ We will use the property **IsAlive** to trigger the slide-out animation, and we 
     </BeginStoryboard>
   </DataTrigger.EnterActions>
 </DataTrigger>        
- 
-<!-- Code excerpts for http://blog.amadeusw.com/practical-animations-in-xaml/
-Source: https://github.com/AmadeusW/MessagePanel/blob/master/MessagePanelControl/MessagePanelControl/MessagePanelControl.xaml -->
 ```
-
-<script src="https://gist.github.com/AmadeusW/dc27aee89ea2a07023bf.js"></script>
 
 Ideally, we would listen to StoryboardCompleted event and remove the item once the framework tell us that the animation has completed. However, the StoryboardCompleted event doesn't have a reference to the removed item or the collection. How would we know which item to remove from the collection?
 
@@ -134,12 +124,7 @@ private void acutallyRemoveMessageFromCollection(MessageObject message)
             }
         ));
 }
- 
-<!-- Code excerpts for http://blog.amadeusw.com/practical-animations-in-xaml/
-Source: https://github.com/AmadeusW/MessagePanel/blob/master/MessagePanelControl/MessagePanelControl/MessagePanelViewModel.cs -->
 ```
-
-<script src="https://gist.github.com/AmadeusW/3f866a63c0c161e076df.js"></script>
 
 Here's how it looks like:
 
@@ -151,7 +136,7 @@ Here's how it looks like:
 We can see the item occupies its space as it animates out, and other items abruptly jump in its space after the item is removed. 
 We can address that by adding a slide-up animation to the **exitStoryboard**. The second animation starts only when the first animation ends (note the **BeginTime**). The animation changes the top margin of the item to -50, effectively dragging it up. We're happy to see that all items below it also move up!
 
-```xaml
+```xml
 <Storyboard x:Key="exitStoryboard">
     <ThicknessAnimation Storyboard.TargetProperty="Margin"
                                                      Duration="00:00:00.25"
@@ -174,12 +159,7 @@ We can address that by adding a slide-up animation to the **exitStoryboard**. Th
                                                      DecelerationRatio="1"                                        
                                                      FillBehavior="HoldEnd" />                
 </Storyboard>
- 
-<!-- Code excerpts for http://blog.amadeusw.com/practical-animations-in-xaml/
-Source: https://github.com/AmadeusW/MessagePanel/blob/master/MessagePanelControl/MessagePanelControl/MessagePanelControl.xaml -->
 ```
-
-<script src="https://gist.github.com/AmadeusW/e731df81a4335f544e2e.js"></script>
 
 Now we only need to change the code-behind to wait for both animations to finish before removing the element, so we change the delay from 250ms to 500ms. That's the final effect:
 
@@ -192,4 +172,3 @@ For best results, this control can be placed above the rest of your app with hel
 
 
 * [Browse "animating the collection" source on GitHub](https://github.com/AmadeusW/MessagePanel).
-* [Check out other WPF articles](http://blog.amadeusw.com/welcome-kicking-off-wpf-xaml-blog-series/)
