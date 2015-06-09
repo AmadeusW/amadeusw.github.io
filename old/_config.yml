@@ -1,0 +1,27 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Amadeus' blog
+tagline:          'now updated'
+description:      'under construction'
+url:              https://amadeusw.com
+baseurl:          ''
+
+author:
+  name:           'Amadeus Wieczorek'
+  url:            https://twitter.com/rockmeamadeu
+
+paginate:         5
+
+# Custom vars
+homeurl:          '/'
+portfolio:        https://amadeusw.com/portfolio
+
+github:
+  repo:           https://github.com/amadeusw
