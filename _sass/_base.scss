@@ -58,6 +58,12 @@ figcaption {
     font-size: $small-font-size;
 }
 
+video {
+    margin-top: 0.8em;
+    margin-bottom: 1.8em;
+    max-width: 100%
+}
+
 
 
 /**
@@ -80,6 +86,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
     font-weight: 300;
 }
 
@@ -130,7 +137,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: $code-background;
 }
 
 code {

@@ -163,6 +163,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    line-height: $content-line-height;
 }
 
 .page-heading {
@@ -181,6 +182,7 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    text-align: right;
 }
 
 .post-link {
@@ -233,4 +235,8 @@
             font-size: 18px;
         }
     }
+}
+
+#post-comments {
+    margin-top: 4em;
 }

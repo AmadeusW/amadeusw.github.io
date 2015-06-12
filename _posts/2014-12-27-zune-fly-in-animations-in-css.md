@@ -8,8 +8,8 @@ tags: css ui jquery
 
 A few years before the [Metro interface](http://en.wikipedia.org/wiki/Metro_%28design_language%29) reached broader audiences through Windows Phone and Windows 8, Microsoft pioneered the Metro interface in the *Zune* app. The early versions of Metro, especially the one seen in Zune, was focused on typography. Currently, "metro interface" is associated with colorful, rectangular tiles:
 
-![Search results for "Metro Interface" in 2010](/public/blogData/OriginalMetro.png) 
-![Current search results for "Metro Interface"](/public/blogData/CurrentMetro.PNG)
+![Search results for "Metro Interface" in 2010]({{ "/blogData/OriginalMetro.png" | prepend: site.baseurl }}) 
+![Current search results for "Metro Interface"]({{ "/blogData/CurrentMetro.PNG" | prepend: site.baseurl }})
 
 ***
 
