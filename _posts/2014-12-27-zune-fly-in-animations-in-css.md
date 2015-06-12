@@ -13,15 +13,21 @@ A few years before the [Metro interface](http://en.wikipedia.org/wiki/Metro_%28d
 
 ***
 
+Recreating the effect
+===
+
 I enjoyed the way Zune software looked and felt, and I wanted to create similar effect on my website
 
 <video width="706" height="222" autoplay loop>
   <source src="http://blog.amadeusw.com/content/images/zune.webm" type="video/webm">  </video>
 
-Through experimenting I found that the fly-in effect looks great when navigation flies in form one direction and the article flies in from another direction. The bottom part of the header, which consists of smaller letters, flies in from a further source, appearing to be faster. Additionally, each of the navigation elements' animation is delayed relatively to the previous element.
+I liked the animation most when navigation flies in form one direction and the article flies in from another direction. The bottom half of the navigation, flies in from a little bit further source, and appears to be faster. Additionally, each of the navigation elements' animation is delayed relatively to the previous element.
 
 <video width="794" height="186" autoplay loop>
   <source src="http://blog.amadeusw.com/content/images/portfolioArticles.webm" type="video/webm">  </video>
+
+Code explained
+===
 
 The origin and destination of movement are controlled by `paddingLeft` and `paddingRight` CSS properties. Fading is accomplished using the `opacity` property.
 
@@ -69,6 +75,9 @@ The code then continues to find **each contained navigation element** and indivi
 {% endhighlight %}
 
 ***
+
+Final note on UX
+===
 
 [@Honzie](https://twitter.com/honzie) helped me improve the fly-in animation for the article content: he pointed me to [Google's *Material Design*](http://www.google.com/design/spec/material-design/introduction.html) which reminds that *everything that moves should move for a reason*, in order to mimic a physical object.
 
