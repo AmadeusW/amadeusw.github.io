@@ -1,0 +1,15 @@
+- slug: ui
+  name: UI
+  color: '#ff0'
+
+- slug: csharp
+  name: C#
+  color: '#f00'
+
+- slug: css
+  name: css
+  color: '#aa0'
+
+- slug: jquery
+  name: jQuery
+  color: '#009'

@@ -4,7 +4,17 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<h1 class="page-heading">Browse articles by tag</h1>
+
+  <ul class="post-list">
+    {% for tag in site.tags %}
+      <li>
+        <a class="post-link" href="{{ tag.slug | prepend: site.baseurl }}">{{ tag.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h1 class="page-heading">Post archive</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}

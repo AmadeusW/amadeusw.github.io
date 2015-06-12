@@ -3,7 +3,7 @@ layout: post
 title: Zune fly-in animations in CSS
 categories: ui
 permalink: ui\zune-animations-css
-tags: css ui jquery
+tags: [css, ui, jquery]
 ---
 
 A few years before the [Metro interface](http://en.wikipedia.org/wiki/Metro_%28design_language%29) reached broader audiences through Windows Phone and Windows 8, Microsoft pioneered the Metro interface in the *Zune* app. The early versions of Metro, especially the one seen in Zune, was focused on typography. Currently, "metro interface" is associated with colorful, rectangular tiles:
