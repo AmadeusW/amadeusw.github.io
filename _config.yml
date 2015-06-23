@@ -6,8 +6,7 @@ markdown: redcarpet
 # Footer:
 title: Amadeusz Wieczorek
 bio: > # this means to ignore newlines until "baseurl:"
-  I'm a co-founder of Alive, showing C# developers 
-  exactly what their code does, as they write it:
+  Co-founder of Alive, every C# developers' personal assistant
 aliveurl: http://comealive.io
 description: 
 twitter_username: HiAmadeus
