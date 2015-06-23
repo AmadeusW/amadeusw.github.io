@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Practical animations in XAML
-categories: ui
+category: ui
 permalink: ui/practical-animations-xaml
 tags: xaml ui csharp
 ---
