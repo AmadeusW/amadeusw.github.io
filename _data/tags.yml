@@ -13,3 +13,7 @@
 - slug: jquery
   name: jQuery
   color: '#009'
+
+- slug: xaml
+  name: xaml
+  color: '#900'
