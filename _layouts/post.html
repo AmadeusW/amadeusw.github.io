@@ -13,7 +13,7 @@ layout: default
 
   <section id="post-meta">
   {% if page.tags.size > 0 %}
-    {% capture tags_content %}Posted with {% if page.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+    {% capture tags_content %}See other posts about {% endcapture %}
     {% for post_tag in page.tags %}
         {% for data_tag in site.data.tags %}
             {% if data_tag.slug == post_tag %}
@@ -30,10 +30,11 @@ layout: default
       {% assign tags_content = '' %}
   {% endif %}
 
-      <p class="post-meta">{% if page.meta %}{{ page.meta }} • {% endif %} {{ tags_content }} {{ page.date | date: "%B %-d, %Y" }}</p>
-      1 {{page.tags}}
-      2 {{page.tag}}
-      3 {{page.category}}
+      <p class="post-meta">
+        {% if page.meta %}{{ page.meta }} • {% endif %}
+        {{ tags_content }} 
+        Published on {{ page.date | date: "%B %-d, %Y" }}
+      </p>
       <hr />
   </section>
 
