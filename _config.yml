@@ -7,7 +7,7 @@ markdown: redcarpet
 title: Amadeus' blog
 myname: Amadeusz Wieczorek
 bio: > # this means to ignore newlines until "baseurl:"
-  Co-founder of Alive, every C# developers' personal assistant
+  Co-founder and developer of Alive, every C# developers' personal assistant.
 aliveurl: http://comealive.io
 description: 
 twitter_username: HiAmadeus
