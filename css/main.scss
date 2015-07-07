@@ -15,9 +15,9 @@ $base-line-height: 1.7;
 $spacing-unit:     30px;
 
 $text-color:       #322;
-$background-color: #f3f0ee;
+$background-color: #fefdfc;
 $brand-color:      #d22;
-$code-background:  #fafaee;
+$code-background:  #ffdddd;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -26,7 +26,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 $content-line-height: 200%;
 
 // Width of the content area
-$content-width:    700px;
+$content-width:    800px;
 
 $on-palm:          500px;
 $on-laptop:        700px;

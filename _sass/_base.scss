@@ -19,11 +19,19 @@ body {
     line-height: $base-line-height;
     font-weight: 300;
     color: $text-color;
-    background-color: $background-color;
+    background-color: $brand-color;
     -webkit-text-size-adjust: 100%;
 }
 
+.body-content {
+    background-color: $background-color;
+    border: 2px solid $grey-color;
+    margin: 1em;
+}
 
+::selection {
+    background-color: $brand-color;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -34,7 +42,6 @@ ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
-
 
 
 /**
@@ -79,7 +86,6 @@ li {
          margin-bottom: 0;
     }
 }
-
 
 
 /**

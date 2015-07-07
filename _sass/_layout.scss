@@ -2,7 +2,6 @@
  * Site header
  */
 .site-header {
-    border-bottom: 1px solid $brand-color;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -13,6 +12,7 @@
     font-size: 26px;
     line-height: 56px;
     letter-spacing: -1px;
+    margin-top: 1em;
     margin-bottom: 0;
     float: left;
 
@@ -91,7 +91,7 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $brand-color;
+    border-top: 2px solid $brand-color;
     padding: $spacing-unit 0;
 }
 
@@ -175,6 +175,10 @@
 
     > li {
         margin-bottom: $spacing-unit;
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 }
 

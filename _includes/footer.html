@@ -5,7 +5,7 @@
     <h2 class="footer-heading">{{ site.myname }}</h2>
 
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
+      <div class="footer-col  footer-col-3">
         <ul class="contact-list">
           <li>{{ site.bio }}</li>
           <li><a href="{{ site.aliveurl }}">{{ site.aliveurl }}</a></li>
@@ -13,7 +13,11 @@
       </div>
 
       <div class="footer-col  footer-col-2">
-        <ul class="social-media-list">
+        <p class="text">{{ site.description }}</p>
+      </div>
+
+      <div class="footer-col  footer-col-1">
+<ul class="social-media-list">
           {% if site.github_username %}
           <li>
             <a href="https://github.com/{{ site.github_username }}">
@@ -42,12 +46,16 @@
             </a>
           </li>
           {% endif %}
+
+          <li>
+            subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+          </li>
+          <li>
+            return <a href="{{ "/index.html" | prepend: site.baseurl }}">to home page</a>
+          </li>
         </ul>
       </div>
 
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
-      </div>
     </div>
 
   </div>
