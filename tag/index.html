@@ -3,54 +3,49 @@ layout: default
 title: Articles
 ---
 
-<header id="post-header">
-    <h1 id="post-title">Articles by tag</h1>
-</header>
+<div class="home">
 
-<div id="post-content">
-    {% if paginator.posts %}
-        {% for post in paginator.posts %}
-            <section class="post">
-                <header class="post-header">
-                    <h4 class="post-title"><a href="{{ post.url }}/">{{ post.title }}</a><small> &ndash; <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b. %d, %Y' }}</time></small></h4>
-                </header>
-                <div class="post-description">
-                    <p>{{ post.excerpt }}</p>
-                </div>
-                <a href="{{ post.url }}/" class="pull-right">Read more</a>
-                <div class="clearfix"></div>
-            </section>
+  <header class="post-header">
+    <h1 class="post-title">Browsing articles by tag</h1>
+  </header>
+
+  <article class="post-content">
+
+{% for data_tag in site.data.tags %}
+    {% assign tag = data_tag %}
+    <h3 class="post-title">On {{ tag.name }}</h1>
+    <ul class="post-list">
+    {% for post in site.tags[data_tag.slug] %}
+        
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
+{% if post.tags.size > 0 %}
+    {% capture tags_content %}{% endcapture %}
+    {% for post_tag in post.tags %}
+        {% for data_tag in site.data.tags %}
+            {% if data_tag.slug == post_tag %}
+                {% assign tag = data_tag %}
+            {% endif %}
         {% endfor %}
-    {% else %}
-        <p>No posts found.</p>
-    {% endif %}
-    {% if paginator.total_pages > 1 %}
-        <div class="text-center">
-            <ul class="pagination">
-                {% if paginator.previous_page %}
-                    {% if paginator.previous_page == 1 %}
-                        <li><a href="/blog/">&laquo;</a></li>
-                    {% else %}
-                        <li><a href="{{ paginator.previous_page_path }}/">&laquo;</a></li>
-                    {% endif %}
-                {% else %}
-                    <li class="disabled"><span>&laquo;</span></li>
-                {% endif %}
-                {% for page in (1..paginator.total_pages) %}
-                    {% if page == paginator.page %}
-                        <li class="active"><span>{{ page }}</span></li>
-                    {% elsif page == 1 %}
-                        <li><a href="/blog/">1</a></li>
-                    {% else %}
-                        <li><a href="{{ site.paginate_path | replace: ':num', page }}/">{{ page }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                {% if paginator.next_page %}
-                    <li><a href="{{ paginator.next_page_path }}/">&raquo;</a></li>
-                {% else %}
-                    <li class="disabled"><a href="#">&raquo;</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    {% endif %}
+        {% if tag %}
+            {% capture tags_content_temp %}{{ tags_content }}<a href="/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+            {% assign tags_content = tags_content_temp %}
+        {% endif %}
+    {% endfor %}
+    {% capture tags_content %}{{ tags_content }} • {% endcapture %}
+  {% else %}
+      {% assign tags_content = '' %}
+  {% endif %}
+
+        <span class="post-meta">{{ tags_content }} {{ post.date | date: "%B %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+  </article>
+
 </div>

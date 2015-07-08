@@ -6,11 +6,11 @@
   name: css
   color: '#aa0'
 
-  - slug: debugging
+- slug: debugging
   name: debugging
   color: '#900'
 
-  - slug: dotnet
+- slug: dotnet
   name: .NET
   color: '#900'
 
