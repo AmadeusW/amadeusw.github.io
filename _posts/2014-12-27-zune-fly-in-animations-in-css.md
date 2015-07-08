@@ -2,7 +2,7 @@
 layout: post
 title: Zune fly-in animations in CSS
 category: ui
-permalink: ui\zune-animations-css
+permalink: ui/zune-animations-css
 tags: [css, ui, jquery]
 ---
 

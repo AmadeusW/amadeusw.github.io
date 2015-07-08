@@ -2,7 +2,7 @@
 layout: post
 title: Remote debugging of VS extension in VM
 category: dotnet
-permalink: dotnet\remote-debugging-vs-extension-in-vm
+permalink: dotnet/remote-debugging-vs-extension-in-vm
 tags: [dotnet, visualstudio, debugging]
 ---
 
