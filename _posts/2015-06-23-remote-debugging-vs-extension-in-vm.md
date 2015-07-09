@@ -69,11 +69,11 @@ The extension I'm working on has its `Package` decorated with attribute `[Provid
 
 Initially, before you load a solution, the breakpoint icons will be hollow. 
 
-![screenshot](/blogData/remote-debugging-vs-extension-in-vm/breakpoint1.png)
+![screenshot](/blogData/remote-debugging-vs-extension-in-vm/breakpoint1.PNG)
 
 As soon as you load a solution, Visual Studio will load your extension and the breakpoint will be hit.
 
-![screenshot](/blogData/remote-debugging-vs-extension-in-vm/breakpoint2.png)
+![screenshot](/blogData/remote-debugging-vs-extension-in-vm/breakpoint2.PNG)
 
 Congratulations! You are now debugging your extension inside Visual Studio inside the virtual machine!
 
