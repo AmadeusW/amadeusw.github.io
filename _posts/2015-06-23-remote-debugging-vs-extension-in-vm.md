@@ -12,10 +12,17 @@ Remote debugging is very straightforward but requires a non trivial setup:
 
 ***
 
-Create an administrator user for use with the debugger
+Download remote debugging tools
 ---
 
-The Visual Studio Remote Debugger Configuration Wizard will ask you for an user account with privilege to `Log on as a service`, network access rights, and if possible, administrative privileges. I log in to my Windows 8 machines using hotmail login, and I couldn't figure out the User name for my account. So I created a new user with name `admin`. [Let me know](https://twitter.com/HiAmadeus) if you know a way to get name for user logged in via Microsoft Account.
+You must install remote debugging tools *on the debugged machine* for the exact version of Visual Studio that you have installed on your *host machine*. 2015 RC, 2015 RC2 and future 2015 all have different remote tools. I got mine from [Visual Studio download page](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) under `Additional Tools > Remote Tools for Visual Studio 2015 RC`.
+
+Create an administrator user for use with the debugger
+===
+
+The Visual Studio Remote Debugger Configuration Wizard will ask you for an user account with privilege to `Log on as a service`, network access rights, and if possible, administrative privileges. I log in to my Windows 8 machines using hotmail login, and I don't know what's the **user name** for my account. So I created a new user with name `admin`.
+
+*Psst! [Let me know](https://twitter.com/HiAmadeus) if you know a way to get name for user logged in via Microsoft Account.*
 
 Grant right to log in as a service
 ===
@@ -36,11 +43,8 @@ After creating an user,
 
 [Instructions via technet](https://technet.microsoft.com/en-ca/library/cc794944(v=ws.10).aspx)
 
-
 Install remote debugging tools
----
-
-You must install remote debugging tools for the exact version of Visual Studio that you have installed on your host machine. 2015 RC, 2015 RC2 and future 2015 all have different remote tools. I got mine from [Visual Studio download page](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) under `Additional Tools > Remote Tools for Visual Studio 2015 RC`.
+===
 
 When you first run the tools, you may receive information that the firewall settings will change. Proceed.
 
@@ -64,6 +68,9 @@ If you don't see your virtual machine there, check network connectivity - see if
 If you see your virtual machine, connect to it, and then find the process that you want to attach to. Visual Studio extensions live within the Visual Studio process `devenv.exe`
 
 ![screenshot](/blogData/remote-debugging-vs-extension-in-vm/attach2.png)
+
+Debugging VS Extension's initialize code
+===
 
 The extension I'm working on has its `Package` decorated with attribute `[ProvideAutoLoad(UIContextGuids80.SolutionExists)]` which causes Visual Studio to start the extension when a solution first loads. This gives us a convenient opportunity to attach to a running `devenv.exe` process and debug the initialization of the extension.
 
