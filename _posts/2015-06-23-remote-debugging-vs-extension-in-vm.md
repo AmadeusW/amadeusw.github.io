@@ -48,7 +48,7 @@ When you first run the tools, you may receive information that the firewall sett
 
 Next, provide credentials of the user that you've created earlier
 
-![screenshot](/blogData/remote-debugging-vs-extension-in-vm/wizard1.png)
+![screenshot](/blogData/remote-debugging-vs-extension-in-vm/wizard1.PNG)
 
 Continue through the wizard, and you should be set up!
 
