@@ -69,7 +69,7 @@ If you see your virtual machine, connect to it, and then find the process that y
 
 ![screenshot](/blogData/remote-debugging-vs-extension-in-vm/attach2.png)
 
-Debugging VS Extension's initialize code
+Debugging VS Extension's initialization code
 ===
 
 The extension I'm working on has its `Package` decorated with attribute `[ProvideAutoLoad(UIContextGuids80.SolutionExists)]` which causes Visual Studio to start the extension when a solution first loads. This gives us a convenient opportunity to attach to a running `devenv.exe` process and debug the initialization of the extension.
