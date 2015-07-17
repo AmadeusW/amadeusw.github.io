@@ -61,6 +61,17 @@ Live Visual Tree came in handy when I needed to see how the VS search box was bu
 
 ![screenshot](/blogData/live-visual-tree-vs/search-box.PNG)
 
+Finding namespace and type name of a control
+===
+
 In Live Visual Tree I backtracked a bit to find the parent class `FindControl`. Hovering the mouse over the element's name shows the tooltip with the type's namespace. By convention, I deduced that the code must be located in `Microsoft.VisualStudio.Editor.Implementation.dll`. Thank you Live Visual Tree for spilling Visual Studio's secrets!
 
 ![screenshot](/blogData/live-visual-tree-vs/search-box-hierarchy.png)
+
+Investigating type and properties of DataContext
+===
+
+Live Property Explorer also shows the type of the DataContext, which may come in handy if it is set dynamically. In the screenshot below, the type is `LaunchControlViewModel`. You can expand the DataContext and peek at the properties. You can also change them, and if the property code invoke `NotifyPropertyChanged` on change, editing properties in Live Property Explorer will trigget the event!
+
+![screenshot](/blogData/live-visual-tree-vs/see-type-names.png)
+
