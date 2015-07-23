@@ -8,8 +8,8 @@ tags: [css, ui, jquery]
 
 A few years before the [Metro interface](http://en.wikipedia.org/wiki/Metro_%28design_language%29) reached broader audiences through Windows Phone and Windows 8, Microsoft pioneered the Metro interface in the *Zune* app. The early versions of Metro, especially the one seen in Zune, was focused on typography. Currently, "metro interface" is associated with colorful, rectangular tiles:
 
-![Search results for "Metro Interface" in 2010]({{ "/blogData/OriginalMetro.png" | prepend: site.baseurl }}) 
-![Current search results for "Metro Interface"]({{ "/blogData/CurrentMetro.PNG" | prepend: site.baseurl }})
+![Search results for "Metro Interface" in 2010]({{ "/blogData/zune-animations-css/OriginalMetro.png" | prepend: site.baseurl }}) 
+![Current search results for "Metro Interface"]({{ "/blogData/zune-animations-css/CurrentMetro.PNG" | prepend: site.baseurl }})
 
 ***
 
@@ -19,12 +19,12 @@ Recreating the effect
 I enjoyed the way Zune software looked and felt, and I wanted to create similar effect on my website
 
 <video width="706" height="222" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/zune.webm" type="video/webm">  </video>
+  <source src="{{baseurl}}/blogData/zune-animations-css/zune.webm" type="video/webm">  </video>
 
 I liked the animation most when navigation flies in form one direction and the article flies in from another direction. The bottom half of the navigation, flies in from a little bit further source, and appears to be faster. Additionally, each of the navigation elements' animation is delayed relatively to the previous element.
 
 <video width="794" height="186" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/portfolioArticles.webm" type="video/webm">  </video>
+  <source src="{{baseurl}}/blogData/zune-animations-css/portfolioArticles.webm" type="video/webm">  </video>
 
 Code explained
 ===
@@ -84,7 +84,7 @@ Final note on UX
 Hence, navigation left causes the article to fly in from the left side, and navigation right causes the article to fly in from the right side.
 
 <video width="526" height="160" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/portfolioSections.webm" type="video/webm">  </video>
+  <source src="{{baseurl}}/blogData/zune-animations-css/portfolioSections.webm" type="video/webm">  </video>
 
 The origin and destination of animation are similarly controlled by `paddingLeft` and `paddingRight` CSS properties. `newSectionId` and `lastSectionId` are global variables that control direction of animation, and they are set in methods that handle link clicks.
 
