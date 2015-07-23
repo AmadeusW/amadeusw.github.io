@@ -8,6 +8,11 @@ tags: xaml ui csharp
 
 Let's build a sleek way to display notifications to the user. The messages won't show up in traditional pop-up windows, but instead slide in at the top of the screen. User can dismiss each one of them by clicking at it.
 
+<video width="524" height="112" autoplay loop>
+  <source src="{{baseurl}}/blogData/practical-animations-xaml/animatedCollection3.webm" type="video/webm">
+*Video that shows the slide-out animation and removal animation. (your browser does not support the video tag)*
+</video>
+
 *Complete project is available [on GitHub](https://github.com/AmadeusW/MessagePanel) and this blog post covers only bits related to animation.*
 
 Each message animates twice: first, when it's added to the collection and first rendered, and second time, disappearing after user dismissed it.
@@ -51,7 +56,7 @@ The DataTrigger fires the animation whenever property **IsAlive** is found to be
 Let's see how it looks like:
 
 <video width="524" height="112" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/animatedCollection1.webm" type="video/webm">
+  <source src="{{baseurl}}/blogData/practical-animations-xaml/animatedCollection1.webm" type="video/webm">
 *Video that shows the slide-in animation. (your browser does not support the video tag)*
 </video>
 
@@ -132,7 +137,7 @@ private void acutallyRemoveMessageFromCollection(MessageObject message)
 Here's how it looks like:
 
 <video width="524" height="112" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/animatedCollection2.webm" type="video/webm">
+  <source src="{{baseurl}}/blogData/practical-animations-xaml/animatedCollection2.webm" type="video/webm">
 *Video that shows the first attempt slide-out animation. (your browser does not support the video tag)*
 </video>
 
@@ -167,7 +172,7 @@ We can address that by adding a slide-up animation to the **exitStoryboard**. Th
 Now we only need to change the code-behind to wait for both animations to finish before removing the element, so we change the delay from 250ms to 500ms. That's the final effect:
 
 <video width="524" height="112" autoplay loop>
-  <source src="http://blog.amadeusw.com/content/images/animatedCollection3.webm" type="video/webm">
+  <source src="{{baseurl}}/blogData/practical-animations-xaml/animatedCollection3.webm" type="video/webm">
 *Video that shows the slide-out animation and removal animation. (your browser does not support the video tag)*
 </video>
 
