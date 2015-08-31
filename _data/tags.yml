@@ -1,3 +1,7 @@
+- slug: azure
+  name: Azure
+  color: '#007fff'
+
 - slug: csharp
   name: C#
   color: '#f00'
