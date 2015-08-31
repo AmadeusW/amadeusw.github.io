@@ -38,6 +38,8 @@ if (sourceData.Length > AZURE_STRING_MAX_LENGTH)
 }
 ```
 
+~~~
+
 # Another approach
 A much simpler approach is apparent when you catch the specific exception type. This is a `StorageException` and its `RequestInformation` property contains more information.
 
@@ -46,7 +48,5 @@ catch (StorageException ex)
 {
     var innerException = ex.RequestInformation.Exception;
 ```
-
-I wonder why this information isn't readily available when consuming the `Exception` object? Is it to prevent [leaking of sensitive data [gets very off topic]](https://github.com/dotnet/corefx/issues/1187)?
 
 
