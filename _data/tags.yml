@@ -30,6 +30,10 @@
   name: Visual Studio
   color: '#900'
 
+- slug: windows
+  name: windows
+  color: '#0a70c5'
+
 - slug: xaml
   name: xaml
   color: '#900'
