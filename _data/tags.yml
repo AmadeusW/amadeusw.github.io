@@ -22,6 +22,10 @@
   name: jQuery
   color: '#009'
 
+- slug: thoughts
+  name: Thoughts
+  color: '#090'
+
 - slug: ui
   name: UI
   color: '#ff0'
