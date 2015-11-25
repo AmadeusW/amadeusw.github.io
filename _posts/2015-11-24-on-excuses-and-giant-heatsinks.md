@@ -28,7 +28,7 @@ Excuses came flooding my mind:
 
 > - I'm awkward on camera, the video's going to suck.
 
-**Without waiting any further, I said yes**! Every moment of hestitation would make the decision harder. I knew I did the right thing, but I also felt immediate regret. **Excuses are like a drug, they give a blissful feeling and temporary relief from stress, but when abused, they're disastrous**. 
+**Without waiting any further, I said yes**! Every moment of hestitation would make the decision harder. I knew I did the right thing, but I also felt scared of shooting the video. It felt like it's outside of my comfort zone, and now, in retrospect, I'm both surprised and disappointed of having such a narrow comfort zone. This needs to change. **Excuses are like a drug, they give a blissful feeling and temporary relief from stress, but when abused, they're disastrous**. 
 
 Of course, filming with Jef was a lot of fun and went smoothly.
 
