@@ -9,13 +9,13 @@ tags: [thoughts]
 Today was going to be a good day. The night before I planned what to do: work on a technical blog post and record one or two videos, one of them being long overdue.
 
 After breakfast I turned on the computer only to see that the screens remain black. I found a PC speaker in the toolbox and mounted it. It called three disturbing and long beeps, followed by one short.
-The motherboard's manual didn't mention this beep code. After couple hours of tinkering with with PC's internals and reading now abandoned fora, the PC booted up! I thought 
+The motherboard's manual didn't mention this beep code. After couple hours of tinkering with with PC's internals and reading now abandoned fora, I got the PC to booted up! I thought,
 
-> - This would be a cool thing to blog about.
+> this would be a cool thing to blog about.
 
-> - No, everyone has laptops these days. Nobody will be interested in it.
+> No, everyone has laptops these days. Nobody will be interested in it.
 
-> - Yeah I guess... Wait a sec! That's just an excuse! I don't want any more excuses in my life. After all,
+> Yeah I guess... Wait a sec! That's just an excuse! I don't want any more excuses in my life. After all,
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">The road to startup failure is paved with excuses for moving slowly.</p>&mdash; Sam Altman (@sama) <a href="https://twitter.com/sama/status/660252065864663041">October 31, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -24,9 +24,9 @@ The motherboard's manual didn't mention this beep code. After couple hours of ti
 A few days ago my friend Jef called me and asked if I want to come and shoot a video to promote my startup's product, [Alive - an interactive programming extension for Visual Studio](http://comealive.io/).
 Excuses came flooding my mind:
 
-> - I have less than two days to prepare!
+> I have less than two days to prepare!
 
-> - I'm awkward on camera, the video's going to suck.
+> I'm awkward on camera, the video's going to suck.
 
 **Without waiting any further, I said yes**! Every moment of hestitation would make the decision harder. I knew I did the right thing, but I also felt scared of shooting the video. It felt like it's outside of my comfort zone, and now, in retrospect, I'm both surprised and disappointed of having such a narrow comfort zone. This needs to change. **Excuses are like a drug, they give a blissful feeling and temporary relief from stress, but when abused, they're disastrous**. 
 
