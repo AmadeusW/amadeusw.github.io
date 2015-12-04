@@ -8,7 +8,11 @@ tags: [visualstudio, iot, debugging, windows]
 
 Remote deploy and remote debugging on Raspberry Pi is great, but if you take one wrong step, it can turn very confusing and appear there is no way to fix it.
 
-When you first pick which device to connect to, make sure to select `Authentication Mode: None`, or better yet, select an auto-detected device if there's one.
+To remote debug in Raspberry Pi, set the configuration to `ARM` and pick `Remote Machine` from the debug dropdown.
+
+![Screenshot of how to debug](/blogData/access-denied-pin-is-required-to-connect/debugging.png)
+
+The first time you do it, Visual Studio will prompt you for the remote machine's settings. Make sure to select `Authentication Mode: None`, or better yet, select an auto-detected device if there's one.
 
 ![Screenshot of correct way to connect](/blogData/access-denied-pin-is-required-to-connect/correct.png)
 
