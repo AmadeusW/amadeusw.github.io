@@ -1,9 +1,9 @@
 ---
 layout: post
-title: IoT debugging: A PIN is required to connect to this device.
-category: iot
-permalink: iot/access-denied-pin-is-required-to-connect
-tags: [iot, visualstudio, debugging, windows]
+title: IoT iot IoT 
+category: debugging
+permalink: debugging/debugging-azure-with-fiddler
+tags: [dotnet, azure, debugging]
 ---
 
 Remote deploy and remote debugging on Raspberry Pi is great, but if you take one wrong step, it can turn very confusing and appear there is no way to fix it.
