@@ -18,6 +18,10 @@
   name: .NET
   color: '#900'
 
+- slug: iot
+  name: IoT
+  color: '#339'
+
 - slug: jquery
   name: jQuery
   color: '#009'
