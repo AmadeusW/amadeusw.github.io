@@ -26,14 +26,13 @@ Not knowing what is the PIN, the deployment will fail with error
 
 ```
 Error : DEP6200 : Bootstrapping 'minwinpc' failed. Device cannot be found. Access denied.  A PIN is required to connect to this device.
-
 Error : DEP6100 : The following unexpected error occurred during bootstrapping stage 'Connecting to the device 'minwinpc'.': 
 DeviceException - Access denied.  A PIN is required to connect to this device.
 ```
 
 ![Screenshot of errors](/blogData/access-denied-pin-is-required-to-connect/error.png)
 
-Next time you try to remotely debug, Visual Studio will use stored settings with `Authentication Mode: Universal (Unencrypted Protocol)`, which will naturally fail.
+Next time you try to remotely debug, Visual Studio will use stored settings with `Authentication Mode: Universal (Unencrypted Protocol)`, which will again fail.
 
 It's not obvious how to change these settings: Go to the **properties** of the project that you're debugging, then to **Debug**. You can revise the connection settings here.
 
