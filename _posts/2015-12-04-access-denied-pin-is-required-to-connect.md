@@ -1,8 +1,8 @@
 ---
 layout: post
-title: IoT iot IoT 
+title: IoT debugging: A PIN is required to connect to this device.
 category: debugging
-permalink: debugging/debugging-azure-with-fiddler
+permalink: iot/access-denied-pin-is-required-to-connect
 tags: [dotnet, azure, debugging]
 ---
 
