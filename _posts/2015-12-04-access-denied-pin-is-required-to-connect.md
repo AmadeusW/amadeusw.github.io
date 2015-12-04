@@ -3,7 +3,7 @@ layout: post
 title: PIN is required to connect to this device when debugging IoT
 category: debugging
 permalink: debugging/access-denied-pin-is-required-to-connect
-tags: [visualstudio, debugging, windows]
+tags: [visualstudio, iot, debugging, windows]
 ---
 
 Remote deploy and remote debugging on Raspberry Pi is great, but if you take one wrong step, it can turn very confusing and appear there is no way to fix it.
