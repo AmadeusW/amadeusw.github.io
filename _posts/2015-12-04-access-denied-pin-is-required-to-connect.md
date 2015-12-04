@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IoT debugging: A PIN is required to connect to this device.
+title: PIN is required to connect to this device when debugging IoT
 category: debugging
 permalink: debugging/access-denied-pin-is-required-to-connect
 tags: [visualstudio, debugging, windows]
