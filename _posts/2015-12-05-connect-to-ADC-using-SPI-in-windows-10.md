@@ -6,7 +6,7 @@ permalink: iot/connect-to-ADC-using-SPI-in-windows-10
 tags: [iot, debugging, windows]
 ---
 
-The smart mirror project recently entered the exciting part of working with hardware! The goal is to enable hand wave gesture recognition using two distance sensors placed on either side of the mirror. The first step is to get the data from the sensors and see how it looks like. In this blog post I wanted to focus specifically on **connecting Raspberry Pi to the MCP3008 analog to digital converter using SPI**, based on the [Potentiometer Sensor Sample](https://ms-iot.github.io/content/en-US/win10/samples/Potentiometer.htm) ([on github](https://github.com/ms-iot/samples/tree/develop/PotentiometerSensor/CS)). The code for this blog post is at [github.com/AmadeusW/raspberryPiTest](https://github.com/AmadeusW/raspberryPiTest/)].
+The smart mirror project recently entered the exciting part of working with hardware! The goal is to enable hand wave gesture recognition using two distance sensors placed on either side of the mirror. The first step is to get the data from the sensors and see how it looks like. In this blog post I wanted to focus specifically on **connecting Raspberry Pi to the MCP3008 analog to digital converter using SPI**, based on the [Potentiometer Sensor Sample](https://ms-iot.github.io/content/en-US/win10/samples/Potentiometer.htm) ([on github](https://github.com/ms-iot/samples/tree/develop/PotentiometerSensor/CS)). The code for this blog post is at [github.com/AmadeusW/raspberryPiTest](https://github.com/AmadeusW/raspberryPiTest/).
 
 For the complete process of connecting distance sensors to Raspberry Pi, see my youtube podcast
 
