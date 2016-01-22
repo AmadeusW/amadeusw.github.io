@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Custom resource files in UWP
+title: `Custom resource files in UWP
 category: iot
 permalink: iot/connect-to-ADC-using-SPI-in-windows-10
 tags: [iot, csharp, windows]
