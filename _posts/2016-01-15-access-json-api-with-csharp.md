@@ -1,8 +1,8 @@
 ---
 layout: post
-title: `Best way to access JSON API with C#
+title: Best way to access JSON API with C#
 category: iot
-permalink: iot/connect-to-ADC-using-SPI-in-windows-10
+xpermalink: iot/connect-to-ADC-using-SPI-in-windows-10
 tags: [iot, debugging, windows]
 ---
 
