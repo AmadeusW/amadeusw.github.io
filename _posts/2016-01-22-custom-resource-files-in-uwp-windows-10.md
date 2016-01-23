@@ -2,7 +2,7 @@
 layout: post
 title: Custom resource files in UWP
 category: iot
-xpermalink: iot/connect-to-ADC-using-SPI-in-windows-10
+permalink: iot/connect-to-ADC-using-SPI-in-windows-10
 tags: [iot, csharp, windows]
 ---
 
@@ -99,5 +99,7 @@ This solution works well for me because it allows me to ship my settings in the 
 Let's look at another way to read string resources:
 
 # UWP: Use string resources
+
+* WORK IN PROGRESS *
 
 https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx

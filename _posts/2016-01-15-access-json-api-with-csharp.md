@@ -2,8 +2,9 @@
 layout: post
 title: Best way to access JSON API with C#
 category: iot
-xpermalink: iot/connect-to-ADC-using-SPI-in-windows-10
+permalink: iot/connect-to-ADC-using-SPI-in-windows-10
 tags: [iot, debugging, windows]
+published: false
 ---
 
 Yesterday I found the most peculiar issue in .NET to date.
