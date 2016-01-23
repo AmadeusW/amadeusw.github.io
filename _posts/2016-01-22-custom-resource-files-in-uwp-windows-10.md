@@ -13,21 +13,14 @@ I made a rookie mistake of hardcoding the API token (key) to a weather service. 
 When an API key (token) is leaked, the recovery steps are straightforward:
 
 1. Reset the API token
-
   * Ideally, the service provider offers a reset of the API token. You click a button, get a new token, and the old one becomes invalid.
   * In another case, you need to create a new free account and use the new API token
-
 2. Remove the token from the source code
-
   * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them
   * Replace the API token string literal with an access to resources
-
 3. Create a resource file that will hold sensitive data
-
   * Commit this code to avoid `FileNotFoundException` and other issues
-
 4. Stop tracking the resource file ([GitHub guide](https://help.github.com/articles/ignoring-files/#ignoring-versioned-files))
-
   * Add the file to `.gitignore`
   * `git rm --cached`
   * Now you can write your API tokens into the file, and git won't pick up these changes
@@ -35,7 +28,9 @@ When an API key (token) is leaked, the recovery steps are straightforward:
 
 # How to access sensitive data in ASP.MVC
 
-My workflow in ASP.MVC ([see on GitHub](https://github.com/CodeConnect/SourceBrowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) was to merge settings from the `Sensitive.config` file 
+My workflow in ASP.MVC ([see on GitHub](https://github.com/CodeConnect/SourceB
+rowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) was
+to merge settings from the `Sensitive.config` file
 
 ```xml
 ﻿<?xml version="1.0" encoding="utf-8" ?>
