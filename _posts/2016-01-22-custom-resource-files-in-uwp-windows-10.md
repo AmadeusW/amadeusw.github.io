@@ -2,15 +2,15 @@
 layout: post
 title: Custom resource files in UWP
 category: iot
-permalink: iot/connect-to-ADC-using-SPI-in-windows-10
+permalink: iot/custom-resource-files-in-uwp-windows-10
 tags: [iot, csharp, windows]
 ---
 
-I made a rookie mistake of hardcoding the API token (key) to a weather service. I then committed the code to a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo).
+I made a rookie mistake of hardcoding the weather service API token (key) into a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo). A good way to secure a secret token is to load it from a resource file. This isn't as easy in Universal Windows Platform. In this blog post I will explore this subject and provide code 
 
 # Protect the API token 
 
-When an API key (token) is leaked, the recovery steps are straightforward:
+When an API key (token) is leaked, you need to invalidate the leaked token, make sure it won't get leaked again, and get a new token:
 
 1. Reset the API token
   * Ideally, the service provider offers a reset of the API token. You click a button, get a new token, and the old one becomes invalid.
@@ -28,9 +28,7 @@ When an API key (token) is leaked, the recovery steps are straightforward:
 
 # How to access sensitive data in ASP.MVC
 
-My workflow in ASP.MVC ([see on GitHub](https://github.com/CodeConnect/SourceB
-rowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) was
-to merge settings from the `Sensitive.config` file
+To provide some background, in an ASP.MVC application ([see on GitHub](https://github.com/CodeConnect/SourceBrowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) I stored the secret token in git-ignored `Sensitive.config` file
 
 ```xml
 ﻿<?xml version="1.0" encoding="utf-8" ?>
@@ -39,7 +37,7 @@ to merge settings from the `Sensitive.config` file
 </appSettings>
 ```
 
-into `Web.config`
+Which I then merged into `Web.config`
 
 ```xml
 <configuration>
@@ -50,7 +48,8 @@ into `Web.config`
   <!-- ... -->
 </configuration>
 ```
-In the code, you could easily access the data:
+
+I could then easily access the data:
 
 ```csharp
 var secret = ConfigurationManager.AppSettings["secret"];
@@ -70,39 +69,86 @@ Microsoft provides a very good guide on how to [Store and retrieve settings and 
 
 # UWP: Read any file bundled with the application
 
-The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have access to the directory where the application's **.exe** is! This means that we just need to include the files that we need, and they will be shipped with the application. 
+The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have read-only access to the directory where the application's **.exe** is! 
+
+This means that we just need to include the file in the output directory, and set its build action to `Content`. This way, the file will be shipped with the application. 
 
 ![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
 
+You can access the file using URI (follow [Microsoft's tutorial](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965322.aspx)
 ```csharp
-async Task<List<string>> listFiles()
+async Task<string> readSampleFile1()
+{
+    var uri = new System.Uri("ms-appx:///sample.txt");
+	var sampleFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+    var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+}
+```
+or read file directly:
+
+```csharp
+async Task<string> readSampleFile2()
+{
+    var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+    var sampleFile = await packageFolder.GetFileAsync("sample.txt");
+    var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+}
+```
+`InstalledLocation` is a `StorageFolder`, and we can enumerate files contained within:
+```csharp
+async Task<List<string>> readAllFiles()
 {
     var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
     var files = await packageFolder.GetFilesAsync();
-    var fileList = new List<string>();
     foreach (var file in files)
     {
-        fileList.Add(file.Path);
+        var path = file.Path;
+        var contents = await Windows.Storage.FileIO.ReadTextAsync(file);
     }
-    return fileList;
 }
 ```
-
-```csharp
-async Task<string> readSampleFile()
-{
-    var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-    var testFile = await packageFolder.GetFileAsync("sample.txt");
-    var contents = await Windows.Storage.FileIO.ReadTextAsync(testFile);
-}
-```
-
-This solution works well for me because it allows me to ship my settings in the format that I want, such as json. I publish the source code of the app on [my public GitHub repo](https://github.com/AmadeusW/Mirror) yet I don't distribute the app to others - it runs locally on Raspberry Pi.
-
-Let's look at another way to read string resources:
 
 # UWP: Use string resources
 
-**WORK IN PROGRESS**
+Windows offers a pretty powerful way to access localized string resources. You can use the resources from both C# back-end and XAML front-end. The main benefit this approach is that the resources come localized and customized to user's device (images use the best size and contrast variants). You don't need to load, read and parse the file yourself. Furthermore, when user changes their language preferences while your app is running, the strings in your app will be updated! These resources go to a `.resw` file, which appears to be a Windows 10 equivalent of `.resx` files.
 
-[https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx)
+Read the [guide on loading string resources](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx) and the
+[guide on creating localized resource files](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965326.aspx) to learn about all features of this approach. 
+
+I just wanted to show how to use this approach to load the API token in the most basic way.
+
+1. Right click on the project, Add > New Item, pick `Resources File (.resw)`. 
+2. Save all, check the empty file into the source control and immediately ignore it (see "Protect the API token" section above)
+3. Double click on the newly added file and add the API token.
+
+![resource file properties](/blogData/custom-resource-files-in-uwp-windows-10/resource-properties.png)
+
+Now, create an instance of `ResourceLoader`, passing in the name of the resource file *without the extension*.
+Suppose you created `resourcesFile.resw` and added a line with key `secret`:
+
+```csharp
+var rl = new Windows.ApplicationModel.Resources.ResourceLoader("resourcesFile");
+var token = rl.GetString("secret");
+```
+
+# Error handling
+
+Suppose someone cloned your repo and wants to run your app. Whether you included an empty file in the repo, or ignored it without adding it, what will be their developer experience? Will your code fail gracefully, or crash the app?
+
+* When the file doesn't exist:
+ * Both `GetFileAsync` and `GetFileFromApplicationUriAsync` throw `FileNotFoundException` with message `The system cannot find the file 
+ * `ResourceLoader` constructor throws `COMException` with message `ResourceMap Not Found.`
+
+* When the file exists, but the resource can't be found
+ * If you're reading the file yourself, it's up to you to parse it
+ * `ResourceLoader.GetString` returns an empty string :) 
+
+# Conclusion
+
+Whether you're using resources or reading files yourself, both options offer you a way to check in an empty file to the source control.
+Using resources is slightly easier, as you don't need to open and parse the file. 
+Loading the file yourself, however, gives you far more flexibility if you need it.
+
+**Which method will I use?**
+
+I was confident I would load and parse a `.json` file, because on top of storing API keys, I wanted to store a variable number of parameters. A JSON array would be the perfect data structure for the job, unlike resources that I need to directly access one by one. Technically, I could store a JSON string in the resource... 
