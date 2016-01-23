@@ -6,7 +6,7 @@ permalink: iot/custom-resource-files-in-uwp-windows-10
 tags: [iot, csharp, windows]
 ---
 
-I made a rookie mistake of hardcoding the weather service API token (key) into a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo). A good way to secure a secret token is to load it from a resource file. This isn't as easy in Universal Windows Platform. In this blog post I will explore this subject and provide code 
+I made a rookie mistake of hardcoding the weather service API token (key) into a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo). A good way to secure a secret token is to load it from a resource file. This isn't as easy in Universal Windows Platform. In this blog post we will explore two ways of accessing data from files: reading a file yourself, or using a resource file.
 
 # Protect the API token 
 
@@ -26,9 +26,9 @@ When an API key (token) is leaked, you need to invalidate the leaked token, make
   * Now you can write your API tokens into the file, and git won't pick up these changes
   * This may break your continuous integration, but it's all fixable (but not a subject of this blog post)
 
-# How to access sensitive data in ASP.MVC
+# Background: sensitive data in ASP.MVC
 
-To provide some background, in an ASP.MVC application ([see on GitHub](https://github.com/CodeConnect/SourceBrowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) I stored the secret token in git-ignored `Sensitive.config` file
+To provide some background, I stored the secret token in git-ignored `Sensitive.config` file ([see the file on GitHub](https://github.com/CodeConnect/SourceBrowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config))
 
 ```xml
 ﻿<?xml version="1.0" encoding="utf-8" ?>
@@ -65,7 +65,7 @@ On UWP, we have no access to [System.Configuration.ConfigurationManager](https:/
 
 In brief, access to the filesystem in UWP is limited to the [DownloadsFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.downloadsfolder.aspx), user-defined libraries (photos, music, videos etc.) listed under [KnownFolders](https://msdn.microsoft.com/library/windows/apps/windows.storage.knownfolders.aspx) and [ApplicationData.LocalFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) 
 
-Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. Unfortunately, these settings need to be created from within the app, for example on first launch. I need to hide the data from source control, so this solution won't work in my use case.
+Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. Unfortunately, these settings need to be programatically created from within the app, for example on first launch. My IoT project doesn't have keyboard input so I can't rely on storing API token typed in by the user. **In my specific use case, I must hide the data from source control**, so I need to store it in an untracked file that is not a code file. 
 
 # UWP: Read any file bundled with the application
 
@@ -76,6 +76,7 @@ This means that we just need to include the file in the output directory, and se
 ![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
 
 You can access the file using URI (follow [Microsoft's tutorial](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965322.aspx)
+
 ```csharp
 async Task<string> readSampleFile1()
 {
@@ -84,6 +85,7 @@ async Task<string> readSampleFile1()
     var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 }
 ```
+
 or read file directly:
 
 ```csharp
@@ -93,8 +95,10 @@ async Task<string> readSampleFile2()
     var sampleFile = await packageFolder.GetFileAsync("sample.txt");
     var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 }
+
 ```
 `InstalledLocation` is a `StorageFolder`, and we can enumerate files contained within:
+
 ```csharp
 async Task<List<string>> readAllFiles()
 {
