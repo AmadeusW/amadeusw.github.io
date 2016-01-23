@@ -14,24 +14,24 @@ When an API key (token) is leaked, the recovery steps are straightforward:
 
 1. Reset the API token
 
- * Ideally, the service provider offers a reset of the API token. You click a button, get a new token, and the old one becomes invalid.
- * In another case, you need to create a new free account and use the new API token
+  * Ideally, the service provider offers a reset of the API token. You click a button, get a new token, and the old one becomes invalid.
+  * In another case, you need to create a new free account and use the new API token
 
 2. Remove the token from the source code
 
- * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them
- * Replace the API token string literal with an access to resources
+  * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them
+  * Replace the API token string literal with an access to resources
 
 3. Create a resource file that will hold sensitive data
 
- * Commit this code to avoid `FileNotFoundException` and other issues
+  * Commit this code to avoid `FileNotFoundException` and other issues
 
 4. Stop tracking the resource file ([GitHub guide](https://help.github.com/articles/ignoring-files/#ignoring-versioned-files))
 
- * Add the file to `.gitignore`
- * `git rm --cached`
- * Now you can write your API tokens into the file, and git won't pick up these changes
- * This may break your continuous integration, but it's all fixable (but not a subject of this blog post)
+  * Add the file to `.gitignore`
+  * `git rm --cached`
+  * Now you can write your API tokens into the file, and git won't pick up these changes
+  * This may break your continuous integration, but it's all fixable (but not a subject of this blog post)
 
 # How to access sensitive data in ASP.MVC
 
@@ -108,6 +108,6 @@ Let's look at another way to read string resources:
 
 # UWP: Use string resources
 
-** WORK IN PROGRESS **
+**WORK IN PROGRESS**
 
-https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx
+[https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx)
