@@ -28,13 +28,16 @@ When an API key (token) is leaked, the recovery steps are straightforward:
 # How to access sensitive data in ASP.MVC
 
 My workflow in ASP.MVC ([see on GitHub](https://github.com/CodeConnect/SourceBrowser/blob/9848ba033619d9887e1c358bc721284c29ebe8e2/src/Security.config)) was to merge settings from the `Sensitive.config` file 
+
 ```xml
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <appSettings>
 	<add key="secret" value="" />
 </appSettings>
 ```
+
 into `Web.config`
+
 ```xml
 <configuration>
   <!-- ... -->
@@ -44,11 +47,13 @@ into `Web.config`
   <!-- ... -->
 </configuration>
 ```
-On my computer, I had a different version of `Sensitive.config` that had a value for the `secret` key.
 In the code, you could easily access the data:
+
 ```csharp
 var secret = ConfigurationManager.AppSettings["secret"];
 ```
+
+On my dev machine, CI server and production server, we had a version of `Sensitive.config` that set the `secret` key. Everyone else is encouraged to use their own API token or face limited functionality.
 
 # State of things in UWP
 
@@ -58,9 +63,41 @@ We have no access to [System.Configuration.ConfigurationManager](https://msdn.mi
 
 In brief, access to the filesystem is limited to the [DownloadsFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.downloadsfolder.aspx), user-defined libraries (photos, music, videos etc.) listed under [KnownFolders](https://msdn.microsoft.com/library/windows/apps/windows.storage.knownfolders.aspx) and [ApplicationData.LocalFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) 
 
-Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. The caveat is that 
+Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. Unfortunately, these settings need to be created from within the app - for example, on first launch, or by the user. That perfectly fits the role of settings, but it doesn't cover our use case of accessing a file that *came bundled with the application*.
 
 # UWP: Read any file bundled with the application
 
+The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have access to the directory where the application's *.exe* is! This means that we just need to include the files that we need, and they will be shipped with the application. 
+
+![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
+
+```csharp
+async Task<List<string>> listFiles()
+{
+    var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+    var files = await packageFolder.GetFilesAsync();
+    var fileList = new List<string>();
+    foreach (var file in files)
+    {
+        fileList.Add(file.Path);
+    }
+    return fileList;
+}
+```
+
+```csharp
+async Task<string> readSampleFile()
+{
+    var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+    var testFile = await packageFolder.GetFileAsync("sample.txt");
+    var contents = await Windows.Storage.FileIO.ReadTextAsync(testFile);
+}
+```
+
+This solution works well for me because it allows me to ship my settings in the format that I want, such as json. I publish the source code of the app on [my public GitHub repo](https://github.com/AmadeusW/Mirror) yet I don't distribute the app to others - it runs locally on Raspberry Pi.
+
+Let's look at another way to read string resources:
+
 # UWP: Use string resources
+
 https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx
