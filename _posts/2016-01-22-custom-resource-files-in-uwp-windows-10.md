@@ -82,7 +82,7 @@ async Task<string> readSampleFile1()
 {
     var uri = new System.Uri("ms-appx:///sample.txt");
 	var sampleFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
-    var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+    return await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 }
 ```
 
@@ -93,21 +93,22 @@ async Task<string> readSampleFile2()
 {
     var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
     var sampleFile = await packageFolder.GetFileAsync("sample.txt");
-    var contents = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+    return await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 }
 
 ```
 `InstalledLocation` is a `StorageFolder`, and we can enumerate files contained within:
 
 ```csharp
-async Task<List<string>> readAllFiles()
+async Task enumerateFiles()
 {
     var packageFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
     var files = await packageFolder.GetFilesAsync();
     foreach (var file in files)
     {
         var path = file.Path;
-        var contents = await Windows.Storage.FileIO.ReadTextAsync(file);
+        // Works only with text files:
+        // var contents = await Windows.Storage.FileIO.ReadTextAsync(file);
     }
 }
 ```
@@ -144,8 +145,8 @@ Suppose someone cloned your repo and wants to run your app. Whether you included
  * `ResourceLoader` constructor throws `COMException` with message `ResourceMap Not Found.`
 
 * When the file exists, but the resource can't be found
- * If you're reading the file yourself, it's up to you to parse it
- * `ResourceLoader.GetString` returns an empty string :) 
+ * If you're parsing the file yourself, it's up to you to handle this scenario.
+ * `ResourceLoader.GetString` returns an empty string.
 
 # Conclusion
 
@@ -155,4 +156,6 @@ Loading the file yourself, however, gives you far more flexibility if you need i
 
 **Which method will I use?**
 
-I was confident I would load and parse a `.json` file, because on top of storing API keys, I wanted to store a variable number of parameters. A JSON array would be the perfect data structure for the job, unlike resources that I need to directly access one by one. Technically, I could store a JSON string in the resource... 
+Initially, I was sure I would load and parse a `.json` file. On top of storing API keys, I wanted to store a variable number of other parameters. A JSON array would be the perfect data structure for the job, unlike resources that I need to directly access by name. 
+
+But I could store a JSON array as a string resource... I guess I'll give the "official" resources way a try!
