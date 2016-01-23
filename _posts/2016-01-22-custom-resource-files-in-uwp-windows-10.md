@@ -71,7 +71,7 @@ Microsoft provides a very good guide on how to [Store and retrieve settings and 
 
 The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have read-only access to the directory where the application's `.exe` is! 
 
-This means that we just need to include the file in the output directory, and set its build action to `Content`. This way, the file will be shipped with the application. 
+To access such file, we just need to set the file's **Build Action** to `Content`. **Copy to Output Directory** doesn't matter. 
 
 ![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
 
@@ -86,7 +86,7 @@ async Task<string> readSampleFile1()
 }
 ```
 
-or read file directly:
+or using the `StorageFolder` class:
 
 ```csharp
 async Task<string> readSampleFile2()
