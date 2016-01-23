@@ -6,25 +6,25 @@ permalink: iot/custom-resource-files-in-uwp-windows-10
 tags: [iot, csharp, windows]
 ---
 
-I made a rookie mistake of hardcoding the weather service API token (key) into a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo). A good way to secure a secret token is to load it from a resource file. This isn't as easy in Universal Windows Platform. In this blog post we will explore two ways of accessing data from files: reading a file yourself, or using a resource file.
+I made a rookie mistake of hardcoding the weather service API token (key) into a public github repo, and did it all live on camera when recording an episode of [Coding with Amadeus: Smart Mirror](https://www.youtube.com/watch?v=NCMQIH0ilLo). I should have stored the token in an untracked resource file, but it's done differently in the Universal Windows Platform. In this blog post we will explore two ways of accessing data from files in UWP apps.
 
 # Protect the API token 
 
-When an API key (token) is leaked, you need to invalidate the leaked token, make sure it won't get leaked again, and get a new token:
+When an API token is leaked, you need to invalidate it, make sure that a new token won't get leaked again, and get a new token:
 
 1. Reset the API token
-  * Ideally, the service provider offers a reset of the API token. You click a button, get a new token, and the old one becomes invalid.
-  * In another case, you need to create a new free account and use the new API token
+  * Ideally, the service provider offers a way reset the API token. The old token becomes invalid, and you get a new one.
+  * In another case, you need to create a new account and use its API token.
 2. Remove the token from the source code
-  * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them
-  * Replace the API token string literal with an access to resources
+  * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them.
+  * Replace the API token string literal with code that accesses the resources (the subject of this blog post)
 3. Create a resource file that will hold sensitive data
-  * Commit this code to avoid `FileNotFoundException` and other issues
-4. Stop tracking the resource file ([GitHub guide](https://help.github.com/articles/ignoring-files/#ignoring-versioned-files))
+  * Commit this (empty) file to avoid `FileNotFoundException` and other issues
+4. Cease tracking the resource file. See [GitHub guide](https://help.github.com/articles/ignoring-files/#ignoring-versioned-files) or tl;dr:
   * Add the file to `.gitignore`
   * `git rm --cached`
   * Now you can write your API tokens into the file, and git won't pick up these changes
-  * This may break your continuous integration, but it's all fixable (but not a subject of this blog post)
+  * Make sure to supply required tokens to continuous integration and build server
 
 # Background: sensitive data in ASP.MVC
 
@@ -63,19 +63,19 @@ Universal apps run in a sandboxed UWP runtime and use a subset of .NET framework
 
 On UWP, we have no access to [System.Configuration.ConfigurationManager](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager%28v=vs.110%29.aspx), but we get limited access to filesystem using APIs shared across all platforms (Desktop, Mobile, IoT etc.)
 
-In brief, access to the filesystem in UWP is limited to the [DownloadsFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.downloadsfolder.aspx), user-defined libraries (photos, music, videos etc.) listed under [KnownFolders](https://msdn.microsoft.com/library/windows/apps/windows.storage.knownfolders.aspx) and [ApplicationData.LocalFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) 
+In brief, access to the filesystem in UWP is limited to the [DownloadsFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.downloadsfolder.aspx), [KnownFolders](https://msdn.microsoft.com/library/windows/apps/windows.storage.knownfolders.aspx) (user's libraries such as photos, music, videos etc) and [ApplicationData.LocalFolder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.applicationdata.localfolder.aspx) 
 
-Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. Unfortunately, these settings need to be programatically created from within the app, for example on first launch. My IoT project doesn't have keyboard input so I can't rely on storing API token typed in by the user. **In my specific use case, I must hide the data from source control**, so I need to store it in an untracked file that is not a code file. 
+Microsoft provides a very good guide on how to [Store and retrieve settings and other app data](https://msdn.microsoft.com/en-us/library/windows/apps/mt299098.aspx), which are loaded from the `LocalFolder`. Unfortunately, these settings need to be programatically created from within the app, for example on first launch. My IoT project doesn't have keyboard input so I can't rely on saving an API token typed in by the user. **In my use case, I must hide the data from source control**, so I need to store it in an untracked resource or configuration file. 
 
 # UWP: Read any file bundled with the application
 
-The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have read-only access to the directory where the application's **.exe** is! 
+The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have read-only access to the directory where the application's `.exe` is! 
 
 This means that we just need to include the file in the output directory, and set its build action to `Content`. This way, the file will be shipped with the application. 
 
 ![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
 
-You can access the file using URI (follow [Microsoft's tutorial](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965322.aspx)
+You can access the file using URI (read more about URIs in [Microsoft's tutorial](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965322.aspx))
 
 ```csharp
 async Task<string> readSampleFile1()
@@ -114,25 +114,25 @@ async Task<List<string>> readAllFiles()
 
 # UWP: Use string resources
 
-Windows offers a pretty powerful way to access localized string resources. You can use the resources from both C# back-end and XAML front-end. The main benefit this approach is that the resources come localized and customized to user's device (images use the best size and contrast variants). You don't need to load, read and parse the file yourself. Furthermore, when user changes their language preferences while your app is running, the strings in your app will be updated! These resources go to a `.resw` file, which appears to be a Windows 10 equivalent of `.resx` files.
+Windows offers powerful means to access localized string resources. You can use the resources from both C# back-end and XAML front-end. The main benefit this approach is that the resources come localized and customized to user's device (images use the best size and contrast variants). You don't need to load, read and parse the file yourself. Furthermore, when user changes their language preferences while your app is running, the strings in your app will be updated! These resources go to a `.resw` file, which appears to be a Windows 10 equivalent of `.resx` files.
 
 Read the [guide on loading string resources](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx) and the
 [guide on creating localized resource files](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965326.aspx) to learn about all features of this approach. 
 
-I just wanted to show how to use this approach to load the API token in the most basic way.
+I just wanted to show how to use the most basic flavor of this approach, just to load the API token.
 
-1. Right click on the project, Add > New Item, pick `Resources File (.resw)`. 
+1. Right click on the project, `Add > New Item`, pick `Resources File (.resw)`. 
 2. Save all, check the empty file into the source control and immediately ignore it (see "Protect the API token" section above)
-3. Double click on the newly added file and add the API token.
+3. Double click on the newly added file and add type in the API token.
 
 ![resource file properties](/blogData/custom-resource-files-in-uwp-windows-10/resource-properties.png)
 
-Now, create an instance of `ResourceLoader`, passing in the name of the resource file *without the extension*.
+To access the token from the code, create an instance of `ResourceLoader`, passing in the name of the resource file *without the extension*.
 Suppose you created `resourcesFile.resw` and added a line with key `secret`:
 
 ```csharp
-var rl = new Windows.ApplicationModel.Resources.ResourceLoader("resourcesFile");
-var token = rl.GetString("secret");
+var resources = new Windows.ApplicationModel.Resources.ResourceLoader("resourcesFile");
+var token = resources.GetString("secret");
 ```
 
 # Error handling
