@@ -21,7 +21,7 @@ When an API token is leaked, you need to invalidate it, make sure that a new tok
 3. Create a resource file that will hold sensitive data
   * Commit this (empty) file to avoid `FileNotFoundException` and other issues
 4. Cease tracking the resource file. See [StackOverflow on What is best practice for keeping secrets out of a git repository?](https://stackoverflow.com/questions/8309304/what-is-best-practice-for-keeping-secrets-out-of-a-git-repository) for a basic and robust approach or tl;dr the basic approach:
-  * `git update-index --assume-unchanged secretFile.txt`
+  * `git update-index --skip-worktree secretFile.txt`
   * Now you can write your API tokens into the file, and git won't pick up these changes
   * Make sure to supply required tokens to continuous integration and build server
 
