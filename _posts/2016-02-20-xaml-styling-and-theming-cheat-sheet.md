@@ -3,7 +3,7 @@ layout: post
 title: XAML for Universal Windows cheat sheet
 category: xaml
 permalink: xaml/uwp-cheat-sheet
-tags: [xaml, csharp, windows]
+tags: [xaml, ui, windows]
 ---
 
 Working on the user interface can take disproportionate amount of time. I usually do the logic work first, and UI last, in the spare time. In the smart mirror project the UI is very bare bones: it's only here to test data bindings. Let's improve the looks of it.
@@ -11,6 +11,7 @@ Working on the user interface can take disproportionate amount of time. I usuall
 ![no theming applied](/blogData/xaml-cheat-sheet/initial.png)
 
 Table of contents:
+
 * [Use the dark theme](#use-the-dark-theme)
 * [Put styles in their own file](#put-styles-in-their-own-file)
 * [Style (almost) all TextBlocks](#style-almost-all-textblocks)
