@@ -35,6 +35,7 @@ Drastically changes the appearance of the app:
 It's a good practice to keep related code together and unrelated code separately. We will leave the viewmodels in the main `App.xaml` and move style-related code to its own file.
 
 Create a new **Resource Dictionary** (right click on a project, Add New Item > XAML > Resource Dictionary). If you call it `MyApp.xaml` and put it in `Themes`, use the following code in `App.xaml`: Add `<ResourceDictionary.MergedDictionaries>` where you will specify the path to the new dictionary.
+
 ```xml
 <Application>
   <Application.Resources>
