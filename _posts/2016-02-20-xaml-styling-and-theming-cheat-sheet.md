@@ -10,6 +10,15 @@ Working on the user interface can take disproportionate amount of time. I usuall
 
 ![no theming applied](/blogData/xaml-cheat-sheet/initial.png)
 
+Table of contents:
+* [Use the dark theme](#use-the-dark-theme)
+* [Put styles in their own file](#put-styles-in-their-own-file)
+* [Style (almost) all TextBlocks](#style-almost-all-textblocks)
+* [Style specific TextBlocks](#style-specific-textblocks)
+* [Modify the default theme](#modify-the-default-theme)
+* [Changing theme at runtime](#changing-theme-at-runtime)
+* [Conditionally display UI elements](#conditionally-display-ui-elements)
+
 # Use the dark theme
 
 The biggest bang for the buck for the smart mirror project is to request a **dark theme**. In `App.xaml`:
@@ -65,7 +74,7 @@ This works for free-standing `TextBlocks`, but not for these embedded in a templ
 
 ![doesn't work with templates](/blogData/xaml-cheat-sheet/no-template.png)
 
-# Style specifix TextBlocks
+# Style specific TextBlocks
 
 To style absolutely all instances of `TextBlock`, we need to set each one's `Style` property. It's unfortunate that it requires much more code changes and it's not as elegant as CSS tag selector. Let's take advantage of this, though, and create different styles for different `TextBlocks`. XAML styles implement inheritance with `BasedOn` property:
 
@@ -121,7 +130,7 @@ The base themes are available for your reference in `generic.xaml` and `themeres
 
 Explore these files to find resources that base styles depend on. You can change them to easily theme large chunks of your app.
 
-# Changing resource dictionaries at runtime
+# Changing theme at runtime
 
 _Think again if you really want to do it. There is no nice solution_
 
@@ -136,6 +145,7 @@ The following options don't work in Universal Windows App:
 3. Using an [Effect](https://msdn.microsoft.com/en-us/library/system.windows.uielement.effect%28v=vs.110%29.aspx) to change colors
  * `Effects` are also removed from `UIElements`
 
+
 Here's what you can do:
 
 1. Change element's `Style`
@@ -143,9 +153,10 @@ Here's what you can do:
 2. Change the element's theme
  * As there are only Light and Dark themes, you don't have much flexibility.
 
-For the complete solution, read [this SO answer](http://stackoverflow.com/a/35548390/879243). In brief:
 
-* Create and use `ThemeAwareFrame` that inherits from `Frame`
+We will change the theme of the `Frame` that contains the entirety of the user interface. For the complete solution, read [this SO answer](http://stackoverflow.com/a/35548390/879243). In brief:
+
+* Create and use `ThemeAwareFrame` that inherits from `Frame` (code is in [the SO answer](http://stackoverflow.com/a/35548390/879243))
 
 ```csharp
 // App.OnLaunched
@@ -169,7 +180,7 @@ For the complete solution, read [this SO answer](http://stackoverflow.com/a/3554
   </Style>
 ```
 
-* Change the `AppTheme` of the instance of `ThemeAwareTheme`
+* Change the `AppTheme` of the instance of `ThemeAwareTheme`. In this example, we're calling `TimeOfDayChangedHandler` every second with alternating boolean flag.
 
 ```csharp
 private void TimeOfDayChangedHandler(bool nightFall)
@@ -178,11 +189,11 @@ private void TimeOfDayChangedHandler(bool nightFall)
 }
 ```
 
-In this example, we're calling `TimeOfDayChangedHandler` every second with alternating boolean flag. Here's the result:
+Here's the result:
 
 ![gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme.gif)
 
-Now we need to overwrite the light theme such that it looks like the dark theme. Notice that this will force users of your app to use the dark theme, despite their personalized system settings. This will also force you to stick to one theme, as the other one will be sacrificed for the effect.
+So far so good. This is the first time I was able to change anything on the screen! Now we need to overwrite the light theme such that it looks like the dark theme. Notice that this will force users of your app to use the dark theme, despite their personalized system settings. This will also force you to stick to one theme, as the other one will be sacrificed for the effect.
 
 1. Go to `C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic\themeresources.xaml` 
 2. Copy it into a new dictionary in your solution: `Themes/LightOverride.xaml` 
@@ -219,6 +230,7 @@ Create a class `NonZeroValueToVisibilityConverter` in namespace `My.App.Converte
 ```
 
 And use it in the following way:
+
 ```xml
 <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Rainfall, Converter={StaticResource NonZeroValueToVisibilityConverter}}">
     <TextBlock Text="{Binding Path=Rainfall}" />
