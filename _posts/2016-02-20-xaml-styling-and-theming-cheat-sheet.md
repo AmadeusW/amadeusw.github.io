@@ -20,6 +20,12 @@ Table of contents:
 * [Changing theme at runtime](#changing-theme-at-runtime)
 * [Conditionally display UI elements](#conditionally-display-ui-elements)
 
+# Watch this in a video instead
+
+I wrote this blog post in preparation and after shooting a video about XAML. You can watch me go through these steps:
+
+[![thumbnail](http://i.ytimg.com/vi/kILHbvZpVPI/default.jpg) Smart Mirror episode 12 - XAML and theming](http://youtu.be/kILHbvZpVPI)
+
 # Use the dark theme
 
 The biggest bang for the buck for the smart mirror project is to request a **dark theme**. In `App.xaml`:
@@ -242,9 +248,3 @@ And use it in the following way:
 This screenshot was taken halfway through UI redesign. The rain and snow quantities are shown only when they're non-zero.
 
 ![conditionally displaying rain information](/blogData/xaml-cheat-sheet/conditional-rain.png)
-
-# Watch this in a video instead
-
-I wrote this blog post in preparation and after shooting a video about XAML. You can watch me go through these steps:
-
-[![thumbnail](http://i.ytimg.com/vi/4mIuIHNF3JA/default.jpg) Smart Mirror episode 12 - XAML](http://youtu.be/4mIuIHNF3JA)
