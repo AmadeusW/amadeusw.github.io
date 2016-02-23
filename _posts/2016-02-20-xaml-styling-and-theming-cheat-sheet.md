@@ -10,7 +10,7 @@ Working on the user interface can take disproportionate amount of time. I usuall
 
 ![no theming applied](/blogData/xaml-cheat-sheet/initial.png)
 
-# Use dark theme
+# Use the dark theme
 
 The biggest bang for the buck for the smart mirror project is to request a **dark theme**. In `App.xaml`:
 
@@ -186,7 +186,7 @@ Now we need to overwrite the light theme such that it looks like the dark theme.
 1. Go to `C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic\themeresources.xaml` 
 2. Copy it into a new dictionary in your solution: `Themes/LightOverride.xaml` 
 3. Remove all nodes except for `<ResourceDictionary x:Key="Default">` (dark theme)
-4. Rename this node to `<ResourceDictionary x:Key="Light">` (make it light theme)
+4. Rename this node to `<ResourceDictionary x:Key="Light">` (make it the light theme)
 5. Merge this dictionary in App.xaml
 
 ```xml
@@ -199,7 +199,7 @@ Now we need to overwrite the light theme such that it looks like the dark theme.
       </ResourceDictionary.MergedDictionaries>
 ```
 
-We're done:
+Now, we are done. Notice the letters change from light blue to light yellow.
 
 ![final gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme-complete.gif)
 
