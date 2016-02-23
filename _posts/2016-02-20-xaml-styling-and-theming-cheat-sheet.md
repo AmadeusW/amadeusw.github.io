@@ -53,7 +53,7 @@ Let's store a brush in `MyApp.xaml`. We will use it in the next section.
 
 # Style (almost) all TextBlocks
 
-Let's try to theme all instances of `TextBlock`. To do this, create a `Style` without the `Key`. You can put it either into `ResourceDictionary` in `App.xaml` or `MyApp.xaml`
+Let's try to theme all instances of `TextBlock`. To do this, create a `Style` with `TargetType` but without the `Key`. You can put it either into `ResourceDictionary` in `App.xaml` or `MyApp.xaml`
 
 ```xml
 <ResourceDictionary>
@@ -63,11 +63,6 @@ Let's try to theme all instances of `TextBlock`. To do this, create a `Style` wi
     <Setter Property="Foreground" Value="{StaticResource TextColor}" />
   </Style>
 ```
-  <Style TargetType="TextBlock">
-    <Setter Property="FontFamily" Value="Helvetica World" />
-    <Setter Property="FontSize" Value="20" />
-    <Setter Property="Foreground" Value="#FFFF0000" />
-  </Style>
 
 This works for free-standing `TextBlocks`, but not for these embedded in a template, e.g. `DataTemplate`
 
@@ -126,8 +121,7 @@ How did I know to change `ApplicationPageBackgroundThemeBrush`?
 
 The base themes are available for your reference in `generic.xaml` and `themeresources.xaml` in `C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic` (the version number might be different)
 
-Changing resource dictionaries at runtime
-===
+# Changing resource dictionaries at runtime
 
 _Do you really want to do it? There is no nice solution_
 
@@ -202,11 +196,10 @@ Now we need to overwrite the light theme such that it looks like the dark theme 
 ```
 
 We're done:
-![final gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme-completed.gif)
+![final gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme-complete.gif)
 
 
-Conditionally display UI elements
-===
+# Conditionally display UI elements
 
 When displaying weather forecast, I don't want to show "0mm rain" on each sunny day. We can use a converter to hide this text.
 
