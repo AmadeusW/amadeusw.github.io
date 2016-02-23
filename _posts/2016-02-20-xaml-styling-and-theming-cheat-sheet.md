@@ -6,13 +6,13 @@ permalink: xaml/uwp-cheat-sheet
 tags: [xaml, csharp, windows]
 ---
 
-I'm finishing up the smart mirror project that runs an UWP app on Raspberry Pi. The last bits of work are in the user interface department. In fact, the only UI code I have so far is responsible for data binding and placing elements within a logical hierarchy:
+Working on the user interface can take disproportionate amount of time. I usually do the logic work first, and UI last, in the spare time. In the smart mirror project the UI is very bare bones: it's only here to test data bindings. Let's improve the looks of it.
 
 ![no theming applied](/blogData/xaml-cheat-sheet/initial.png)
 
 # Use dark theme
 
-The easiest thing to get 90% of theming for this project is to request a **dark theme**. In `App.xaml`:
+The biggest bang for the buck for the smart mirror project is to request a **dark theme**. In `App.xaml`:
 
 ```xml
 <Application
@@ -26,14 +26,15 @@ change this into
     RequestedTheme="Dark">
 ```
 
-For immediate results:
+Drastically changes the appearance of the app:
+
 ![dark theme](/blogData/xaml-cheat-sheet/dark.png)
 
 # Put styles in their own file
 
-It's a good practice to file data in specific location as opposed to putting every style into `App.xaml`. Later on, this will allow us to swap one style for another at runtime.
+It's a good practice to keep related code together and unrelated code separately. We will leave the viewmodels in the main `App.xaml` and move style-related code to its own file.
 
-Create a new **Resource Dictionary** (right click on a project, Add New Item > XAML > Resource Dictionary). I named it `White.xaml` and put it in `Themes`. Now, in `App.xaml` add `<ResourceDictionary.MergedDictionaries>` where you will specify which dictionary to use.
+Create a new **Resource Dictionary** (right click on a project, Add New Item > XAML > Resource Dictionary). If you call it `MyApp.xaml` and put it in `Themes`, use the following code in `App.xaml`: Add `<ResourceDictionary.MergedDictionaries>` where you will specify the path to the new dictionary.
 ```xml
 <Application>
   <Application.Resources>
@@ -43,13 +44,7 @@ Create a new **Resource Dictionary** (right click on a project, Add New Item > X
       </ResourceDictionary.MergedDictionaries>
 ```
 
-Important notice: You might have had some resources stored directly in `<Application.Resources>` before. Now that you're using a resource dictionary, you need to move all resources into the `<ResourceDictionary>`.
-
-Let's store a brush in `MyApp.xaml`. We will use it in the next section.
-```xml
-<ResourceDictionary>
-  <SolidColorBrush x:Key="TextColor" Color="#FFFF0000" />
-```
+Important notice: If you had some resources stored directly in `<Application.Resources>` before, now you need to move all resources into the `<ResourceDictionary>`.
 
 # Style (almost) all TextBlocks
 
@@ -57,6 +52,7 @@ Let's try to theme all instances of `TextBlock`. To do this, create a `Style` wi
 
 ```xml
 <ResourceDictionary>
+  <SolidColorBrush x:Key="TextColor" Color="#FFFF0000" />
   <Style TargetType="TextBlock">
     <Setter Property="FontFamily" Value="Helvetica World" />
     <Setter Property="FontSize" Value="20" />
@@ -93,6 +89,7 @@ To use these styles, assign appropriate `StaticResource` to element's `Style`. H
 <TextBlock Style="{StaticResource LargeText}" />
 <TextBlock Style="{StaticResource VeryLargeText}" />
 ```
+
 ![each element gets styled](/blogData/xaml-cheat-sheet/various-styles.png)
 
 # Modify the default theme
