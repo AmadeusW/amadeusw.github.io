@@ -118,13 +118,16 @@ How did I know to change `ApplicationPageBackgroundThemeBrush`?
 
 The base themes are available for your reference in `generic.xaml` and `themeresources.xaml` in `C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic` (the version number might be different)
 
+Explore these files to find resources that base styles depend on. You can change them to easily theme large chunks of your app.
+
 # Changing resource dictionaries at runtime
 
-_Do you really want to do it? There is no nice solution_
+_Think again if you really want to do it. There is no nice solution_
 
-I would like the theme of the app to be amber at night. In Universal Windows Apps there is no `DynamicResource`, so changing properties of resources is not as elegant as in regular Win32 app. If you want to look at all failed attempts, [here is my SO question](https://stackoverflow.com/questions/35544034/update-resource-in-universal-windows-app-xaml/).
+I would like the theme of the app to use a red color at night. In Universal Windows Apps there is no `DynamicResource`, so changing properties of resources is not as elegant as in regular Win32 app. If you want to look at all failed attempts to get it working, [here is my SO question](https://stackoverflow.com/questions/35544034/update-resource-in-universal-windows-app-xaml/).
 
 The following options don't work in Universal Windows App:
+
 1. Using `DynamicResource`
  * This type is no longer used, for performance reasons
 2. Changing a dictionary at runtime
@@ -133,6 +136,7 @@ The following options don't work in Universal Windows App:
  * `Effects` are also removed from `UIElements`
 
 Here's what you can do:
+
 1. Change element's `Style`
  * To enumerate all elements, use [this code](http://stackoverflow.com/a/978352/879243)
 2. Change the element's theme
@@ -141,12 +145,13 @@ Here's what you can do:
 For the complete solution, read [this SO answer](http://stackoverflow.com/a/35548390/879243). In brief:
 
 * Create and use `ThemeAwareFrame` that inherits from `Frame`
+
 ```csharp
 // App.OnLaunched
   rootFrame = new ThemeAwareFrame(ElementTheme.Dark);
 ```
 
-* Create your style and store it in Light and Dark themes
+* Create your resource in both Light and Dark themes
 
 ```xml
 <ResourceDictionary
@@ -172,16 +177,18 @@ private void TimeOfDayChangedHandler(bool nightFall)
 }
 ```
 
-Here's what we get:
+In this example, we're calling `TimeOfDayChangedHandler` every second with alternating boolean flag. Here's the result:
+
 ![gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme.gif)
 
-Now we need to overwrite the light theme such that it looks like the dark theme - and the only change is the text color. Notice that this will force users of your app to use the dark theme, despite their personalized system settings.
+Now we need to overwrite the light theme such that it looks like the dark theme. Notice that this will force users of your app to use the dark theme, despite their personalized system settings. This will also force you to stick to one theme, as the other one will be sacrificed for the effect.
 
 1. Go to `C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic\themeresources.xaml` 
-2. Copy it into a new dictionary in your solution. 
-3. Remove all nodes except for `<ResourceDictionary x:Key="Default">`. 
-4. Rename this node to `<ResourceDictionary x:Key="Light">`.
-5. Use this dictionary in App.xaml
+2. Copy it into a new dictionary in your solution: `Themes/LightOverride.xaml` 
+3. Remove all nodes except for `<ResourceDictionary x:Key="Default">` (dark theme)
+4. Rename this node to `<ResourceDictionary x:Key="Light">` (make it light theme)
+5. Merge this dictionary in App.xaml
+
 ```xml
 <Application>
   <Application.Resources>
@@ -193,6 +200,7 @@ Now we need to overwrite the light theme such that it looks like the dark theme 
 ```
 
 We're done:
+
 ![final gif of changing themes](/blogData/xaml-cheat-sheet/changing-theme-complete.gif)
 
 
@@ -217,4 +225,12 @@ And use it in the following way:
 </StackPanel>
 ```
 
-[![thumbnail](http://i.ytimg.com/vi/4mIuIHNF3JA/default.jpg) Smart Mirror episode 11 - XAML](http://youtu.be/4mIuIHNF3JA)
+This screenshot was taken halfway through UI redesign. The rain and snow quantities are shown only when they're non-zero.
+
+![conditionally displaying rain information](/blogData/xaml-cheat-sheet/conditional-rain.png)
+
+# Watch this in a video instead
+
+I wrote this blog post in preparation and after shooting a video about XAML. You can watch me go through these steps:
+
+[![thumbnail](http://i.ytimg.com/vi/4mIuIHNF3JA/default.jpg) Smart Mirror episode 12 - XAML](http://youtu.be/4mIuIHNF3JA)
