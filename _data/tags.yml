@@ -18,6 +18,10 @@
   name: .NET
   color: '#900'
 
+- slug: hardware
+  name: Hardware
+  color: '#466'
+
 - slug: iot
   name: IoT
   color: '#339'
