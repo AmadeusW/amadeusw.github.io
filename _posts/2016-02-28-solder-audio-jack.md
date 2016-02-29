@@ -6,9 +6,9 @@ permalink: hardware/solder-3-5-mm-audio-jack
 tags: [iot, hardware]
 ---
 
-Read this blog post if you'd like to build or replace an [3.5mm / audio / phone jack](https://en.wikipedia.org/wiki/Phone_connector_%28audio%29){:target="_blank"} or you're building your own audio device. 
+Read this blog post if you'd like to build or replace an [3.5mm / audio / phone jack](https://en.wikipedia.org/wiki/Phone_connector_%28audio%29){:target="_blank"}.
 
-The right channel in my speakers wouldn't working unless I wiggled the cable. Eventually it completely stopped working. The other end of the audio cable is embedded into the volume controller, which meant that I needed to either replace the whole unit or attempt fixing the cable myself.
+The right channel in my speakers wouldn't working unless I wiggled the cable. Eventually it completely stopped working. The other end of the audio cable was embedded into the volume controller, which meant that I needed to either replace the whole unit or attempt fixing the cable myself.
 
 I picked up a Sennheiser 3.5mm jack from the local electronics store for roughly one dollar.
 
