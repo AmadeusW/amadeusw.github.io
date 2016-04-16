@@ -8,7 +8,8 @@ tags: [windows, dotnet, ui]
 
 In Windows 10 Tablet Mode, the active window is always maximized and other windows are hidden. If you `Show()` a window it will maximize and parent window will minimize. 
 
-*In this gif we are trying to create a red 200px x 200px popup window, but in tablet mode it maximizes and white parent window minimized:*
+*In this gif we are trying to create a red 200px x 200px popup window. 
+In tablet mode it maximizes and white parent window minimizes.*
 
 ![demo gif](/blogData/window-show-hides-parent-in-tablet-mode/demo.gif)
 
