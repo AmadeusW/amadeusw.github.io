@@ -12,7 +12,8 @@ In Windows 10 Tablet Mode, the active window is always maximized and other windo
 
 ![demo gif](/blogData/window-show-hides-parent-in-tablet-mode/demo.gif)
 
-This is not a desired behavior for small popup windows. To fix it, disallow the window from maximizing by setting `ResizeMode` property to either `NoResize` or `CanMinimize`. 
+This is not a desired behavior for small popup windows. To fix it, disallow the window from maximizing: 
+Set `ResizeMode` property to either `NoResize` or `CanMinimize`. 
 
 ```csharp
 var myWindow = new MyWindow()
