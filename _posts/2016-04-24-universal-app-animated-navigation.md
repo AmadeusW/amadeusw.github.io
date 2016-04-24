@@ -17,6 +17,9 @@ Basic transition
 To add an animated transition to your page, just pass in a type of the transition to `Page.Transitions`. 
 WPF invokes the animation behind the scenes when you're navigating to and from the page.
 
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/entrance.mp4" type="video/mp4">  </video>
+
 ```xml
 <!-- <Page -->
     <Page.Transitions>
