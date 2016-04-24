@@ -8,13 +8,14 @@ tags: [xaml, ui, windows]
 
 Let's explore different ways to animate the navigation across Frames in an Universal App.
 
-Check out the videos below or [explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the app yourself.
+Check out the [demo videos](#demo-of-all-transitions) below or [explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the app yourself.
 
 
 Basic transition
 ===
 
-Add a transition to `Page.Transitions` to set how the page appears and disappears. This is all the code you need, as WPF invokes the animation behind the scenes.
+To add an animated transition to your page, just pass in a type of the transition to `Page.Transitions`. 
+WPF invokes the animation behind the scenes when you're navigating to and from the page.
 
 ```xml
 <!-- <Page -->
@@ -25,64 +26,16 @@ Add a transition to `Page.Transitions` to set how the page appears and disappear
     </Page.Transitions>
 ```
 
-WPF provides a few implementations of `Windows.UI.Xaml.Media.Animation.Transition` that you can plug into `TransitionCollection`. The code sample uses reflection to explore all of the implementations.
-
+WPF provides a few implementations of `Windows.UI.Xaml.Media.Animation.Transition` that you can plug into `TransitionCollection`. 
 Some implementations are more suitable for page navigation than others, and some of them allow you to pass in a parameter that further customizes the behavior.
-
-**AddDeleteThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/addDelete.mp4" type="video/mp4">  </video>
-
-
-**ContentThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/content.mp4" type="video/mp4">  </video>
-
-
-**EdgeThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/edge.mp4" type="video/mp4">  </video>
-
-
-**EntranceThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/entrance.mp4" type="video/mp4">  </video>
-
-
-**PaneThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/pane.mp4" type="video/mp4">  </video>
-
-
-**PopupThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/popup.mp4" type="video/mp4">  </video>
-
-
-**ReorderThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/reorder.mp4" type="video/mp4">  </video>
-
-
-**RepositionThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/reposition.mp4" type="video/mp4">  </video>
-
-
-**NavigationThemeTransition**
-<video width="512" height="386" autoplay loop>
-  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/navigation.mp4" type="video/mp4">  </video>
-
-
-*Note that Left and Right animations were implemented using the "control animation direction" code below.*
-
+You can [see all implementations](#demo-of-all-transitions) below. 
 
 Directional animation
 ===
 
-If you know that a page always comes out from one edge and returns there afterwards, hard-code the transition's parameters into the xaml. 
+If a page always comes out from one edge and returns there afterwards, pass in transition's parameters through xaml. 
 
-Here, the red popup page uses `EdgeUIThemeTransition` and hard-codes the **left edge**.
+Here, the red popup page uses `EdgeUIThemeTransition` associated with the **left edge**.
 
 <video width="512" height="386" autoplay loop>
   <source src="{{baseurl}}/blogData/animated-navigation-universal-app/popupContent.mp4" type="video/mp4">  </video>
@@ -95,19 +48,18 @@ Here, the red popup page uses `EdgeUIThemeTransition` and hard-codes the **left 
 </Page.Transitions>
 ```
 
-Some transitions play exceptionally nice with others. Here, we are navigating **from** `EdgeUIThemeTransition` **to** `PaneThemeTransition`.
+Some transitions play exceptionally nice with others. Here, we are navigating between `PaneThemeTransition` and `EdgeUIThemeTransition` in the popup.
 
 <video width="512" height="386" autoplay loop>
   <source src="{{baseurl}}/blogData/animated-navigation-universal-app/popupPane.mp4" type="video/mp4">  </video>
 
-Not all combinations of "to" and "from" play well together - a race condition may occur and only one transition would play.
 
-Control animation direction
+Continuous swiping animation
 ===
 
 Transitions are not aware of direction of navigation.
 
-To implement **scrolling**, you will need to provide direction of animation, and **inverse** it depending on whether you're navigating **to** or **from** the page.
+To implement **scrolling**, you will need to inverese the direction of animation depending on whether you're navigating **to** or **from** the page.
 
 First, pass in an optional parameter to the `Navigate` method to indicate the animation direction.
 
@@ -118,9 +70,10 @@ Frame rootFrame = Window.Current.Content as Frame;
 rootFrame.Navigate(typeof(MyView), parameter: navigatingRight);
 ```
 
-Add code that adjusts the transition's property just before the animation plays.
+Now, add code that adjusts the transition's property just before the animation plays.
 
-**Notice** that properties in **from** animation are opposites of these in **to** animation to create an illusion of scrolling.
+**Notice** that properties in **from** animation are opposites of these in **to** animation. 
+This way, the page won't return to its initial position, but will simulate animation in one direction.
 
 ```csharp
 // in MyView.xaml.cs
@@ -166,3 +119,54 @@ Voilà!
 <video width="512" height="386" autoplay loop>
   <source src="{{baseurl}}/blogData/animated-navigation-universal-app/paneSwipe.mp4" type="video/mp4">  </video>
 
+Demo of all transitions
+===
+
+Check out [the source code](https://github.com/AmadeusW/xaml-page-transitions) and see the animations in high fidelity. 
+The code is using reflection to find implementations of `Windows.UI.Xaml.Media.Animation.Transition`
+
+**AddDeleteThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/addDelete.mp4" type="video/mp4">  </video>
+
+
+**ContentThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/content.mp4" type="video/mp4">  </video>
+
+
+**EdgeThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/edge.mp4" type="video/mp4">  </video>
+
+
+**EntranceThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/entrance.mp4" type="video/mp4">  </video>
+
+
+**PaneThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/pane.mp4" type="video/mp4">  </video>
+
+
+**PopupThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/popup.mp4" type="video/mp4">  </video>
+
+
+**ReorderThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/reorder.mp4" type="video/mp4">  </video>
+
+
+**RepositionThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/reposition.mp4" type="video/mp4">  </video>
+
+
+**NavigationThemeTransition**
+<video width="512" height="386" autoplay loop>
+  <source src="{{baseurl}}/blogData/animated-navigation-universal-app/navigation.mp4" type="video/mp4">  </video>
+
+Cheers!
