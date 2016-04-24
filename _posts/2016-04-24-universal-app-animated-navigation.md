@@ -85,7 +85,7 @@ public sealed partial class MyView : Page
             return;
         bool navigatingRight = (bool)e.Parameter;
 
-        EntranceAnimation.FromHorizontalOffset = towardsRight ? 300 : -300;
+        EntranceAnimation.FromHorizontalOffset = navigatingRight ? 300 : -300;
     }
 
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
