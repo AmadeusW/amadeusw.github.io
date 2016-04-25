@@ -7,8 +7,13 @@ tags: [xaml, ui, windows]
 ---
 
 Let's explore different ways to animate the navigation across Frames in an Universal App.
+These animations are called Transitions, and WPF provides a few af them. 
 
-Check out the [demo videos](#demo-of-all-transitions) below or [explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the app yourself.
+![banner image](/blogData/animated-navigation-universal-app/animation.png)
+
+We will see how easy it is to create a [transition from and back to a left edge](#directional-animation) of the screen. With some extra code, we will create [transitions that look like continuous scrolling](#continuous-swiping-animation) in one direction. Finally, we will see [demo videos](#demo-of-all-transitions) of all transitions. 
+
+[Explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the demo app yourself.
 
 
 Basic transition
