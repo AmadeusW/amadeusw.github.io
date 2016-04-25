@@ -7,13 +7,13 @@ tags: [xaml, ui, windows]
 ---
 
 Let's explore different ways to animate the navigation across Frames in an Universal App.
-These animations are called Transitions, and WPF provides a few af them. 
+These animations are called Transitions, and WPF provides a few kinds to choose from. 
 
 ![banner image](/blogData/animated-navigation-universal-app/animation.png)
 
-We will see how easy it is to create a [transition from and back to a left edge](#directional-animation) of the screen. With some extra code, we will create [transitions that look like continuous scrolling](#continuous-swiping-animation) in one direction. Finally, we will see [demo videos](#demo-of-all-transitions) of all transitions. 
+We will see how easy it is to create a [transition coming out from and going back to a left edge](#directional-animation) of the screen. With some extra code, we will create [transitions that look like continuous scrolling](#continuous-swiping-animation) in one direction. Finally, we will see [demo videos](#demo-of-all-transitions) of all transitions. 
 
-[Explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the demo app yourself.
+[Explore the source code](https://github.com/AmadeusW/xaml-page-transitions) and run the demo app yourself!
 
 
 Basic transition
@@ -41,7 +41,7 @@ You can [see all implementations](#demo-of-all-transitions) below.
 Directional animation
 ===
 
-If a page always comes out from one edge and returns there afterwards, pass in transition's parameters through xaml. 
+If a page always comes out from one edge and returns there afterwards, it's the easiest to pass in transition's parameters through xaml. 
 
 Here, the red popup page uses `EdgeUIThemeTransition` associated with the **left edge**.
 
@@ -65,9 +65,9 @@ Some transitions play exceptionally nice with others. Here, we are navigating be
 Continuous swiping animation
 ===
 
-Transitions are not aware of direction of navigation.
+Transitions are not aware of direction of navigation. You can pass in a parameter into the `Navigate` method which you can later access in `OnNavigatedTo` and `OnNavigatingFrom` methods.
 
-To implement **scrolling**, you will need to inverese the direction of animation depending on whether you're navigating **to** or **from** the page.
+To implement **scrolling** in the same direction for both **to** and **from** animations, you will need to inverese the direction of one of the animations.
 
 First, pass in an optional parameter to the `Navigate` method to indicate the animation direction.
 
@@ -126,6 +126,8 @@ Voilà!
 
 <video width="512" height="386" autoplay loop>
   <source src="{{baseurl}}/blogData/animated-navigation-universal-app/paneSwipe.mp4" type="video/mp4">  </video>
+
+All screen captures that demonstrate navigation left and right use this code.
 
 Demo of all transitions
 ===
