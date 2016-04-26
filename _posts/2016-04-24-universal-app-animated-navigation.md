@@ -7,6 +7,7 @@ tags: [xaml, ui, windows]
 ---
 
 Let's explore different ways to animate the navigation across Frames in an Universal App.
+These animations are called Transitions, and UWP provides a few kinds to choose from. 
 
 ![banner image](/blogData/animated-navigation-universal-app/animation.png)
 
