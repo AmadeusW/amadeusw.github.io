@@ -58,12 +58,13 @@ Finding a method with specific name
 
 
 Finding a method with specific parameter
+#
  Name matched as string
  Type matched as string
  Type matched as Type
 
-Finding a method with specific type of return value
-#
+This can be extended to finding a method with specific type of return value
+
 
 Finding a class that implements an interface
 ###
@@ -71,7 +72,7 @@ Finding a class that implements an interface
 Find usages of `new` keyword
 ###
 
-Complete example: Find 
+Complete example: Find usages of `new` keyword followed by usage as a param. 
 
 I needed to fix [stringly typed](https://blog.codinghorror.com/new-programming-jargon/) code in hundreds of documents. The code in question followed a certain pattern, and thus yielded itself to automatic refactoring with an analyzer. In this blog post we will see the CodeFixProvider that finds the pattern in the code, and in the second part we will look at the refactoring that uses `nameof` operator to replace stringly typed code, like so:
 
