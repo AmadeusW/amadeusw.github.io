@@ -10,10 +10,10 @@ I made a rookie mistake of hardcoding the weather service API token (key) into a
 
 # Protect the API token 
 
-When an API token is leaked, you need to invalidate it, make sure that a new token won't get leaked again, and get a new token:
+When an API token is leaked, you need to invalidate it. Ensure that a new token won't be leaked again then get a new token:
 
 1. Reset the API token
-  * Ideally, the service provider offers a way reset the API token. The old token becomes invalid, and you get a new one.
+  * Ideally, the service provider offers a way to reset the API token. The old token becomes invalid, and you get a new one.
   * In another case, you need to create a new account and use its API token.
 2. Remove the token from the source code
   * [Rewriting git history](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) is possible, but not recommended - especially if you pushed your changes and others might have pulled them.
@@ -58,7 +58,7 @@ On my dev machine, CI server and production server, we had a version of `Sensiti
 
 # State of things in UWP
 
-Universal apps run in a sandboxed UWP runtime and use a subset of .NET framework.
+Universal apps run in a sandboxed UWP runtime and use a subset of the .NET framework.
 
 On UWP, we have no access to [System.Configuration.ConfigurationManager](https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager%28v=vs.110%29.aspx), but we get limited access to filesystem using APIs shared across all platforms (Desktop, Mobile, IoT etc.)
 
@@ -68,9 +68,9 @@ Microsoft provides a very good guide on how to [Store and retrieve settings and 
 
 # UWP: Read any file bundled with the application
 
-The good news is that UWP provides access not only to some of user's files, and application's little storage locker, but we also have read-only access to the directory where the application's `.exe` is! 
+The good news is that UWP provides access to more than user's Documents. We have access to application's storage locker as well as read-only access to the directory where the application's `.exe` is located. 
 
-To access such file, we just need to set the file's **Build Action** to `Content`. **Copy to Output Directory** doesn't matter. 
+To access files located where `.exe` is, we just need to set the file's **Build Action** to `Content`. **Copy to Output Directory** doesn't matter. 
 
 ![file properties](/blogData/custom-resource-files-in-uwp-windows-10/file-properties.png)
 
@@ -114,10 +114,10 @@ async Task enumerateFiles()
 
 # UWP: Use string resources
 
-Windows offers powerful means to access localized string resources. You can use the resources from both C# back-end and XAML front-end. The main benefit this approach is that the resources come localized and customized to user's device (images use the best size and contrast variants). You don't need to load, read and parse the file yourself. Furthermore, when user changes their language preferences while your app is running, the strings in your app will be updated! These resources go to a `.resw` file, which appears to be a Windows 10 equivalent of `.resx` files.
+Windows offers powerful ways to access localized string resources. You can use the resources from both C# back-end and XAML front-end. The main benefit of this approach is that the resources come localized and customized to the user's device (images use the best size and contrast variants). You don't need to load, read and parse the file yourself. Furthermore, when a user changes their language preferences while your app is running, the strings in your app will be updated! These resources go to a `.resw` file, which appears to be a Windows 10 equivalent of `.resx` files.
 
 Read the [guide on loading string resources](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx) and the
-[guide on creating localized resource files](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965326.aspx) to learn about all features of this approach. 
+[guide on creating localized resource files](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965326.aspx) to learn about all the features of this approach. 
 
 I just wanted to show how to use the most basic flavor of this approach, just to load the API token.
 
@@ -128,7 +128,7 @@ I just wanted to show how to use the most basic flavor of this approach, just to
 ![resource file properties](/blogData/custom-resource-files-in-uwp-windows-10/resource-properties.png)
 
 To access the token from the code, create an instance of `ResourceLoader`, passing in the name of the resource file *without the extension*.
-Suppose you created `resourcesFile.resw` and added a line with key `secret`:
+Suppose you created `resourcesFile.resw` and added a line with the key `secret`:
 
 ```csharp
 var resources = new Windows.ApplicationModel.Resources.ResourceLoader("resourcesFile");
@@ -149,12 +149,12 @@ Suppose someone cloned your repo and wants to run your app. Whether you included
 
 # Conclusion
 
-Whether you're using resources or reading files yourself, both options offer you a way to check in an empty file to the source control.
+Whether you're using resources or reading files yourself, both options offer you a way to consume a file checked into the source control.
 Using resources is slightly easier, as you don't need to open and parse the file. 
 Loading the file yourself, however, gives you far more flexibility if you need it.
 
 **Which method will I use?**
 
-Initially, I was sure I would load and parse a `.json` file. On top of storing API keys, I wanted to store a variable number of other parameters. A JSON array would be the perfect data structure for the job, unlike resources that I need to directly access by name. 
+Initially, I was sure I would load and parse a `.json` file. On top of storing API keys, I wanted to store a number of other parameters. A JSON array would be the perfect data structure for the job, unlike resources that I need to directly access by name. 
 
-But I could store a JSON array as a string resource... I guess I'll give the "official" resources way a try!
+I may feel inclined to try both approaches and store the JSON array as a string resource :)
