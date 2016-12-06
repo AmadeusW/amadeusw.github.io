@@ -3,6 +3,9 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://amadeusw.com" # the base hostname & protocol for your site
 markdown: kramdown
 
+# Fix some shitty bug in jekyll 3 that broke links https://github.com/jekyll/jekyll/issues/4440
+permalink: /:categories/:title/
+
 # Footer:
 title: Amadeus' blog
 myname: Amadeusz Wieczorek
