@@ -2,7 +2,7 @@
 layout: post
 title: Using Fiddler to debug Azure exceptions 
 category: debugging
-permalink: debugging/debugging-azure-with-fiddler
+permalink: debugging/debugging-azure-with-fiddler/
 tags: [dotnet, azure, debugging]
 ---
 
