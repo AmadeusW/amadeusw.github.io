@@ -162,7 +162,6 @@
 
 .body-content {
     background-color: $background-color;
-    margin: 2px;
 }
 
 @include media-query($on-laptop) {
