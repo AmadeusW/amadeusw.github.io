@@ -1,0 +1,10 @@
+Dinosaur
+Table
+Airplane
+Ocean
+City
+Chimney
+Floppy disk
+Can of soda
+Office
+Tissues
