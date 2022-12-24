@@ -1,10 +1,10 @@
-<!doctype html><html><head><title>Amadeus' page</title><link rel=stylesheet href=//amadeusw.com/mypage/css/style.css></head><body><div id=container class=centered><header id=title class="containerelement navcontent"><a class=link href=//amadeusw.com/mypage><span class=headercontent>Amadeo</span></a></header><div id=subtitle class="accent_dotnet containerelement navcontent"><span class=headercontent>Window.Show hides parent window in Tablet mode</span></div><nav class="accent_dotnet containerelement"><div class=navcontent><a class=link href=/mypage/travel/>Travel</a>
-<a class=link href=/mypage/3dprinting/>3D printing</a>
-<a class=link href=/mypage/tech/>Electronics</a>
-<a class=link href=/mypage/projects/>Projects</a>
-<a class=link href=/mypage/cookery/>Cookery</a>
-<a class="link active" href=/mypage/dotnet/>.net</a></div></nav><div id=content class=containerelement><main class=centered><article class=dotnet><p>In Windows 10 Tablet Mode, the active window is always maximized and other windows are hidden. If you <code>Show()</code> a window it will maximize and parent window will minimize.</p><p><em>In this gif we are trying to create a red 200px x 200px popup window.
-In tablet mode it maximizes and white parent window minimizes.</em></p><p><img src=//amadeusw.com/mypage/techBlogData//window-show-hides-parent-in-tablet-mode/demo.gif alt="demo gif"></p><p>This is not a desired behavior for small popup windows. To fix it, disallow the window from maximizing:
+<!doctype html><html><head><title>Amadeus' page</title><link rel=stylesheet href=//amadeusw.com/css/style.css></head><body><div id=container class=centered><header id=title class="containerelement navcontent"><a class=link href=//amadeusw.com><span class=headercontent>Amadeo</span></a></header><div id=subtitle class="accent_dotnet containerelement navcontent"><span class=headercontent>Window.Show hides parent window in Tablet mode</span></div><nav class="accent_dotnet containerelement"><div class=navcontent><a class=link href=/travel/>Travel</a>
+<a class=link href=/3dprinting/>3D printing</a>
+<a class=link href=/tech/>Electronics</a>
+<a class=link href=/projects/>Projects</a>
+<a class=link href=/cookery/>Cookery</a>
+<a class="link active" href=/dotnet/>.net</a></div></nav><div id=content class=containerelement><main class=centered><article class=dotnet><p>In Windows 10 Tablet Mode, the active window is always maximized and other windows are hidden. If you <code>Show()</code> a window it will maximize and parent window will minimize.</p><p><em>In this gif we are trying to create a red 200px x 200px popup window.
+In tablet mode it maximizes and white parent window minimizes.</em></p><p><img src=//amadeusw.com/techBlogData//window-show-hides-parent-in-tablet-mode/demo.gif alt="demo gif"></p><p>This is not a desired behavior for small popup windows. To fix it, disallow the window from maximizing:
 Set <code>ResizeMode</code> property to either <code>NoResize</code> or <code>CanMinimize</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>var</span> myWindow = <span style=color:#66d9ef>new</span> MyWindow()
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    ResizeMode = ResizeMode.NoResize,
