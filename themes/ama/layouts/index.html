@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main>
+    <p>
+        <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
+    </p>
+    <p class="home">
+        {{.Content}}
+    </p>
+    <div class="postList">
+        {{ range .Sections }}
+            {{ partial "listitem.html" . }}
+        {{end}}
+    </div>
+    <p>
+        A few recent posts:
+    </p>
+    <div class="postList">
+        {{ range first 6 .Site.RegularPages}}
+            {{ partial "listitem.html" . }}
+        {{ end }}
+    </div>
+</main>
+{{ end }}

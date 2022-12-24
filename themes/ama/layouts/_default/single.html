@@ -1,0 +1,12 @@
+{{define "main"}}
+<main class="centered">
+    <article class="{{ .Type }}">
+        {{ if .Params.image }}
+        <p>
+            <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
+        </p>
+        {{ end }}
+        {{.Content}}
+    </article>
+</main>
+{{end}}
