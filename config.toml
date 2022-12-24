@@ -1,6 +1,6 @@
 title = 'Amadeus'
 theme = 'ama'
-baseURL = '//amadeusw.com/mypage'
+baseURL = '//amadeusw.com'
 languageCode = 'en-us'
 
 [params]
