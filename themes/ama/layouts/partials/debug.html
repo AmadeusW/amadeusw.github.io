@@ -1,0 +1,52 @@
+<div class="containerelement debug">
+<hr />
+<p>Debug:</p>
+
+
+<p>
+    Variables:
+    <ul>
+    <li>Aliases: {{ .Aliases }}</li>
+    <li>Data: {{ .Data }}</li>
+    <li>IsHome: {{ .IsHome }}</li>
+    <li>Kind: {{ .Kind }}</li>
+    <li>Title: {{ .Title }}</li>
+    <li>Parent: {{ .Parent }}</li>
+    <li>Type: {{ .Type }}</li>
+    <li>Param.title: {{ .Site.Params.title }}</li>
+    <li>Params.title: {{ .Params.title }}</li>
+    </ul>
+</p>
+<p>
+Menus:
+<ul>
+{{ range .Site.Menus }}
+<li>{{ . }}</li>
+{{ end }}
+</ul>
+</p>
+<p>
+Sections:
+<ul>
+{{ range .Site.Sections }}
+<li>{{ . }}</li>
+{{ end }}
+</ul>
+</p>
+<p>
+Taxonomies:
+<ul>
+{{ range .Site.Taxonomies }}
+<li>{{ . }}</li>
+{{ end }}
+</ul>
+</p>
+<p>
+Pages:
+<ul>
+{{ range .Pages }}
+<li>{{ . }}</li>
+{{ end }}
+</ul>
+</p>
+</div>

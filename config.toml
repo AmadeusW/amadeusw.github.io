@@ -1,0 +1,10 @@
+title = 'Amadeus'
+theme = 'ama'
+baseURL = '//amadeusw.com/mypage'
+languageCode = 'en-us'
+
+[params]
+  title = 'Amadeo'
+  footerName = 'Amadeus Wieczorek'
+  footerAbbr = 'Pronounce: A-ma-de-ows Vee-cho-reck'
+  footerDescription = 'I build productivity tools.'

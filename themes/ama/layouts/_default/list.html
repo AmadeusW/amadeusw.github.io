@@ -1,0 +1,37 @@
+{{define "main"}}
+<main>
+    <article class="{{ .Type }}">
+        {{ if .Params.image }}
+        <p>
+            <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
+        </p>
+        {{ end }}
+        {{.Content}}
+    </article>
+    <div class="postList">
+        {{ range .Pages }}
+            {{ partial "listitem.html" . }}
+        {{end}}
+    </ul>
+
+    {{ if .Params.showTags }}
+    <aside class="tagcloud">
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+        <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+        <ul>
+            {{ range $key, $value := $taxonomy }}
+            <li> {{ $key }} </li>
+                <ul>
+                {{ range $value.Pages }}
+                    <li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
+                {{ end }}
+                </ul>
+            {{ end }}
+        </ul>
+        </li>
+    {{ end }}
+    </aside>
+    {{end}}
+</main>
+
+{{end}}
