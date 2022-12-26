@@ -5,7 +5,7 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: #454;
   color: #ddd;
-  max-width: 95vw;
+  max-width: 1200px;
   width: 90%;
 }
 
@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   body {
     width: 100%;
     padding: 0 0.5em;
