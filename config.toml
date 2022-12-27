@@ -5,6 +5,6 @@ languageCode = 'en-us'
 
 [params]
   title = 'Amadeo'
-  footerName = 'Amadeus Wieczorek'
+  footerName = 'Amadeusz Wieczorek'
   footerAbbr = 'Pronounce: A-ma-de-ows Vee-cho-reck'
   footerDescription = 'I build productivity tools.'
