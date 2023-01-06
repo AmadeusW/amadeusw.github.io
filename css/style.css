@@ -11,10 +11,10 @@ body {
 
 #container {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 3fr);
+  grid-template-columns: 1fr minmax(0, 4fr);
   grid-template-rows: 4em auto 4em;
   grid-template-areas: "title subtitle" "navigation content" "footer footer";
-  gap: 16px;
+  gap: 52px;
   justify-content: space-between;
 }
 
@@ -103,16 +103,18 @@ nav {
   overflow-y: scroll;
 }
 
-p>code {
+code {
   color: #ffa;
   /*background-color: #343;*/
   background-color: #272822;
-  padding: 0.5em;
+  padding: 0.3em;
+  margin: 0.2em;
 }
 
 pre {
+  background-color: #272822;
   padding: 0.5em;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 a {
@@ -136,7 +138,8 @@ a:hover {
 
 .headercontent {
   line-height: 1em;
-  font-size: 1.2em;
+  font-size: 1.6em;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
