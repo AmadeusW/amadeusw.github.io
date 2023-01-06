@@ -17,12 +17,12 @@ $ echo 'password' | openssl passwd -6 -stdin
 $6$k5M8bJM8sciQg4N4$8STzoHVsSyzdjpzjuUhn6UDhxcbe/JlQB4WUbEBPl/1kIRBd8q3QA.I4h6hGCEdACLgt3ejDQj4qJIxNohOts0
 ```
 
-# Setup of headless raspberry pi
-* Download [Raspberry Pi OS Lite]([Operating system images – Raspberry Pi](https://www.raspberrypi.com/software/operating-systems/))
-* Use [Etcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher/)) to flash downloaded .zip onto a MicroSD card
-* After flashing, open the FAT partition as folder in your code editor, and
-  * Create file named `ssh`. Keep it empty
-  * Create file named `wpa_supplicant.conf` with the following content
+# Setup the headless raspberry pi
+* Download [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)
+* Use [Etcher](https://www.balena.io/etcher/)) to flash downloaded .zip onto a MicroSD card
+* After flashing, open the FAT partition as folder in your code editor, and:
+  * Create file named `ssh`. Keep it empty.
+  * Create file named `wpa_supplicant.conf` and insert, replacing values of `ssid` and `psk`
 
 ```wpa_supplicant.conf
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -35,14 +35,17 @@ network={
      scan_ssid=1
 }
 ```
-  * Create file named `userconf` with the following content `username:encrypted-password` where encrypted-password is output of the openssl command above
-  
+  * Create file named `userconf` with the following content `username:encrypted-password`, replacing `encrypted-password` with the output of the above openssl command.
+
+# First boot
+
 * Insert MicroSD in Raspberry Pi and power it up
-* If you see an error about tampering with fingerprint, open `~/.ssh/known-hosts` and remove line containing `raspberry`
-* Run `sudo raspi-config` to configure the hostname, timezone, and other relevant settings. When quitting, you'll be prompted to restart.
+  * If you see an error about tampering with fingerprint, open `~/.ssh/known-hosts` and remove line containing `raspberry`, that's from another device.
+* Run `sudo raspi-config` to configure the hostname, timezone, and other relevant settings.
+  * When quitting, you'll be prompted to restart.
 * When Rapsberry Pi reboots, connect using new hostname, e.g. `ssh pi@newhostname`
 * Change password `passwd pi`
-* Update available package sources `sudo apt update`
+* Update sources of available packages `sudo apt update`
 * Upgrade installed packages `sudo apt full-upgrade`
 
 
