@@ -119,11 +119,12 @@ pre {
 
 a {
   text-decoration: none;
+  font-weight: bold;
   color: #eef;
 }
 
 a:hover {
-  /*text-decoration: underline;*/
+  text-decoration: underline;
   color: #fff;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
 }
@@ -195,11 +196,13 @@ article>p:first-child {
   background-color: #464;
   border: 1px solid #aaa;
   margin: 0.3em 0;
+  font-weight: normal;
 }
 
 .post:hover {
   background-color: #575;
   border: 1px solid #aea;
+  text-decoration: none;
 }
 
 .post>div {
