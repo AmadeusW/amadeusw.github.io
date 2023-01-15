@@ -1,0 +1,4 @@
+<span x-text="amount * {{ .Get 1 }}">{{ .Get 1 }}</span>
+{{ with .Get 2 }}<span> {{ . }}</span>{{ end }}
+{{ .Get 0 }}.
+<br />
