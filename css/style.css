@@ -207,6 +207,10 @@ article>p:first-child {
   font-style: italic;
 }
 
+.recipe span {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 700px) {
   body {
     width: auto;

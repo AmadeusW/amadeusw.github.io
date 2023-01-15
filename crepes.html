@@ -1,0 +1,26 @@
+<script src="//unpkg.com/alpinejs" defer></script>
+ 
+<div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <span x-show="open">
+      Content...
+    </span>
+</div>
+<div x-data="{ amount: 4 }">
+    <p>
+    <button @click="amount = 1">1</button>
+    <button @click="amount = 2">2</button>
+    <button @click="amount = 3">3</button>
+    <button @click="amount = 4">4</button>
+    <button @click="amount = 5">5</button>
+    <button @click="amount = 6">6</button>
+    <input type="number" x-model="amount" />
+    </p>
+    <p>
+        <span x-text="(amount * 150)">test</span>g flour.
+        <span x-text="amount">test</span> eggs.
+        <span x-text="amount * 150">test</span>g milk.
+        <span x-text="amount / 2">test</span> teaspoon cognac.
+    </p>
+</div>

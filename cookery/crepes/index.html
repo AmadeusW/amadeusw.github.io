@@ -1,0 +1,26 @@
+<!doctype html><html><head><title>Amadeus' page</title><link rel=stylesheet href=//amadeusw.com/css/style.css><meta name=viewport content="width=device-width,initial-scale=1"></head><body><div id=container class=centered><header id=title class="containerelement navcontent"><a class=link href=//amadeusw.com><span class=headercontent>Amadeo</span></a></header><div id=subtitle class="accent_cookery containerelement navcontent"><span class=headercontent>Crepes</span></div><nav class="accent_cookery containerelement"><div class=navcontent><a class=link href=/travel/>Travel</a>
+<a class=link href=/3dprinting/>3D printing</a>
+<a class=link href=/tech/>Electronics</a>
+<a class=link href=/projects/>Projects</a>
+<a class="link active" href=/cookery/>Cookery</a>
+<a class=link href=/dotnet/>.net</a></div></nav><div id=content class=containerelement><main class=centered><article class=cookery><p>Simona&rsquo;s <strong>clatite</strong> recipe:</p><p>Mix all ingredients, leave aside for 10 minutes and fry on the pan.
+For the most fluffines, leave aside in the fridge for a few hours.</p><p>Warm up a pan to high, coat with oil and add pour roughly 60ml mixture, spreading it quickly around the whole surface.
+After a minute, use a butter knife to turn the crepe on the other side. Keep on the pan for another minute or less.</p><script src=//unpkg.com/alpinejs defer></script><div class=recipe x-data='{ base: 4, amount: 1 }' x-init='$watch("base", base => { amount = base/ 4; })'><p><button @click="base = 1">1</button>
+<button @click="base = 2">2</button>
+<button @click="base = 3">3</button>
+<button @click="base = 4">4</button>
+<button @click="base = 5">5</button>
+<button @click="base = 6">6</button>
+<input type=number x-model=base></p><p><p><span x-text="amount * 4">4</span>
+eggs.<br><span x-text="amount * 250">250</span>
+<span>g</span>
+flour.<br><span x-text="amount * 500">500</span>
+<span>ml</span>
+milk.<br><span x-text="amount * 1">1</span>
+<span>tablespoon</span>
+vanilla sugar.<br><span x-text="amount * 1">1</span>
+<span>tablespoon</span>
+cognac.<br><span x-text="amount * 50">50</span>
+<span>g</span>
+melted butter.<br><span>dash</span> of salt.<br></p><p>Makes <span x-text="amount * 20">20</span>
+crepes.<br></p></div></p></div></article></main></div><div id=footer class=containerelement><div id=footerName><abbr title="Pronounce: A-ma-de-ows Vee-cho-reck">Amadeus Wieczorek</abbr></div><div id=footerUnderName>I supercharge your productivity.</div><ul id=footerLinks><li><a href=//github.com/amadeusw>My github</a></li><li><a href=//amadeusw.com/portfolio>2013 portfolio</a></li><li><a href=feed.xml>RSS feed</a></li><li><a href=#>Scroll to top</a></li></div></div></div></body></html>
