@@ -218,6 +218,9 @@ article>p:first-child {
     grid-template-areas: "title" "subtitle" "content" "footer" ;
     gap: 8px;
   }
+  nav {
+    display: none;
+  }
   .link {
     padding: 0;
   }
