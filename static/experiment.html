@@ -15,22 +15,19 @@
         <input type="text" id="line1" value="Single line" />
         <input type="text" id="line2" value="Another line" />
         <input type="text" id="line3" value="Finish" />
+        <input type="text" id="line4" value="" style="visibility: hidden" />
     </body>
-    <script>
-        documebt
-    </script>
 </html>
 
 <script>
-    document.getElementById("up").addEventListener("mousedown", goUp);
     document.getElementById("down").addEventListener("mousedown", goDown);
-    
+
     function goDown(event) {
       console.log("goDown");
-      const l0 = document.getElementById("textarea");
       const l1 = document.getElementById("line1");
       const l2 = document.getElementById("line2");
       const l3 = document.getElementById("line3");
+      const l4 = document.getElementById("line4");
       if (l1 === document.activeElement)
       {
         console.log("l1 has focus");
@@ -44,12 +41,14 @@
       else if (l3 === document.activeElement)
       {
       console.log("l3 has focus");
-        l0.focus();
+        l4.style = "visibility: visible;"
+        l4.focus();
       }
-      else if (l0 === document.activeElement)
+      else if (l4 === document.activeElement)
       {
-        console.log("l0 has focus");
+        console.log("l4 has focus");
         l1.focus();
+        l4.style = "visibility: hidden;"
       }
       else
       {
@@ -58,34 +57,5 @@
       event.preventDefault();
       console.log("goDown finished");
     }
-    
-    function goUp(event) {
-      console.log("goUp");
-      const l0 = document.getElementById("textarea");
-      const l1 = document.getElementById("line1");
-      const l2 = document.getElementById("line2");
-      const l3 = document.getElementById("line3");
-      if (l1 === document.activeElement)
-      {
-        l0.focus();
-      }
-      else if (l2 === document.activeElement)
-      {
-        l1.focus();
-      }
-      else if (l3 === document.activeElement)
-      {
-        l2.focus();
-      }
-      else if (l0 === document.activeElement)
-      {
-        l3.focus();
-      }
-      else
-      {
-        console.log("crap, something else has focus");
-      }
-      event.preventDefault();
-      console.log("goUp finished");
-    }
+
 </script>
