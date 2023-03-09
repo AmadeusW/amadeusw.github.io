@@ -1,0 +1,23 @@
+<!-- infrastructure -->
+<script src="//unpkg.com/alpinejs" defer></script>
+ 
+<!-- recipe content -->
+<!-- todo: rename amoutn to multiplier-->
+<div 
+    class='recipe'
+    x-data='{ base: {{ .Get "default" }}, amount: 1 }'
+    x-init='$watch("base", base => { amount = base/ {{ .Get "default" }}; })'
+    >
+    <p>
+        <button @click="base = 1">1</button>
+        <button @click="base = 2">2</button>
+        <button @click="base = 3">3</button>
+        <button @click="base = 4">4</button>
+        <button @click="base = 5">5</button>
+        <button @click="base = 6">6</button>
+        <input type="number" x-model="base" />
+    </p>
+    <p>
+        {{.Inner}}
+    </p>
+</div>
