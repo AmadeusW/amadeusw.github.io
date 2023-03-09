@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Experiment</title>
+    </head>
+    <body style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: row;">
+            <input type="button" id="up" value="🔼" onclick="goUp" />
+            <input type="button" id="down" value="🔽" onclick="goDown" />
+            <input type="button" id="edit" value="↔" onclick="goEdit" />
+        </div>
+        <textarea rows="5" id="textarea">This is a sample text
+            Inside the text area
+            with five rows
+        </textarea>
+        <input type="text" id="line1" value="Single line" />
+        <input type="text" id="line2" value="Another line" />
+        <input type="text" id="line3" value="Finish" />
+    </body>
+    <script>
+        documebt
+    </script>
+</html>
+
+<script>
+    document.getElementById("up").addEventListener("mousedown", goUp);
+    document.getElementById("down").addEventListener("mousedown", goDown);
+    
+    function goDown(event) {
+      console.log("goDown");
+      const l0 = document.getElementById("textarea");
+      const l1 = document.getElementById("line1");
+      const l2 = document.getElementById("line2");
+      const l3 = document.getElementById("line3");
+      if (l1 === document.activeElement)
+      {
+        console.log("l1 has focus");
+        l2.focus();
+      }
+      else if (l2 === document.activeElement)
+      {
+      console.log("l2 has focus");
+        l3.focus();
+      }
+      else if (l3 === document.activeElement)
+      {
+      console.log("l3 has focus");
+        l0.focus();
+      }
+      else if (l0 === document.activeElement)
+      {
+        console.log("l0 has focus");
+        l1.focus();
+      }
+      else
+      {
+        console.log("crap, something else has focus");
+      }
+      event.preventDefault();
+      console.log("goDown finished");
+    }
+    
+    function goUp(event) {
+      console.log("goUp");
+      const l0 = document.getElementById("textarea");
+      const l1 = document.getElementById("line1");
+      const l2 = document.getElementById("line2");
+      const l3 = document.getElementById("line3");
+      if (l1 === document.activeElement)
+      {
+        l0.focus();
+      }
+      else if (l2 === document.activeElement)
+      {
+        l1.focus();
+      }
+      else if (l3 === document.activeElement)
+      {
+        l2.focus();
+      }
+      else if (l0 === document.activeElement)
+      {
+        l3.focus();
+      }
+      else
+      {
+        console.log("crap, something else has focus");
+      }
+      event.preventDefault();
+      console.log("goUp finished");
+    }
+</script>
