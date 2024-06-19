@@ -1,7 +1,7 @@
 ---
 title: 'Cookery'
 date: 2022-12-18
-weight: 6
+weight: 8
 ---
 
-Recipes are coming soon!
+Recipes and culinary experiments

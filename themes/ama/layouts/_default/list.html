@@ -1,18 +1,27 @@
 {{define "main"}}
 <main>
     <article class="{{ .Type }}">
+        
+        <header id="postheader" class="accent_{{ .Type }}">
+            {{ .Title }}
+        </header>        
+
         {{ if .Params.image }}
-        <p>
+        <figure id="postpicture">
             <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
-        </p>
+        </figure>
         {{ end }}
+        
         {{.Content}}
+
     </article>
-    <div class="postList">
+    <nav class="postList">
+        <ul>
         {{ range .Pages }}
-            {{ partial "listitem.html" . }}
+            {{ partial "listitem_with_summary.html" . }}
         {{end}}
-    </ul>
+        </ul>
+    </nav>
 
     {{ if .Params.showTags }}
     <aside class="tagcloud">
