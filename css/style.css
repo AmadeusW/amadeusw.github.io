@@ -1,237 +1,156 @@
+/* Copied from https://edw.is/about-this-website/ */
+*,*:before,*:after {
+    box-sizing: border-box
+}
+
+html {
+    font-size: 80%
+}
+
 body {
-  margin: 0 auto;
-  font-size: 20px;
-  line-height: 1.6em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #454;
-  color: #ddd;
-  max-width: 1200px;
-  width: 90%;
+    font-size: 1.5rem;
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 0 auto;
+    padding: 0 16px;
+    line-height: 1.5;
+    max-width: 75rem
 }
 
-#container {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 4fr);
-  grid-template-rows: 4em auto 4em;
-  grid-template-areas: "title subtitle" "navigation content" "footer footer";
-  gap: 52px;
-  justify-content: space-between;
+footer {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
 }
 
-.centered {
-  margin: 0 auto;
+header#title {
+    margin: 25px 0
 }
 
-.containerelement {
-  background-color: #454;
-  /*border: 1px solid #fed;*/
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    line-height: 1.15
 }
 
-#title {
-  grid-area: title;
-  align-self: end;
-  justify-self: stretch;
+p {
+    margin: 12px 0
 }
 
-#subtitle {
-  grid-area: subtitle;
-  align-self: end;
-  justify-self: stretch;
-  padding-bottom: 0.58em; /* match 0.4em title padding plus 0.18em to fully align it */
+header#post-header h1 {
+    display: block
 }
 
-nav {
-  grid-area: navigation;
-  justify-self: stretch;
+header#post-header>div {
+    display: block;
+    color: #767676
 }
 
-#content {
-  grid-area: content;
-  justify-self: stretch;
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center
 }
 
-#footer {
-  grid-area: footer;
-  justify-self: stretch;
-  margin-top: 2em;
-  padding-top: 1em;
-  margin-bottom: 1em;
-
-  display: grid;
-  grid-template-columns: 2fr minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  grid-template-areas: "footerName footerName" "footerUnderName footerLinks";
-  gap: 16px;
-  justify-content: space-between;
-
-  border-top: 1px #ddd solid;
+li {
+    line-height: 1.5
 }
 
-#footerName {
-  grid-area: footerName;
-  font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
-  color: #ddd;
-  font-weight: 300;
+li>p {
+    margin: 0
 }
 
-#footerUnderName {
-  grid-area: footerUnderName;
-  font-size: 0.9em;
+figure {
+    display: block
 }
 
-#footerLinks {
-  grid-area: footerLinks;
-  list-style: none;
-  margin: 0;
-  text-align: right;
+figure img {
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center
 }
 
-.debug {
-  overflow-y: scroll;
+figure figcaption {
+    font-size: .92em;
+    text-align: center;
+    margin-top: 6px;
+    padding: 0 10px
 }
 
-code {
-  color: #ffa;
-  /*background-color: #343;*/
-  background-color: #272822;
-  padding: 0.3em;
-  margin: 0.2em;
+figure figcaption p {
+    display: inline
+}
+
+blockquote {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    border-left: solid 3px;
+    border-radius: 3px;
+    font-size: 14px
 }
 
 pre {
-  background-color: #272822;
-  padding: 0.5em;
-  overflow-x: auto;
+    background: #f8f8f8;
+    font-family: monospace;
+    display: block;
+    overflow-x: auto;
+    font-size: 1.3rem;
+    white-space: pre-wrap;
+    margin: 20px 0;
+    padding: 1.5rem;
+    line-height: 1.4;
+    border: 1px solid
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #eef;
+p>code {
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #f2f2f2
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+blockquote.hint-info {
+    background-color: #f9f9f9;
+    color: #464646
 }
 
-.accent_travel {
-  border-color: #696 !important;
+blockquote.hint-warning {
+    border-left-color: #fd6!important;
+    background-color: #ffdd6660
 }
 
-.accent_tech {
-  border-color: #68a !important;
+blockquote.hint-danger {
+    border-left-color: #f66!important;
+    background-color: #ff666660
 }
 
-.headercontent {
-  line-height: 1em;
-  font-size: 1.6em;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
+video {
+    display: block;
+    margin: auto
 }
 
-.navcontent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
+table,th,td {
+    border: 1px solid #000
 }
 
-.link {
-  padding: 0.4em 0.8em;
+th,td {
+    padding: 6px
 }
 
-.link:hover {
-  background: #676;
+table {
+    border-collapse: collapse;
+    border-spacing: 10px
 }
 
-.active {
-  background: #565;
+kbd {
+    border-radius: 3px;
+    padding: 1px 2px 0;
+    border: 1px solid #000
 }
-
-main {
-  /*background: #565;*/
-  line-height: 1.9em;
-}
-
-main img {
-  background: #eef;
-  max-width: 100%;
-  /*padding: 2px 2px 2px 14px;*/
-  margin: -2px;
-  border: 1px solid #bbc;
-}
-
-article>p:first-child {
-  margin-top: 0.4em;
-}
-
-.postList {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-between;
-  list-style-type: none;
-}
-
-.post {
-  display: block;
-  max-width: 100%;
-  /*width: 45%; uncomment if .postList flex-wrap is wrap*/
-  background-color: #464;
-  border: 1px solid #aaa;
-  margin: 0.3em 0;
-  font-weight: normal;
-}
-
-.post:hover {
-  background-color: #575;
-  border: 1px solid #aea;
-  text-decoration: none;
-}
-
-.post>div {
-  display: flex;
-  flex-direction: column;
-  margin: 0.7em;
-}
-
-.postheader {
-  /*text-align: center;*/
-  margin-bottom: 1em;
-}
-
-.postsummary {
-  font-style: italic;
-}
-
-.recipe span {
-  font-weight: bold;
-}
-
-@media screen and (max-width: 700px) {
-  body {
-    width: auto;
-    padding: 0.5em;
-  }
-  #container {
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto auto auto 4em;
-    grid-template-areas: "title" "subtitle" "content" "footer" ;
-    gap: 8px;
-  }
-  nav {
-    display: none;
-  }
-  .link {
-    padding: 0;
-  }
-  .headercontent {
-    font-size: 1.2em;
-    padding: 0.4em 0;
-  }
-}
-
-/* For photo album, use https://css-tricks.com/adaptive-photo-layout-with-flexbox/ */
