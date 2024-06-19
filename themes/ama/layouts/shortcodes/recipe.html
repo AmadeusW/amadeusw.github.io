@@ -9,13 +9,16 @@
     x-init='$watch("base", base => { amount = base/ {{ .Get "default" }}; })'
     >
     <p>
-        <button @click="base = 1">1</button>
-        <button @click="base = 2">2</button>
-        <button @click="base = 3">3</button>
-        <button @click="base = 4">4</button>
-        <button @click="base = 5">5</button>
-        <button @click="base = 6">6</button>
-        <input type="number" x-model="base" />
+        How many crepes do you want?
+    </p>
+    <p>
+        <button @click="base = 1">5</button>
+        <button @click="base = 2">10</button>
+        <button @click="base = 3">15</button>
+        <button @click="base = 4">20</button>
+        <button @click="base = 5">25</button>
+        <button @click="base = 6">30</button>
+        <!--<input type="number" x-model="base" />-->
     </p>
     <p>
         {{.Inner}}

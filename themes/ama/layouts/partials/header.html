@@ -1,22 +1,5 @@
-<header id="title" class="containerelement navcontent" >
-    <a class="link {{ if .IsHome }} active {{ end }}" href={{.Site.BaseURL}}>
-        <span class="headercontent">
-            {{ .Site.Params.title }}
-        </span>
+<header id="title" >
+    <a href={{.Site.BaseURL}}>
+        <h2>{{ .Site.Params.title }}</h2>
     </a>
 </header>
-<div id="subtitle" class="accent_{{ .Type }} containerelement navcontent">
-    <span class="headercontent">
-        {{ .Title }}
-    </span>
-</div>
-
-<nav class="accent_{{ .Type }} containerelement">
-    {{ $section := .Section }}
-    <div class="navcontent">
-        {{ range .Site.Sections }}
-            <a class="link {{ if eq .Section $section }} active {{end}}" href="{{.RelPermalink}}">{{.Title}}</a>    
-        {{ end }}
-    </div>
-</nav>
-
