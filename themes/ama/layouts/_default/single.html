@@ -1,19 +1,18 @@
 {{define "main"}}
-<main>
-    <article class="{{ .Type }}">
+<article class="{{ .Type }}">
+    {{ if .Params.image }}
+    <picture id="postpicture">
+        <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
+    </picture>
+    {{ end }}
 
-        {{ if .Params.image }}
-        <picture id="postpicture">
-            <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
-        </picture>
-        {{ end }}
+    <header id="postheader" class="accent_{{ .Type }}">
+        <h3>{{ .Title }}</h3>
+    </header>
 
-        <header id="postheader" class="accent_{{ .Type }}">
-            <h3>{{ .Title }}</h3>
-        </header>
-        
+    <main>
         {{.Content}}
+    </main>
 
-    </article>
-</main>
+</article>
 {{end}}
