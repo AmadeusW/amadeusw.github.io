@@ -1,12 +1,13 @@
 {{ define "main" }}
-<main>
+<article>
     <picture id="postpicture">
         <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
     </picture>
 
-    <p class="home">
+    <main>
         {{.Content}}
-    </p>
+    </main>
+
     <nav class="postList">
         <ul>
         {{ range .Sections }}
@@ -28,5 +29,5 @@
     </nav>
     -->
 
-</main>
+</article>
 {{ end }}
