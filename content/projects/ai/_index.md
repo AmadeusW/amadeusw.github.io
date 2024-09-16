@@ -1,6 +1,6 @@
 ---
-title: "AI drama"
-summary: "Getting two LLMs to chat"
+title: "AI's secret"
+summary: "Getting two LLMs to spill the beans"
 date: 2024-09-13T21:20:08-07:00
 ---
 
