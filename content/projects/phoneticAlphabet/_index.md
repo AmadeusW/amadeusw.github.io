@@ -1,0 +1,353 @@
+---
+title: "Phonetic alphabet input"
+summary: "Easily type phonetic alphabet letters"
+date: 2022-11-23T21:20:50-08:00
+---
+
+As part of the cognitive science minor, I took a phonetics class. I thoroughly enjoyed it, and wrote a simple tool to help type the letters of the phonetic alphabet.
+
+To use: **Up and Down arrows** cycle through related phonetic symbols. **Left and Right arrows** move the cursor.
+
+{{< rawhtml >}}
+        <style>@import url('ipa.css')</style>
+
+		<div class="container">
+			<p>
+				<input type="text" id="textField" size="30" value="press up and down aɹɹows"/><br/>
+			</p>
+			<div class="suggestions">
+				
+			</div>
+        </div>
+<!--
+			<p>
+				debug:<br />
+				Before caret: <span class="r0"></span>; Selected: <span class="r2"></span>
+				<br />
+				Symbol: <span class="r4"></span>
+			</p>
+			<p>
+
+				<span class="sense"></span> -
+				<span class="sense2"></span> -
+				<span class="sense3"></span> -
+				<span class="sense4"></span>
+			</p>
+-->
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+
+		<script type="text/javascript">
+		var currentSegment;
+		var currentBucket;	// BucketID of bucket that contains currentSegment
+		var currentSymbol;	// SymbolID of currentSegment in a bucket
+		var arrays;			// Contains buckets with symbols
+
+		(function($){
+
+			$("document").ready(function(){
+
+				arrays = createTables();
+				document.getElementById("textField").setSelectionRange(20, 20);
+				document.getElementById("textField").focus();
+				display($("#textField"));
+
+				$("#textField").keyup(function()
+				{
+					display($(this));
+				}
+				).keydown(function(e)
+				{
+					display($(this));
+
+					if (e.keyCode != 38 && e.keyCode != 40)
+					{
+						// It's not an up/down arrow, don't do anything extra
+						return true;
+					}
+
+					if (currentSymbol == -1)
+					{
+						// There were no matches, don't do anything
+						return true;
+					}
+
+					var bucketContent = arrays[currentBucket];
+
+					if (e.keyCode == 40)
+					{ // Down arrow
+						if (currentSymbol < bucketContent.length - 1)
+						{
+							currentSymbol++;
+						}
+						else
+						{
+							currentSymbol = 0;
+						}
+					}
+					else
+					{ // Up arrow
+						if (currentSymbol > 0)
+						{
+							currentSymbol--;
+						}
+						else
+						{
+							currentSymbol = bucketContent.length - 1;
+						}
+					}
+
+					// Retrieve the new symbol from the table
+					currentSegment = bucketContent[currentSymbol];
+
+					// Put the new symbol in the text box
+					var select = getSelected($(this));
+					var newString = select[3] + currentSegment.getCharacter() + select[1];
+					$("#textField").val(newString);
+
+					// Restore the selection
+					var caretPos = select[3].length + currentSegment.getCharacter().length;
+					document.getElementById("textField").setSelectionRange(caretPos, caretPos);
+
+					// Debug
+					//Debug $("span.r4").text(currentSegment.getCharacter());
+
+
+					return false;
+
+				}
+				).keypress(function()
+				{
+					display($(this));
+				}
+				).mousemove(function()
+				{
+					display($(this));
+				}
+				).mouseup(function()
+				{
+					display($(this));
+				}
+				);
+			});
+
+			function Symbol(inCharacter, inDescription, inExample, inExampleLink)
+			{
+				var character = inCharacter;
+				var description = inDescription;
+				var example = inExample;
+				var exampleLink = inExampleLink;
+
+				this.getCharacter = function()
+				{
+					return character;
+				}
+				this.getDescription = function()
+				{
+					return description;
+				}
+				this.getExample = function()
+				{
+					return example;
+				}
+				this.getExampleLink = function()
+				{
+					return exampleLink;
+				}
+			}
+
+			function createTables()
+			{
+
+				var a1 = new Symbol("i",	"high tense front unrounded",	"P<u>e</u>te, b<u>ea</u>t",				"");
+				var a2 = new Symbol("ɪ",	"high lax front unrounded",		"p<u>i</u>t, b<u>i</u>t",				"");				
+				var a3 = new Symbol("e",	"upper mid front unrounded",			"l<u>a</u>te, b<u>ai</u>t",				"");
+				var a4 = new Symbol("ɛ",	"lower mid front unrounded",		"p<u>e</u>t, b<u>e</u>t",				"");
+				var a5 = new Symbol("æ",	"low front unrounded",			"p<u>a</u>t, b<u>a</u>t",				"");
+
+				var a6 = new Symbol("ə",	"mid central unrounded",		"<u>a</u>bout, sof<u>a</u>",			"");
+				var a7 = new Symbol("ʌ",	"lower mid central unrounded",	"p<u>u</u>tt, b<u>u</u>t",				"");
+				var a8 = new Symbol("a",	"low central unrounded",		"P<u>a</u>rk <i>(wide)</i>",			"");
+				
+				var a9 = new Symbol("u",	"high tense back rounded",		"st<u>oo</u>p, b<u>oo</u>t",			"");
+				var a10 = new Symbol("ʊ",	"high lax back rounded",		"p<u>u</u>t, f<u>oo</u>t",				"");
+				var a11 = new Symbol("o",	"upper mid back rounded",				"p<u>o</u>ke, b<u>oa</u>t",				"");
+				var a12 = new Symbol("ɔ",	"lower mid back rounded",			"p<u>o</u>rt, b<u>ou</u>ght",			"");
+				var a13 = new Symbol("ɑ",	"low back unrounded",			"p<u>o</u>t, f<u>a</u>ther",			"");				
+
+				var b1 = new Symbol("b",	"voiced bilabial stop",			"<u>b</u>e, so<u>b</u>, subur<u>b</u>",	"");
+
+				//var c1 = new Symbol("c",	"letter b",						"<u>a</u>quarium",			"");
+
+				var d1 = new Symbol("d",	"voiced alveolar stop",			"<u>d</u>uck, <u>d</u>ad, re<u>d</u>o",				"");
+
+				//var e1 = new Symbol("e",	"letter e",						"<u></u>",				"");
+
+				var f1 = new Symbol("f",	"voiceless labiodental fricative",	"<u>f</u>ish, cou<u>gh</u>, <u>ph</u>iloso<u>ph</u>y",				"");
+
+				var g1 = new Symbol("g",	"voiced velar stop",					"<u>g</u>oose, fo<u>g</u>, a<u>g</u>ain",							"");
+				var g2 = new Symbol("ʤ",	"voiced palatoalveolar affricate",		"<u>j</u>azz, <u>g</u>iraffe, delu<u>g</u>e, fu<u>dg</u>e",							"");
+				var g3 = new Symbol("ʒ",	"voiced palatoalveolar fricative",		"<u>J</u>acques, mea<u>s</u>ure, rou<u>g</u>e, vi<u>s</u>ual, gara<u>g</u>e, a<u>z</u>ure",							"");
+
+				var h1 = new Symbol("h",	"voiceless glottal fricative",	"<u>h</u>ow, ad<u>h</u>ere",				"");
+				var h2 = new Symbol("ʔ",	"voiceless glottal stop",		"<u>uh-oh</u>",				"");
+
+				//var i1 = new Symbol("i",	"letter i",						"<u></u>",				"");
+
+				var j1 = new Symbol("j",	"palatal glide",				"<u>y</u>es, ass<u>*</u>ume, f<u>ew</u>, <u>y</u>et, <u>u</u>se",				"");
+				var j2 = new Symbol("y",	"letter y",						"<i>Alternative symbol for sound j</i>",				"");
+
+				var k1 = new Symbol("k",	"voiceless velar stop",			"<u>k</u>iss, <u>c</u>at, <u>ch</u>oir, <u>q</u>ui<u>ck</u>",				"");
+				var k2 = new Symbol("c",	"letter c",						"<i>n/a</i>",			"");
+
+				var l1 = new Symbol("l",	"alveolar (lateral) liquid",	"<u>l</u>ight, me<u>l</u>on, fa<u>ll</u>",				"");
+
+				var m1 = new Symbol("m",	"bilabial nasal",				"<u>m</u>uffin, la<u>m</u>b, le<u>m</u>on",				"");
+
+				var n1 = new Symbol("n",	"alveolar nasal",				"<u>n</u>est, moo<u>n</u>, fu<u>nn</u>y",				"");
+				var n2 = new Symbol("ŋ",	"velar nasal",					"si<u>ng</u>, si<u>ng</u>le, ba<u>n</u>k, twi<u>n</u>kle",				"");
+
+				//var o1 = new Symbol("o",	"letter o",						"<u></u>",				"");
+
+				var p1 = new Symbol("p",	"voiceless bilabial stop",		"<u>p</u>ie, <u>p</u>o<u>p</u>, <u>p</u>u<u>pp</u>y",	"");
+
+				var q1 = new Symbol("q",	"letter q",						"<i>n/a</i>",				"");
+
+				var r1 = new Symbol("r",	"letter r",						"<i>n/a</i>",				"");
+				var r2 = new Symbol("ɹ",	"retroflex approximant (glide)",		"<u>r</u>ed, <u>r</u>ota<u>r</u>y, fa<u>r</u>",				"");
+
+				var s1 = new Symbol("s",	"voiceless alveolar fricative",			"<u>s</u>ip, pa<u>ss</u>, <u>c</u>ele<u>s</u>tial, fa<u>c</u>e",				"");
+				var s2 = new Symbol("ʃ",	"voiceless palatoalveolar fricative",	"<u>sh</u>ip, <u>ch</u>ef, <u>s</u>ure, na<u>t</u>ion, da<u>sh</u>, pre<u>ss</u>ure",				"");
+
+				var t1 = new Symbol("t",	"voiceless alveolar stop",				"<u>t</u>eam, fa<u>t</u>, s<u>t</u>op",				"");
+				var t2 = new Symbol("θ",	"voiceless (inter)dental fricative",	"<u>th</u>ick, ba<u>th</u>, re<u>th</u>ink",				"");
+				var t3 = new Symbol("ð",	"voiced (inter)dental fricative",		"<u>th</u>is, clo<u>th</u>e, fea<u>th</u>er",				"");
+				var t4 = new Symbol("ʧ",	"voiceless palatoalveolar affricate",	"<u>ch</u>ip, mat<u>ch</u>, lec<u>t</u>ure",				"");
+				var t5 = new Symbol("ɾ",	"alveolar flap",				"bi<u>tt</u>er, bu<u>tt</u>er, wri<u>t</u>er",				"");
+
+				//var u1 = new Symbol("u",	"letter u",						"<u></u>",				"");
+
+				var v1 = new Symbol("v",	"voiced labiodental fricative",	"<u>v</u>ine, sa<u>v</u>e, pre<u>v</u>ent",				"");
+
+				var w1 = new Symbol("w",	"labiovelar glide",				"<u>w</u>ood, s<u>w</u>allow",				"");
+
+				var x1 = new Symbol("x",	"letter x",						"<i>n/a</i>",				"");
+
+				//var y1 = new Symbol("y",	"letter y",						"<i>Alternative symbol for sound j</i>",				"");
+
+				var z1 = new Symbol("z",	"voiced alveolar fricative",	"<u>z</u>ip, dog<u>s</u>, plea<u>s</u>e, rea<u>s</u>on ",				"");
+
+				var a = new Array(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+				var b = new Array(b1);
+				//var c = new Array(c1, c2, c3, c4);
+
+				var d = new Array(d1);
+				//var e = new Array(e1);
+				var f = new Array(f1);
+				var g = new Array(g1, g2, g3);
+				var h = new Array(h1, h2);
+				//var i = new Array(i1);
+				var j = new Array(j1, j2);
+				var k = new Array(k1, k2);
+				var l = new Array(l1);
+				var m = new Array(m1);
+				var n = new Array(n1, n2);
+				//var o = new Array(o1);
+				var p = new Array(p1);
+				var q = new Array(q1);
+				var r = new Array(r1, r2);
+				var s = new Array(s1, s2);
+				var t = new Array(t1, t2, t3, t4, t5);
+				//var u = new Array(u1);
+				var v = new Array(v1);
+				var w = new Array(w1);
+				var x = new Array(x1);
+				//var y = new Array(y1);
+				var z = new Array(z1);
+
+				return new Array(a, b, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, z);
+			}
+
+			function display(what)
+			{
+				var select = getSelected(what);
+				//Debug $("span.r0").text(select[0]);
+				//Debug $("span.r2").text(select[2]);
+
+				//Debug $("span.sense").text(select[0]);
+				//Debug $("span.sense2").text(select[1]);
+				//Debug $("span.sense3").text(select[2]);
+				//Debug $("span.sense4").text(select[3]);
+
+				if (select[2])
+				{
+					currentSegment = select[2];
+				}
+				else
+				{
+					currentSegment = select[0];
+				}
+
+				// What is the BucketID and SegmentID for this segment?
+				var bucket = -1;
+				var symbol = -1;
+				var match = 0;
+				for (bucket = 0; bucket < arrays.length; bucket++) {
+					var bucketContent = arrays[bucket];
+					for (symbol = 0; symbol < bucketContent.length; symbol++) {
+						if (currentSegment.toLowerCase() == bucketContent[symbol].getCharacter())
+						{
+							currentSymbol = symbol;
+							currentBucket = bucket;
+
+							match = 1;
+							break;
+						}
+					}
+					if (match == 1)
+						break;
+				}
+
+				// Display contents of this bucket
+				$("div.suggestions").text("");
+
+				if (match == 0)
+				{
+					// Don't display anything if there are no matches
+					currentSymbol = -1;
+					return;
+				}
+
+				var bucketContent = arrays[currentBucket];
+				for (var i = 0; i < bucketContent.length; i++)
+				{
+					if (i == currentSymbol)
+					{
+						$("div.suggestions").append("<div class='sc selected'><span class='symbol'>" + bucketContent[i].getCharacter() + "</span><span class='d'>" + bucketContent[i].getDescription() + "</span> - <span class='d2'>" + bucketContent[i].getExample() + "</a></span></div>");
+					}
+					else
+					{
+						$("div.suggestions").append("<div class='sc'><span class='symbol'>" + bucketContent[i].getCharacter() + "</span><span class='d'>" + bucketContent[i].getDescription() + "</span> - <span class='d2'>" + bucketContent[i].getExample() + "</a></span></div>");
+					}
+				};
+
+				// Finally, display the segment
+				//Debug $("span.segment").text(currentSegment);
+			}
+
+			function getSelected(what)
+			{
+			  var u     = what.val();
+			  var start = what.get(0).selectionStart;
+			  var end   = what.get(0).selectionEnd;
+
+			  var segmentStart = start == 0 ? 0 : start - 1;
+			  var beforeSegment = start == end ? segmentStart : start;
+
+			  return [u.substring(segmentStart, start), u.substring(end), u.substring(start, end), u.substring(0, beforeSegment)];
+			}
+
+		})(jQuery);
+
+		</script>
+{{< /rawhtml >}}
