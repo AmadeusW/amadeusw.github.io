@@ -3,6 +3,20 @@ title: "Git"
 date: 2024-09-13T21:28:27-07:00
 ---
 
+# Config
+
+```
+git config merge.conflictstyle diff3
+git config diff.wsErrorHighlight all
+git config push.autoSetupRemote true
+```
+
+`merge.conflictstyle diff3` adds original code to the diff view, this helps arrive at correct resolution when resolving a conflict
+`diff.wsErrorHighlight all` Displays whitespace in diff
+`push.autoSetupRemote true` automates the first push of a branch
+
+# Aliases 
+
 I feel at home with these aliases:
 
 ```
@@ -19,3 +33,36 @@ git config --global alias.pub "!f() { branch=$(git rev-parse --abbrev-ref HEAD);
 ```
 
 The only thing to watch out for is that speedy `git put` eagerly commits all changes in the working tree, including any unexpected or overlooked changes.
+
+# Prompt summary
+
+On Windows, I use [PoshGit](https://github.com/dahlbyk/posh-git?tab=readme-ov-file#installation) to show status summary in the prompt
+
+# Tips
+
+When I started work on a clone, and then want to transition to my fork
+
+```
+git remote set-url origin <fork URL>
+git fetch --all -p
+```
+
+To ignore a change to the file
+
+```
+git update-index --skip-worktree .gitignore
+```
+
+To list all conflicts
+
+```
+git diff --name-only --diff-filter=U
+```
+
+Occasional manual cleanup (tip: run it on schedule)
+
+```
+git gc
+git prune
+git gc --aggressive
+```
