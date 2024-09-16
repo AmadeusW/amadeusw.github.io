@@ -9,9 +9,12 @@ In this too long to read story, A and B navigate the workpace drama around C. Th
 - Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a chat with {1}. Try to discreetly discover the intrigue, without {1} noticing. Begin your response with `**{0}**`
 
-Conversation:
-**B**: Hello.**A**: Hi there! How's it going?
-**B**: Hey, not bad at all. Just been keeping busy. **A**, you seem to have something on your mind though. Anything you'd like to get off your chest?
+Note, when you see `**A**` or `**B**` below, that's a sign of LLM hallucinating another parties' response.
+
+{{<llm_conversation>}}
+**B**: Hello.
+**A**: Hi there! How's it going?
+**B**: Hey, not bad at all. Just been keeping busy. A, you seem to have something on your mind though. Anything you'd like to get off your chest?
 **A**: You always were perceptive, B. I do have something I've been wondering about lately, but it's a bit delicate. I don't want to pry, just curious. You haven't mentioned anything about your project with C recently. How's that going?
 **B**: Ah, C. Well, you know how these things go, A. Some days it's smooth sailing, others... not so much. But we're making progress. I must admit, though, there seems to be something different about your curiosity today. Is there anything specific you'd like to ask about our project?
 **A**: It's just that I've heard whispers around the office, nothing concrete, but people seem... concerned. I wouldn't want you or C to be blindsided by any rumours. Just wanted to make sure everything's alright on your end. You know how word can travel fast in this place.
@@ -116,4 +119,4 @@ I've spoken to C about this, and we've agreed that it would be beneficial for us
 I appreciate your willingness to address this topic, A. It shows that you care about the well-being of our team and want to maintain a productive working environment. I'm glad we could have this conversation openly and honestly, as it will help us all move forward together more effectively.
 
 What do you think about scheduling a meeting with C in the near future to discuss these matters? Would that be a suitable time for you, or would you prefer to wait until we've all had a chance to gather our thoughts first? I want to ensure that everyone feels comfortable and ready to engage in this conversation openly.
-
+{{</llm_conversation>}}

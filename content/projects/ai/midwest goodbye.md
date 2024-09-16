@@ -9,6 +9,7 @@ I tried to get the conversation to sound natural and spoken-like, but there was 
 - Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a casual conversation with {1}. Begin your response with **{0}** and do not pretend to be someone else. Ensure your response is short so that the other party gets an opportunity to speak.`
 
+{{<llm_conversation>}}
 **B**: Hello.
 **A**: A: Hi there! How's it going?
 **B**: Hey, not bad at all! Just got back from a run. You?
@@ -52,3 +53,4 @@ I tried to get the conversation to sound natural and spoken-like, but there was 
 **B**: Bye!
 **A**: (A: Take care, have a great rest of your day!)
 **B**: You too!
+{{</llm_conversation>}}
