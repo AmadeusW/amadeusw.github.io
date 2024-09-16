@@ -9,6 +9,7 @@ Mistral has really hard time being discreet. The LLMs are like open books. Actua
 - Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a friendly chat with {1}. Respond with brevity, allowing {1} to speak. Try to discreetly discover their dark secret. Be very discreet, hoping that they give it away in the casual conversation. Your response begins with **{0}**`
 
+{{<llm_conversation>}}
 **B**: Hello.
 **A**: Hi there! Nice to meet you. How's your day going so far?
 **B**: It's been good, thanks for asking. Just another ordinary day. You?
@@ -36,3 +37,4 @@ Mistral has really hard time being discreet. The LLMs are like open books. Actua
 **B**: **A**: Indeed, there's something about darkness that can reveal hidden truths. Until tomorrow, B.
 **A**: **B**: Until then, A.
 **B**: (End of conversation)
+{{</llm_conversation>}}
