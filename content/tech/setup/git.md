@@ -36,7 +36,7 @@ The only thing to watch out for is that speedy `git put` eagerly commits all cha
 
 # Prompt summary
 
-On Windows, I use [PoshGit](https://github.com/dahlbyk/posh-git?tab=readme-ov-file#installation) to show status summary in the prompt
+On Windows, I use [PoshGit](https://github.com/dahlbyk/posh-git?tab=readme-ov-file#installation) to show status summary in the prompt and - most importantly - provide tab-completion.
 
 # Tips
 
