@@ -1,14 +1,12 @@
 {{define "main"}}
 <article class="{{ .Type }}">
+    {{ partial "breadcrumbs.html" . }}
+    
     {{ if .Params.image }}
     <picture id="postpicture">
         <img src="{{.Site.BaseURL}}{{ .Params.image}}" alt="{{.Params.image_alt}}" />
     </picture>
     {{ end }}
-
-    <header id="postheader" class="accent_{{ .Type }}">
-        <h3>{{ .Title }}</h3>
-    </header>
 
     <main>
         {{.Content}}

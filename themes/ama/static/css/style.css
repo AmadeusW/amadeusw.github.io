@@ -5,7 +5,7 @@
 
 html {
     font-size: 80%;
-    background-color: #f1f0ea;
+    background-color: #f2f1eb;
 }
 
 body {
@@ -100,21 +100,23 @@ blockquote {
     font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
+code {
+    font-size: 1.2rem;
+    font-family: 'Cascadia Code', monospace;
+}
+
 pre {
     background: #f8f8f8;
     font-family: 'Cascadia Code', monospace;
     display: block;
     overflow-x: auto;
-    font-size: 1.3rem;
     margin: 20px 0;
     padding: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.4;
     border: 1px solid
 }
 
-code {
-    font-family: 'Cascadia Code', monospace;
-    font-size: 14px;
+p>code {
     margin: 0 0.7em;
     background-color: #f8f8f8;
 }
@@ -156,4 +158,13 @@ kbd {
     border-radius: 3px;
     padding: 1px 2px 0;
     border: 1px solid #000
+}
+
+#breadcrumbs {
+    margin-bottom: 2em;
+}
+
+#breadcrumbs li {
+    display: inline;
+    list-style-type: none;
 }

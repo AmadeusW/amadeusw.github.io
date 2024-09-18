@@ -1,0 +1,8 @@
+<header id="postheader" class="accent_{{ .Type }}">
+    <ul id="breadcrumbs">
+        {{- range after 1 .Ancestors.Reverse }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> ▹</li>
+        {{- end }}
+        <li><strong><a href="{{ .RelPermalink }}">{{ .Title }}</a></strong></li>
+    </ul>
+</header>
