@@ -3,10 +3,12 @@ title: Krakow
 date: 2022-11-23T21:06:47-08:00
 image: /polskasm.jpg
 image_alt: Poland Landscape
-summary: My recommendations when you're in Krakow.
+summary: My recommendations when you're in Kraków.
 ---
 
-Krakow is a historic and a hip city in Poland. The Main Square, surrounding Old Town and the Wawel Castle used to be surrounded by walls. In place of walls, these days a park encircles the entirety of Old Town.
+# Kraków
+
+Kraków is a historic and a hip city in Poland. The Main Square, surrounding Old Town and the Wawel Castle used to be surrounded by walls. In place of walls, these days a park encircles the entirety of Old Town.
 
 Some of the best aspects of traveling to Poland are food: high quality, huge portion sizes, and great price. Here are my recommendations:
 
