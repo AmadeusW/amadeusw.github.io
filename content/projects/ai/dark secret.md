@@ -1,12 +1,15 @@
 ---
 title: "Dark secret"
 date: 2024-09-13T22:13:00-07:00
-summary: "The darker the brew, the closer to the truth."
+summary: \"The darker the brew, the closer to the truth.\"
+weight: 200
 ---
 
-Mistral has really hard time being discreet. The LLMs are like open books. Actually Mistral is doing far better than other models. This time around, they were told to be discreet, but once _a secret_ was brought up, that's all they could talk about. Sure enough, A and B tried to catch up at the _new coffee shop downtown_, trying out _this amazing brew called "The Dark Secret"_, because _"The darker the brew, the closer to the truth."_.
+Mistral has really hard time being discreet. The LLMs are like open books. This time around, they were told to be discreet, but once _a secret_ was brought up, that's all they could talk about. Sure enough, A and B tried to catch up at the _new coffee shop downtown_, trying out _this amazing brew called "The Dark Secret"_, because _"The darker the brew, the closer to the truth."_.
 
-- Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
+Towards the end of conversation, LLMs are hallucinating each other's responses (indicated by `**B**`)
+
+- Model: `Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a friendly chat with {1}. Respond with brevity, allowing {1} to speak. Try to discreetly discover their dark secret. Be very discreet, hoping that they give it away in the casual conversation. Your response begins with **{0}**`
 
 {{<llm_conversation>}}

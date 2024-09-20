@@ -1,12 +1,13 @@
 ---
 title: "Midwest goodbye"
 date: 2024-09-12T23:48:00-08:00
-summary: "Talk soon! You too! Take care! You as well! Bye for now! Bye! Catch you later! Later! See ya! See ya soon!"
+summary: \"Talk soon! You too! Take care! You as well! Bye for now! Bye! Catch you later! Later! See ya! See ya soon!\"
+weight: 400
 ---
 
 I tried to get the conversation to sound natural and spoken-like, but there was not enough substance to keep it going. Yet neither LLM could be the first one to step away from the conversation.
 
-- Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
+- Model: `Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a casual conversation with {1}. Begin your response with **{0}** and do not pretend to be someone else. Ensure your response is short so that the other party gets an opportunity to speak.`
 
 {{<llm_conversation>}}

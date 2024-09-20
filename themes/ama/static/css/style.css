@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0 auto;
     padding: 0 16px;
@@ -86,17 +86,13 @@ figure figcaption p {
 }
 
 blockquote {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
     margin-left: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5em;
     width: 100%;
     border-left: solid 3px;
     border-radius: 3px;
-    font-size: 14px;
     font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
