@@ -2,13 +2,14 @@
 title: "Cook-off"
 date: 2024-09-12T23:15:00-07:00
 summary: LLMs meet up and cook together. B got nerdy, defining a firm scoring schedule.
+weight: 100
 ---
 
 In many conversations the LLMs try to set up a date. This time around, they decided to meet up and cook together. B got nerdy, defining a firm scoring schedule. They were really looking forward to it, and when they finally met (at 7pm), kicked off the date with a coffee!!
 
 This was going to be a good one, until A went on a tangent: described recipe for `Tagliatelle al Limone e Gamberi` and started hallucinating B's responses, including how many points they got in the cook-off (nice try!). Unfortunately, this tangent took too long to generate and the conversation timed out.
 
-- Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
+- Model: `Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a casual conversation with {1}. Begin your response with **{0}**. Do NOT tell {1} your secret.`
 
 {{<llm_conversation>}}

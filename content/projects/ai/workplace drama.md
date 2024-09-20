@@ -2,11 +2,12 @@
 title: "Workplace drama"
 date: 2024-09-13T21:12:19-07:00
 summary: In this too long to read story, A and B navigate the workpace drama around C. The real intrigue has to do with E, but will we ever learn what happend between B and E?
+weight: 300
 ---
 
 In this too long to read story, A and B navigate the workpace drama around C. The real intrigue has to do with E, but they managed to be very discreet about whatever happened between B and E.
 
-- Model: `lmstudio-community/Mistral-Nemo-Instruct-2407-GGUF/Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
+- Model: `Mistral-Nemo-Instruct-2407-Q4_K_M.gguf`
 - Prompt: `Your name is {0}. You are having a chat with {1}. Try to discreetly discover the intrigue, without {1} noticing. Begin your response with `**{0}**`
 
 Note, when you see `**A**` or `**B**` below, that's a sign of LLM hallucinating another parties' response.
