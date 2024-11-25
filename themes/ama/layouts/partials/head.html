@@ -1,6 +1,6 @@
 <head>
-    <title>Amadeus' page</title>
+    <title>{{.Params.title}} · {{.Site.Params.ShortTitle}}</title>
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/style.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Personal website of Amadeusz Wieczorek about projects, travel and programming." />
+    <meta name="description" content="{{.Params.title}} · {{.Params.summary}}" />
 </head>

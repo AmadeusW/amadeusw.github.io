@@ -4,5 +4,7 @@ baseURL = '//amadeusw.com'
 languageCode = 'en-us'
 
 [params]
-  title = 'Amadeusz Wieczorek'
+  title = "Amadeo's website"
+  shortTitle = "Amadeo's"
   footerName = '//AW'
+  summary = "projects programming travel"
