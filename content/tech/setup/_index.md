@@ -1,6 +1,7 @@
 ---
 title: "Git setup"
 date: 2024-09-13T21:28:27-07:00
+description: Get in the flow in git
 summary: Get in the flow
 ---
 

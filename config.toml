@@ -1,10 +1,10 @@
-title = 'Amadeus'
+title = "Amadeo's"
 theme = 'ama'
 baseURL = '//amadeusw.com'
 languageCode = 'en-us'
 
 [params]
   title = "Amadeo's website"
-  shortTitle = "Amadeo's"
   footerName = '//AW'
   summary = "projects programming travel"
+
