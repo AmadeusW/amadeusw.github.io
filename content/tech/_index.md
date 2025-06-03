@@ -1,7 +1,7 @@
 ---
-title: 'Tech notes'
+title: 'Notes'
 date: 2022-12-18
 weight: 6
 ---
 
-Tips, tricks and reminders for all things tech.
+Tips and tricks, and things to remember.
