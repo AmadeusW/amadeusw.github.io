@@ -1,6 +1,7 @@
 ---
 title: "Crepes"
 date: 2023-01-15T12:38:22-08:00
+summary: Crepees from the blender
 ---
 
 Simona's **clatite** recipe:
@@ -13,6 +14,7 @@ For each crepe, coat pan with small amount of oil (use parchment paper or brush)
 After a minute, use a butter knife to turn the crepe on the other side. Keep on the pan for another minute or less.
 
 {{<recipe default="4" min="2" max="6">}}
+    <h3>{{<ingredient `crepes` 20 >}}</h3>
     <p>
         {{<ingredient eggs 4 >}}
         {{<ingredient flour 250 g >}}
@@ -21,9 +23,6 @@ After a minute, use a butter knife to turn the crepe on the other side. Keep on 
         {{<ingredient cognac 1 tablespoon >}}
         {{<ingredient `melted butter` 50 g >}}
         {{<ingredient salt 1 dash >}}
-    </p>
-    <p>
-        Makes {{<ingredient `crepes` 20 >}}
     </p>
 </div>
 {{</recipe>}}
