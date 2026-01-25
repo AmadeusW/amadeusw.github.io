@@ -1,9 +1,15 @@
 <!doctype html><html lang=en><head><title>Raspberry Pi cyberdeck setup · Amadeo's</title>
-<link rel=stylesheet href=//amadeusw.com//css/style.css><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Notes from creating a cyberdeck"></head><body><header id=title><a href=//amadeusw.com/><h2>Amadeo's website</h2></a></header><article class=tech><header id=postheader class=accent_tech><ul id=breadcrumbs><li><a href=/tech/>Tech</a> ▹</li><li><a href=/tech/hardware/>Electronics</a> ▹</li><li><strong><a href=/tech/hardware/cyberdeck/>Raspberry Pi cyberdeck setup</a></strong></li></ul></header><main><h1 id=to-connect-to-a-bluetooth-device>To connect to a bluetooth device</h1><p>The <code>trust</code> command makes it auto-connect on boot</p><h1 id=1-enter-bluetooth-control>1. Enter Bluetooth control</h1><p>bluetoothctl</p><h1 id=2-now-typing-inside-bluetoothctl>2. Now, typing inside bluetoothctl:</h1><p>power on
+<link rel=stylesheet href=//amadeusw.com//css/style.css><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Notes from creating a cyberdeck"></head><body><header id=title><a href=//amadeusw.com/><h2>Amadeo's website</h2></a></header><article class=tech><header id=postheader class=accent_tech><ul id=breadcrumbs><li><a href=/tech/>Tech</a> ▹</li><li><a href=/tech/hardware/>Electronics</a> ▹</li><li><strong><a href=/tech/hardware/cyberdeck/>Raspberry Pi cyberdeck setup</a></strong></li></ul></header><main><h1 id=to-connect-to-a-bluetooth-device>To connect to a bluetooth device</h1><p>The <code>trust</code> command makes it auto-connect on boot</p><ol><li>Enter Bluetooth control</li></ol><pre tabindex=0><code>bluetoothctl
+</code></pre><ol start=2><li>Now, typing inside bluetoothctl:</li></ol><pre tabindex=0><code>power on
 agent on
 default-agent
-scan on</p><h1 id=3-wait-for-your-device-to-appear-note-its-mac-address-xxxxxxxxxxxx>3. Wait for your device to appear, note its MAC address (XX:XX:XX:XX:XX:XX)</h1><h1 id=then>Then:</h1><p>pair XX:XX:XX:XX:XX:XX
+scan on
+</code></pre><ol start=3><li>Wait for your device to appear, note its MAC address</li></ol><pre tabindex=0><code>pair XX:XX:XX:XX:XX:XX
 trust XX:XX:XX:XX:XX:XX
-connect XX:XX:XX:XX:XX:XX</p><h1 id=4-exit>4. Exit</h1><p>scan off
-exit</p></main></article><footer><span><a href=/about/>//AW</a></span>
+connect XX:XX:XX:XX:XX:XX
+</code></pre><ol start=4><li>Exit</li></ol><pre tabindex=0><code>scan off
+exit
+</code></pre><h1 id=list-wifi-networks>List wifi networks</h1><pre tabindex=0><code>nmcli device wifi list
+</code></pre><p>Might need to <code>sudo apt install network-manager</code></p><h1 id=tmux>tmux</h1><ul><li>Scrolling; enter the copy mode <code>Ctrl+b [</code></li></ul><h1 id=i3>i3</h1><ul><li><a href=https://i3wm.org/docs/refcard.html>Reference guide</a></li><li>Launch app; <code>mod+d</code> type name, enter</li></ul><h1 id=minimal-support-for-windowed-apps>Minimal support for windowed apps</h1><pre tabindex=0><code>sudo apt install xserver-xorg xinit openbox
+</code></pre><p>Then, use <code>startx</code> to enable windowed apps.</p></main></article><footer><span><a href=/about/>//AW</a></span>
 <span><a href=#>Scroll to top</a></span></footer></body></html>
