@@ -13,9 +13,10 @@ git config diff.wsErrorHighlight all
 git config push.autoSetupRemote true
 ```
 
-`merge.conflictstyle diff3` adds original code to the diff view, this helps arrive at correct resolution when resolving a conflict
-`diff.wsErrorHighlight all` Displays whitespace in diff
-`push.autoSetupRemote true` automates the first push of a branch
+- `merge.conflictstyle diff3` adds original code to the diff view, this helps arrive at correct resolution when resolving a conflict
+- `diff.wsErrorHighlight all` Displays whitespace in diff
+- `push.autoSetupRemote true` automates the first push of a branch
+
 
 ## Aliases 
 
@@ -36,9 +37,23 @@ git config --global alias.pub "!f() { branch=$(git rev-parse --abbrev-ref HEAD);
 
 The only thing to watch out for is that speedy `git put` eagerly commits all changes in the working tree, including any unexpected or overlooked changes.
 
+## Line endings
+
+On Windows, convert CRLF to LF on commit, and LF to CRLF on checkout:
+bash
+```
+git config --global core.autocrlf true
+```
+
+On Linux, convert CRLF to LF on commit only, to fix any CLRF line endings:
+bash
+```
+git config --global core.autocrlf input
+```
+
 ## Prompt summary
 
-On Windows, I use [PoshGit](https://github.com/dahlbyk/posh-git?tab=readme-ov-file#installation) to provide tab-completion and show status summary in the terminal.
+On Windows, use [PoshGit](https://github.com/dahlbyk/posh-git?tab=readme-ov-file#installation) to provide tab-completion and show status summary in the terminal.
 
 ## Tips
 

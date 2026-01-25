@@ -4,7 +4,12 @@ summary: "Using relay in a box to connect Ecobee to a gas fireplace on millivolt
 date: 2025-06-01T21:20:53-00:00
 ---
 
-Smart thermostat lets you easily adjust heating schedule, turn the heat up when someone is in the room, and warm up the place ahead of coming back from a trip. The smart thermostat expects to be plugged into a 24V AC HVAC wiring.
+Smart thermostat lets you easily adjust heating schedule, automatically turn up the heat when you walk in the room, and warm up the place ahead of coming back from a trip. It learns the response of the heating system, and keeps it on for as little time as necessary to maintain the temperature without overshooting it. 
+
+![Heating chart](/techBlogData/2025-06-02-millivolt-ecobee/heating.png)
+> Blue line represents the actual temperature temperature. Yellow line is the target temperature. Orange highlight represents when the stove was on.
+
+The smart thermostat expects to be plugged into a 24V AC HVAC wiring, and the stove operates on milivolt wiring. These systems can be joined by a _Relay in a Box_.
 
 I followed these instructions: [Using an Ecobee Thermostat with a Millivolt Heating System](https://medium.com/@ZekeS/using-an-ecobee-thermostat-with-a-millivolt-heating-system-217047db5d56)
 
@@ -23,5 +28,12 @@ _Aside: If pilot light won't stay on after lighting, most likely the thermocoupl
 For purposes of this note, a relay is a device which connects two wires when it detects a signal across two other wires. It's triggered by the 24V AC signal that the thermostat sends to turn on heating. In this case, it completes the millivolt circuit and causes the voltage from the thermopile to open the flow of gas. I used `RIBU1C Enclosed Pilot Relay, 10 Amp Spdt with 10-30 Vac/Dc/120 Vac Coil`
 
 ## Result
-Ecobee learns the response of the heating system, and keeps it on for as little time as possible to maintain the temperature (_blue line_). It keeps the energy use low by not overshooting the target. Here, it lights the fire very briefly (_orange highlight_), enough to bring the room temperature above threshold (_yellow line_), a few minutes after turning off the fire.
-![Heating chart](/techBlogData/2025-06-02-millivolt-ecobee/heating.png)
+
+![Upgraded stove](/techBlogData/2025-06-02-millivolt-ecobee/stove.jpg)
+
+## Schematic
+TBD
+
+
+## Cost
+TBD - measure power draw
