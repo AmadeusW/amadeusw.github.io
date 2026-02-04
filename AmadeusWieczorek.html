@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Amadeusz Wieczorek</title>
+    <style>
+        body { max-width: 8.5in; margin-left:auto; margin-right:auto; font: 14px "Times New Roman", times, serif;}
+        header { margin-bottom: 0.6em; font-size: 1.1em; font-family: "Muli", "Tahoma", "sans-serif";}
+        header .top { border-bottom: 1px solid black; padding-bottom: 2px; margin-bottom: 2px; }
+        header .name { font-size: 1.7em; padding-left: 2px; text-transform: uppercase;}
+
+        .top, .bottom { display: flex; justify-content: space-between; }
+        .top > p { align-self: flex-end; }
+        .bottom > p { align-self: flex-start; }
+
+        article { display: flex; margin-bottom: 0.4em; }
+        article > h2 { flex-shrink: 0; flex-basis: 110px; font-size: 1.1em; font-family: "Muli", "Tahoma", "sans-serif";}
+        article > .content { flex-grow: 1; line-height: 1.3em; padding-top: 2px; }
+        .summary > p { padding-bottom: 0.5em; }
+        p { margin: 0; }
+        ul.nomargin { margin: 0; padding: 0; }
+        ul { list-style: none; padding-left: 0.5em; margin: 7px 0 7px 0; }
+        li { padding-bottom: 0.3em; }
+        li.separated { padding-top: 0.3em; }
+        h1,h2,h3,h4,h5 { margin: 0; display: inline-block;}
+        .footnote { font-size: 0.9em; padding-top: 4px; }
+        li.impact { margin-left: -7px; font-weight: bold; }
+        a { color: black; text-decoration: none; }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+        <div class="top">
+            <p class="name">Amadeus Wieczorek</p>
+            <p>hello@amadeusw.com</p>
+        </div>
+        <div class="bottom">
+            <p></p>
+            <p><!--github.com/AmadeusW · -->http://amadeusw.com</p>
+        </div>
+    </header>
+    <article>
+        <h2>About me</h2>
+        <section class="content summary">
+            <p>Engineer and entrepreneur building developer productivity tools. Ten years designing
+            <br />extensible systems, leading cross-team initiatives, and shipping features used by millions.</p>
+
+            <p>Co-founded a developer tools startup acquired by Microsoft. Led the product from prototype
+            through sales to acquisition, gaining experience across the full business and technical lifecycle.</p>
+
+            <p>Two patents in real-time 3D visualization. Former Amazon intern. 
+                <br />Outside of work, bootstrapped a 3D printing business.</p>
+        </section>
+    </article>
+    <article>
+        <h2>Select<br />Experience</h2>
+        <div class="content">
+            <section>
+                <div class="top">
+                    <h3>Microsoft</h3>
+                    <p>2016 - present</p>
+                </div>
+                <div class="bottom">
+                    <p><strong>Senior Software Engineer</strong> on the <strong>Visual Studio Editor</strong> team</p>
+                    <p>Seattle, WA</p>
+                </div>
+                <ul>
+<li class="impact">Technical impact</li>
+<li>
+    Designed and evolved extensible Visual Studio Editor APIs, 
+    maintaining long-term compatibility while leading the transition from synchronous to asynchronous data providers
+    (IntelliSense, Quick Actions, File I/O, Plugin initialization).
+</li>
+<li>
+    Defined durable API contracts that balanced backward compatibility with modern async patterns,
+    <br />enabling safe evolution across multiple release cycles and partner integrations.
+</li>
+<li>
+    Developed AI-assisted coding features through prompt engineering 
+    <br />and iterative evaluation of quality, latency, and token usage.
+</li>
+<li class="impact">Leadership impact</li>
+<li>
+    Served as Designated Responsible Individual for major features, leading cross-team design and execution,
+    <br />and owning delivery through production.
+</li>
+<li>
+    Coordinated cross-org security on-call rotation;
+    served as security subject matter expert for the Editor,<br />
+    driving timely MSRC resolution and secure-by-design practices.
+</li>
+<li>
+    Made feature decisions through A/B experimentation and telemetry analysis across millions of users.
+</li>
+                </ul>
+            </section>
+            <section>
+                <div class="top">
+                    <h3>Code Connect</h3>
+                    <p>2014 - 2016</p>
+                </div>
+                <div class="bottom">
+                    <p><strong>Co-founder</strong> of developer tool startup, acquired by Microsoft</p>
+                    <p>Waterloo, ON</p>
+                </div>
+                <ul>
+<li>Built and sold interactive programming tool <strong>Alive</strong> to developers, enterprises, and educators worldwide.</li>
+<li>Owned product end-to-end: prototyping, integrating with <strong>Roslyn</strong> compiler, marketing, sales, customer support.</li>
+<li>Profiled and optimized execution paths to maintain responsive UX during compute-intensive operations.</li>
+<li>Awards: 4th Year Design Cup winner (2014), Velocity Fund pitch winner (2015), Microsoft MVP (2016)</li>
+<!--<li>Produced marketing content and pitched at conferences; balanced feature development against maintenance</li>-->
+                </ul>
+            </section>
+            <!--
+            <section>
+                <div class="top">
+                    <h3>Amazon.com</h3>
+                    <p>2013</p>
+                </div>
+                <div class="bottom">
+                    <p><strong>Software Engineering Intern</strong> on <strong>AppStore</strong> team</p>
+                    <p>Seattle, WA</p>
+                </div>
+                <ul>
+<li>Developed front end and back end of feature that changed capabilities of the ordering pipeline.</li>
+<li>Designed new user interfaces and evaluated their usage patterns using A/B testing.</li>
+                </ul>
+            </section>
+            -->
+            <section>
+                <div class="top">
+                    <h3>Schlumberger Information Solutions</h3>
+                    <p>2012</p>
+                </div>
+                <div class="bottom">
+                    <p><strong>Software Engineering Intern</strong> on <strong>Petrel</strong> team</p>
+                    <p>Stavanger, Norway</p>
+                </div>
+                <ul>
+<li>Invented patented techniques for real-time 3D visualization of large-scale seismic datasets <br />(US20120254781, US20130235696).</li>
+<li>Shipped features in tight iteration cycles alongside domain experts who used the software immediately.</li>
+<li>Prototyped novel input device integrations and 3D lighting control interfaces.</li>
+                </ul>
+            </section>
+        </div>
+    </article>
+    <article>
+        <h2>Education</h2>
+        <section class="content">
+            <div class="top">
+                <h3 style="display: inline">University of Waterloo</h3>
+                <p>2009 - 2014</p>
+            </div>
+            <ul>
+                <li>
+                    <strong>Bachelor of Applied Science</strong>, Honors <strong>Computer Engineering</strong> with <strong>cognitive science minor</strong> and distinction.</li>
+                </li>
+            </ul>
+        </section>
+    </article>
+    <article>
+        <h2>Interests</h2>
+        <ul class="content nomargin">
+            <li>
+                <strong>Side projects:</strong>
+                Custom light brush for long exposure photography, 3D printing, <br />
+                contributing to Home Assistant, project combining CloudFlare workers KV with MCP memory.
+            </li>
+        </ul>
+    </article>
+    <p class="footnote">Full work experience at <a href="https://www.linkedin.com/in/amadeusamadeus">linkedin.com/in/amadeusamadeus</a></p>
+  </body>
+</html>
