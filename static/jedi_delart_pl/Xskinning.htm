@@ -1,0 +1,234 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="pl">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<META NAME="Authoring_tool" CONTENT="CS Pajączek 2000 PRO v4.8.1">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Jedi Academy - Skinning</title>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="kursor.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2" SRC="zewnetrzny.js"></SCRIPT>
+<LINK href="styl.css" type=text/css rel=stylesheet>
+
+<script>
+<!--
+/* 
+No Right Click. Written by PerlScriptsJavaScripts.com
+Copyright http://www.perlscriptsjavascripts.com 
+Free and commercial Perl and JavaScripts     
+*/
+
+isNN = document.layers ? 1 : 0; 
+
+function noContext(){return false;}
+
+function noContextKey(e) {
+    if(isNN){
+        if (e.keyCode == 96){ return (false);}
+    } else {
+        if (event.keyCode == 96){ return (false);}
+    }
+}
+
+function noClick(e){
+    if(isNN){
+        if(e.which > 1) {return false;}
+    } else { 
+        if(event.button > 1){return false;}
+    }
+}
+
+if(isNN){ 
+    document.captureEvents(Event.MOUSEDOWN);
+}
+
+document.oncontextmenu = noContext;
+document.onkeypress    = noContextKey;
+document.onmousedown   = noClick;
+document.onmouseup     = noClick;
+
+// -->
+</script>
+
+
+
+</head>
+
+<BODY bgcolor="#000000" onLoad="Start()" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"
+ondragstart="return false" onselectstart="return false">
+
+
+<table border="0" width="100%" height="540" bgcolor="#000000">
+  <tr>
+    <td width="100%" colspan="5" bgcolor="#000000" valign="bottom" align="center">
+<script language="JavaScript">
+// ==============================================
+// Copyright 2004 by CodeLifter.com
+// Free for all; but please leave in this header.
+// ==============================================
+
+var Quotation=new Array() // do not change this!
+
+// Set up the quotations to be shown, below.
+// To add more quotations, continue with the
+// pattern, adding to the array.  Remember
+// to increment the Quotation[x] index!
+
+Quotation[0] = "<img border=\"0\" src=\"banner/1.jpg\">";
+Quotation[1] = "<img border=\"0\" src=\"banner/2.jpg\">";
+Quotation[2] = "<img border=\"0\" src=\"banner/3.jpg\">";
+Quotation[3] = "<img border=\"0\" src=\"banner/4.jpg\">";
+Quotation[4] = "<img border=\"0\" src=\"banner/5.jpg\">";
+Quotation[5] = "<img border=\"0\" src=\"banner/6.jpg\">";
+
+var Q = Quotation.length;
+var whichQuotation=Math.round(Math.random()*(Q-1));
+function showQuotation(){document.write(Quotation[whichQuotation]);}
+showQuotation();
+</script>
+
+
+  </tr>
+  <tr>
+    <td width="25%" align="center" colspan="2" valign="middle">
+      <p></p>
+    </td>
+    <TD vAlign=center align=center width="50%">
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="200" HEIGHT="30" id="10" ALIGN="">
+ <PARAM NAME=movie VALUE="tytoly\10.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000> <EMBED src="tytoly\10.swf" quality=high bgcolor=#000000  WIDTH="200" HEIGHT="30" NAME="13" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+</OBJECT>
+    
+</TD>
+    <td width="25%" colspan="2" align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="25%" valign="top" align="left">&nbsp;
+         <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna5);
+</SCRIPT>
+         </td>
+    <td width="50%" height="800" bgcolor="#000048" colspan="3" valign="top" bordercolor="#FFFFFF">
+      <p align="center"><font color="#FFFFFF"><b><a name="ZACZYNAMY"></a></b></font>&nbsp;<br>
+      <br>
+      <font color="#FFFFFF"><b>Zaczynamy!</b></font></p>
+      <p align="left"><font color="#FFFFFF">Aby stworzyć własny skin (ciało
+      gracza) w Jedi Academy, musisz znaleźć w katalogu z grą \ gamedata plik
+      o nazwie &quot;assets1.pk3&quot;<br>
+      Otwórz go programem <a href="http://www.winzip.com/" target="_blank"> WinZip</a>.
+      Wybierz opcję &quot;sortuj wedłóg katalogów&quot; i znajdź wszystkie pliki
+      w katalogu &quot;models\players\lando&quot; - na początek spróbujemy
+      pokolorować pana Lando<img border="0" src="emot5.gif" width="15" height="15">
+      - i rozpakuj cały ten katalog do jakiegoś
+      katalogu (np. C:\Jedi ). W C:\Jedi powinien być katalog
+      &quot;lando&quot;. Obok niego (nie w nim) utwórz dwa inne katalogi:
+      &quot;Models&quot; i &quot;Players&quot;. &quot;Lando&quot; włóż do
+      &quot;Players&quot;, ten zaś włóż do &quot;Models&quot;</font></p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF"><b>Pierwsze kroki</b></font></p>
+      <p align="left"><font color="#FFFFFF">W przykładowym katalogu
+      &quot;Jedi&quot; powinien być katalog &quot;models&quot;, w nim &quot;players&quot;
+      a w nim &quot;lando&quot;. Jeżeli nie, powtórz dział
+      &quot;Zaczynamy!&quot;<br>
+      Używając dowolnego programu graficznego (tylko nie Paint!!!<img border="0" src="emot2.gif" width="15" height="15">) edytuj <b>niżej
+      wymienione </b>pliki .jpg i .tga znajdujące się w katalogu
+      &quot;Lando&quot;:</font></p>
+      <p align="left"><font color="#FFFFFF">Accesories - gadżety, które Lando
+      ma ze sobą<br>
+      Basic_hand - dłoń (prawa i lewa)<br>
+      Face - twarz<br>
+      Head - głowa<br>
+      Lando_legs - nogi<br>
+      Lando_torso - tułów<br>
+      mouth_eyes - zęby i oko (lewe i prawe)</font></p>
+      <p align="left"><font color="#FFFFFF">Jeżeli po nazwie pliku jest
+      &quot;_red&quot; lub &quot;_blue&quot; - znaczy, że są to odmiany drużynowe</font></p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF"><b>Pierwsza próba</b></font></p>
+      <p align="left"><font color="#FFFFFF">Teraz, włącz program WinZip i naciśnij
+      przycisk New.<br>
+      W przykładowym katalogu &quot;Jedi&quot; utwórz &quot;Skin.pk3&quot;<br>
+      Opcja &quot;files of type&quot; musi być ustawiona na &quot;all files&quot;<br>
+      Rozszerzeniem <b>musi</b> być &quot;pk3&quot;<br>
+      Następnie wybierz potrzebne pliki:<br>
+      Wejdź do katalogu &quot;Jedi&quot; i naciśnij przycisk &quot;Add&quot;,<br>
+      ustawiając wcześniej poniższe parametry:<br>
+      Nazwa pliku (filename)&nbsp;&nbsp; *.*<br>
+      Include subfolders&nbsp;&nbsp; ZAZNACZONE<br>
+      Save full patch info&nbsp;&nbsp; NIEZAZNACZONE</font></p>
+      <p align="left"><font color="#FFFFFF">Następnie w głównym oknie
+      WinZip'a powinieneś zobaczyć dosyć sporo plików. Zwróć uwagę na ścieżki
+      tych plików (Path)<br>
+      Zaznacz wszystkie pliki, które w kolumnie Path nie mają nic i usuń je.
+      Powinny pozostać tylko pliki o ścieżce &quot;models\players\lando&quot;</font></p>
+      <p align="left"><font color="#FFFFFF">Skopiuj plik &quot;Jedi.pk3&quot; do
+      katalogu gry, gamedata\base (tam powinien być plik assets1.pk3)</font></p>
+      <p align="left"><font color="#FFFFFF">Włącz multiplayer, jako swoją
+      postać wybierz Landa i zobacz swoje dzieło.</font></p>
+      <p align="left"><font color="#FFFFFF">Jednak to zamienia pana Lando, a nie
+      tworzy własnego gracza !<img border="0" src="emot2.gif" width="15" height="15"><br>
+      Zaraz stworzysz własnego gracza! <img border="0" src="emot3.gif" width="15" height="15"><br>
+      &nbsp;</font></p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF"><b>Własny gracz</b></font></p>
+      <p align="left"><font color="#FFFFFF">Wejdź do katalogu &quot;models\players&quot;
+      i zmień nazwę &quot;Lando na np. &quot;Facet&quot;. NIE UŻYWAJ POLSKICH
+      ZNAKÓW. Wejdź do katalogu &quot;Facet&quot; i usuń tekst
+      &quot;Lando&quot; ze wszystkich plików, zastępując je słowem
+      &quot;Facet&quot; (czyli lando_torso i lando_legs, na &quot;facet_torso&quot;
+      i &quot;facet_legs&quot;)</font></p>
+      <p align="left"><font color="#FFFFFF">Następnie otwórz plik &quot;model_default.skin&quot;.
+      Za pierwszym razem pojawi się okno &quot;Otwórz za pomocą...&quot;. Wybierz
+      Notatnik (Notepad).<br>
+      Zamień każde &quot;lando&quot; na &quot;facet&quot;, jak w przykładzie:<br>
+      było: hips,models/players/lando/lando_legs.tga<br>
+      ma być: hips,models/players/facet/facet_legs.tga</font></p>
+      <p align="left"><font color="#FFFFFF">Po skończeniu edytuj plik &quot;icon_default.jpg&quot;,
+      aby był charakterystyczny dla Twojego gracza (To jest ikonka gracza).</font></p>
+      <p align="left"><font color="#FFFFFF">Możesz również edytować pliki
+      &quot;model_red.skin&quot; i &quot;model_blue.skin&quot;, oraz &quot;icon_red&quot;
+      i &quot;icon_blue&quot; jak powyżej.</font></p>
+      <p align="left"><font color="#FFFFFF">Usuń plik &quot;Jedi.pk3&quot; z
+      C:\Jedi<br>
+      Spakuj wszystko tak, aby na nowo utworzyć &quot;Jedi.pk3&quot; i aby wszystkie
+      spakowane pliki
+      miały ścieżkę &quot;models\players\facet&quot;</font></p>
+      <p align="left"><font color="#FFFFFF">Skopiuj &quot;Jedi.pk3&quot; do
+      katalogu &quot;base&quot;, zastępując starszą wersję.</font></p>
+      <p align="left"><font color="#FFFFFF">Włącz grę, wybierz z listy ikonkę
+      swojego gracza, rozpocznij grę. Lando jest znowu &quot;normalny&quot;
+      oraz dostępny jest nowy gracz (właśnie ten, który właśnie zrobiłeś<img border="0" src="emot3.gif" width="15" height="15">)!!!</font></p>
+      <p align="left">&nbsp;</p>
+      <p align="left"><font color="#FFFF00">2003 - Amadeusz Wieczorek <img border="0" src="emot1.gif" width="15" height="15"><br>
+      Powielanie bez zgody jest naprawdę nieładne, więc byłoby mi miło,
+      gdybym wiedział o istnieniu mojego tekstu / zmodyfikowanego tekstu na
+      innej stronie.</font></p>
+      <p align="left">&nbsp;</p>
+      <p align="right"><font color="#FFFFFF"><a href="#ZACZYNAMY">do góry</a></font></p>
+      <p align="left"><font color="#FFFFFF">&nbsp;</font></p>
+    </td>
+    <td width="25%" valign="top" align="left">
+ <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna4);
+</SCRIPT>
+    </td>
+  </tr>
+  <tr>
+ <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna3);
+</SCRIPT>
+  </tr>
+</table>
+
+<div id="obiekt" style="position:absolute;left:250px;top:-100px;width:110px;z-index:1">
+<img src=inquisitor1.gif>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+BODY
+{
+background-color: white;
+}
+
+A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:unknown {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: black; TEXT-DECORATION: underline
+}
+.border {
+	BORDER-RIGHT: #d0d0d0 1px solid; BORDER-TOP: #d0d0d0 1px solid; BORDER-LEFT: #d0d0d0 1px solid; BORDER-BOTTOM: #d0d0d0 1px solid
+}
+
+H1 
+{
+color: black;
+text-align: center; 
+font-family: Verdana, MS Sans Serif, Arial CE, Helvetica; 
+font-size: 10pt;
+font-weight: normal;
+}

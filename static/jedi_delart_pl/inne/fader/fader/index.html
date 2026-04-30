@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Author" CONTENT="Bogdan Błaszczak [BlaTek]">
+
+<TITLE>Elementy fadeowane</TITLE>
+
+<STYLE TYPE="text/css">
+body {background-color:black; margin:50px}
+h1 {font:normal normal 18px verdana;color:white}
+p,td {font:normal normal 12px verdana;color:white;background-color:black}
+p {margin:50px}
+
+.duzyLink {font-size:16px;font-weight:bold}
+.duzyLink:link {text-decoration:none;color:blue}
+.duzyLink:visited {text-decoration:none;color:blue}
+.duzyLink:hover {text-decoration:underline;color:red}
+
+.malyLink {font-size:12px;font-weight:bold}
+.malyLink:link {text-decoration:none;color:rgb(0,150,255)}
+.malyLink:visited {text-decoration:none;color:rgb(0,150,255)}
+.malyLink:hover {text-decoration:none;color:rgb(190,120,0)}
+
+.bgInput {border:1px solid white;margin:2px;width:250px;font:normal normal 12px arial}
+
+</STYLE>
+
+<!--        --- Fader script ---         -->
+<SCRIPT TYPE="text/javascript" SRC="fader.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript">
+jpfy='**********   FADER v1.0   **********     '+
+'Written by Bogdan Blaszczak                   '+
+'homepage http://www.blatek.25.pl/javascript/'
+//don't edit lines above
+
+function declareFade(){return [
+
+['duzyLink','color','rgb(0,0,255)','rgb(255,0,0)',9],
+['fadeowanyAkapit','color','rgb(255,255,255)','rgb(0,100,255)',12],
+['tekst1','color','rgb(0,200,255)','rgb(255,150,0)',12],
+['fadeTD1','color','rgb(255,255,255)','rgb(255,255,0)',20],
+['fadeTD2','color','rgb(255,0,0)','rgb(0,0,255)',14],
+['fadeTD3','color','rgb(0,0,0)','rgb(190,120,0)',20],
+['fadeTD4','color','rgb(255,255,0)','rgb(0,255,0)',30],
+['bgAkapit','backgroundColor','rgb(0,0,0)','rgb(80,80,80)',12],
+['borderAkapit','borderColor','rgb(255,255,255)','rgb(255,0,0)',12],
+['bgInput','backgroundColor','rgb(50,180,250)','rgb(250,250,250)',8],
+['bgButton','backgroundColor','rgb(0,80,150)','rgb(0,250,250)',8],
+['fbgTD1','color','rgb(255,255,255)','rgb(0,0,0)',8],
+['fbgTD1','backgroundColor','rgb(180,180,180)','rgb(255,255,255)',8],
+['fbgTD2','color','rgb(255,255,255)','rgb(255,0,0)',8],
+['fbgTD2','backgroundColor','rgb(255,180,180)','rgb(255,255,255)',8],
+['fbgTD3','color','rgb(255,255,255)','rgb(0,0,255)',8],
+['fbgTD3','backgroundColor','rgb(180,180,255)','rgb(255,255,255)',8],
+['fbgTD4','color','rgb(255,255,255)','rgb(0,180,0)',8],
+['fbgTD4','backgroundColor','rgb(180,255,180)','rgb(255,255,255)',8],
+['malyLink','color','rgb(0,150,255)','rgb(190,120,0)',9] //<--- uwaga, po ostatniej tablicy nie stawiac przecinka
+
+]}
+</SCRIPT>
+<!--        --- end of Fader ---         -->
+
+</HEAD>
+<BODY onload="initFade()">
+
+<H1>Elementy fadeowane &nbsp;&nbsp;<A class="malyLink" HREF="http://blatek.25.pl/javascript/skrypty.html">homepage:&nbsp;http://blatek.25.pl/javascript/skrypty.html</A></H1>
+
+<P>
+Skrypt działa prawidłowo w przeglądarkach: IE, NS6, Mozilla.<br>
+W przeglądarkach NS4.x i Opera (ok. 5% rynku), ze względu na ograniczoną możliwość dynamicznej zmiany stylu, kolor
+elementów nie zmienia się. Jednak nie powoduje to żadnych błędów, tak więc strona zachowuje swoją
+funkcjonalność również w tych przeglądarkach.
+</P>
+
+<P>
+Do czego służy ten skrypt?<br>
+Do płynnej zmiany koloru dowolnego elementu HTML. Zmiana odbywa się w odpowiedzi na zdarzenie
+"onmouseover", czyli po wjechaniu myszką na dany element. Po zjechaniu myszką z elementu,
+następuje powrót do koloru wyjściowego, również w sposób płynny.
+</P>
+
+<P>
+<a class="duzyLink" href="#">Po dobraniu</a><br>
+<a class="duzyLink" href="#">odpowiedniej</a><br>
+<a class="duzyLink" href="#">kolorystyki</a><br>
+<a class="duzyLink" href="#">takie linki</a><br>
+<a class="duzyLink" href="#">mogą stworzyć</a><br>
+<a class="duzyLink" href="#">dość ciekawe</a><br>
+<a class="duzyLink" href="#">efekty</a><br>
+</P>
+
+<P class="fadeowanyAkapit">
+Poza linkami, fadeowaniu może być poddany np. cały akapit. Umieść kursor myszy ponad tym
+tekstem aby zobaczyć efekt.
+</P>
+
+<P>
+Można też poddać zabiegowi fadeowania dowolny <span class="tekst1">fragment tekstu</span>,
+np. poprzez objęcie go znacznikiem &lt;span class="nazwaklasy"&gt;.
+</P>
+
+<P>
+Inny przykład. Fadeowanie zawartości komórek w tabeli:</P>
+<table border cellpadding="10">
+ <tr><td class="fadeTD1">zmiana koloru od białego do żółtego</td>
+     <td class="fadeTD2">zmiana koloru od czerwonego do niebieskiego</td></tr>
+ <tr><td class="fadeTD3">zmiana koloru od czarnego :)))<br>do złotego</td>
+     <td class="fadeTD4">zmiana koloru od żółtego do zielonego</td></tr>
+</table>
+
+<P class="bgAkapit" style="padding:20px">
+Poza zmianą koloru tekstu istnieje również możliwość zmiany koloru tła dowolnego elementu HTML.
+Na przykład, kolor tła w tym akapicie zmienia się z czarnego na szary.
+</P>
+
+<P class="borderAkapit" style="border:2px solid white;padding:20px">
+Elementy posiadające obramowanie, mogą również zmieniać jego kolor. Wprawdzie zmiana koloru
+obramowania nie działa w NS6, lecz nie powoduje to żadnego błędu w tej przeglądarce. Po prostu
+kolor pozostaje nie zmieniony.
+</P>
+
+<FORM>
+<input class="bgInput" value="Pamiętajmy jednak, że"><br>
+<input class="bgInput" value="dynamiczna zmiana koloru tła"><br>
+<input class="bgInput" value="przebiega zazwyczaj nieco wolniej"><br>
+<input class="bgInput" value="od zmiany koloru czcionki."><br>
+<input class="bgInput" value="Tak więc zmiana tła,"><br>
+<input class="bgInput" value="może przebiegać mniej płynnie."><br>
+<input class="bgInput" value="W dużym stopniu zależy to"><br>
+<input class="bgInput" value="od wydolności maszynki użytkownika."><br>
+<input class="bgInput" value="Jednak szczególnie może się"><br>
+<input class="bgInput" value="to objawić na takich"><br>
+<input class="bgInput" value="elementach, jak widoczne"><br>
+<input class="bgInput" value="tutaj, elementy formularza"><br><br>
+<input class="bgButton" type="button" value="   Button   "><br><br><br>
+</FORM>
+
+<P>
+Istnieje również możliwość jednoczesnej zmiany koloru czcionki i koloru tła danego elementu</P>
+<table border="0" cellspacing="0" cellpadding="20" width="500">
+ <tr><td class="fbgTD1">pierwsza komórka</td>
+     <td class="fbgTD2">druga komórka</td></tr>
+ <tr><td class="fbgTD3">trzecia komórka</td>
+     <td class="fbgTD4">czwarta komórka</td></tr>
+</table>
+
+<P>
+Jak umieścić skrypt w dokumencie?<br>
+Zobacz w <a class="malyLink" href="ex1.html">następnym przykładzie.</a>
+</P>
+
+</BODY>
+</HTML>

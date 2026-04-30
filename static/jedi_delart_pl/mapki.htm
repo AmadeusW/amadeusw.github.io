@@ -1,0 +1,242 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="pl">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<META NAME="Authoring_tool" CONTENT="CS Pajączek 2000 PRO v4.8.1">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Jedi Academy - Ocena map</title>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="kursor.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2" SRC="zewnetrzny.js"></SCRIPT>
+<LINK href="styl.css" type=text/css rel=stylesheet>
+
+<script>
+<!--
+/* 
+No Right Click. Written by PerlScriptsJavaScripts.com
+Copyright http://www.perlscriptsjavascripts.com 
+Free and commercial Perl and JavaScripts     
+*/
+
+isNN = document.layers ? 1 : 0; 
+
+function noContext(){return false;}
+
+function noContextKey(e) {
+    if(isNN){
+        if (e.keyCode == 96){ return (false);}
+    } else {
+        if (event.keyCode == 96){ return (false);}
+    }
+}
+
+function noClick(e){
+    if(isNN){
+        if(e.which > 1) {return false;}
+    } else { 
+        if(event.button > 1){return false;}
+    }
+}
+
+if(isNN){ 
+    document.captureEvents(Event.MOUSEDOWN);
+}
+
+document.oncontextmenu = noContext;
+document.onkeypress    = noContextKey;
+document.onmousedown   = noClick;
+document.onmouseup     = noClick;
+
+// -->
+</script>
+
+
+
+</head>
+
+<BODY bgcolor="#000000" onLoad="Start()" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"
+ondragstart="return false" onselectstart="return false">
+
+
+<table border="0" width="100%" height="540" bgcolor="#000000">
+  <tr>
+    <td width="100%" colspan="5" bgcolor="#000000" valign="bottom" align="center">
+<script language="JavaScript">
+// ==============================================
+// Copyright 2004 by CodeLifter.com
+// Free for all; but please leave in this header.
+// ==============================================
+
+var Quotation=new Array() // do not change this!
+
+// Set up the quotations to be shown, below.
+// To add more quotations, continue with the
+// pattern, adding to the array.  Remember
+// to increment the Quotation[x] index!
+
+Quotation[0] = "<img border=\"0\" src=\"banner/1.jpg\">";
+Quotation[1] = "<img border=\"0\" src=\"banner/2.jpg\">";
+Quotation[2] = "<img border=\"0\" src=\"banner/3.jpg\">";
+Quotation[3] = "<img border=\"0\" src=\"banner/4.jpg\">";
+Quotation[4] = "<img border=\"0\" src=\"banner/5.jpg\">";
+Quotation[5] = "<img border=\"0\" src=\"banner/6.jpg\">";
+
+var Q = Quotation.length;
+var whichQuotation=Math.round(Math.random()*(Q-1));
+function showQuotation(){document.write(Quotation[whichQuotation]);}
+showQuotation();
+</script>
+
+  </tr>
+  <tr>
+    <td width="25%" align="center" colspan="2" valign="middle">
+      <p></p>
+    </td>
+    <TD vAlign=center align=center width="50%">
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="200" HEIGHT="30" id="17" ALIGN="">
+ <PARAM NAME=movie VALUE="tytoly\17.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000> 
+  <EMBED src="tytoly\17.swf" quality=high bgcolor=#000000  WIDTH="200" HEIGHT="30" NAME="17" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>
+    
+</TD>
+    <td width="25%" colspan="2" align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="25%" valign="top" align="left">&nbsp;
+         <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna5);
+    </SCRIPT>
+         </td>
+    <td width="50%" height="800" bgcolor="#000048" colspan="3" valign="top" bordercolor="#FFFFFF">
+      <p align="center"><font color="#FFFFFF"><b><a name="Postacie"></a></b>&nbsp;</font></p>
+      <p align="center"></p>
+      <p align="left"><font color="#FFFFFF">Poniżej przedstawię kilka bardzo 
+      częstych błędów, abyście mogli ocenić mapy oraz nie robić tych błędów w 
+      swoich mapach.</font></p>
+      <p align="left"><font color="#FFFFFF">Kliknij na link aby dowiedzieć się 
+      więcej i obejrzeć zdjęcia</font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#1">1. Prostokątna architektura</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#2">2. Powtarzająjąjąjące się tekstury</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#3">3. Światła... z nikąd</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#4">4. Złe rozmieszczenie broni</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#5">5. Brak ścieżki dla botów</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#6">6. Nierealny teren</a></font></p>
+      <p align="left"><font color="#FFFFFF"><a href="#7">7. Brak tekstur</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><b><font color="#FFFFFF"><a name="1"></a>Prostokątna architektura</font></b></p>
+      <p align="left"><font color="#FFFFFF">To błąd który najczęściej można 
+      spotkać w czyichś pierwszych mapach, i po nim najprościej jest określić 
+      jak ktoś potrafi robić mapy. Jeżeli widzi się kwadratowy budynek, 
+      prostokątne korytarze bez żadnych ciekawych wnęk w ścianach, prostokątne 
+      drzwi... z pewnością nie ma się do czynienia z dobrą mapką...</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia:
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22605_2.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25077_21.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22818_5.jpg">
+      3</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF"><a name="2"></a>&nbsp;</font><b><font color="#FFFFFF">P</font></b><font color="#FFFFFF"><b>owtarzająjąjąjące 
+      się tekstury</b></font></p>
+      <p align="left"><font color="#FFFFFF">Aż oczy bolą gdy widzi się całą 
+      ścianę w jednej, tej samej teksturze, lub gdy widzi się piach z 
+      powtarzającym się w równych odstępach czarnym zabrudzeniem. Kolejny 
+      przykład na kiepską mapę lub świeżo upieczonego autora.</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia: 
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/29605_2.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22605_1.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22605_4.jpg">3</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25483_1.jpg">4</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25077_7.jpg">5</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22818_5.jpg">
+      6</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF">&nbsp;<b><a name="3"></a>Światła... z nikąd</b></font></p>
+      <p align="left"><font color="#FFFFFF">Czyli najgłupsza rzecz robiona przez 
+      najleniwszych mapperów. Wstawiają światło, ale nie wstawiają pochodni, 
+      lamp, czy czegokolwiek, co mogło by to światło wytwarzać. Taka mapa jest 
+      brzydka i nierealna.</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia: 
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/30761_3.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/27525_1.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/23656_1.jpg">3</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25483_19.jpg">4</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25483_3.jpg">5</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25483_1.jpg">
+      6</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF">&nbsp;<b><a name="4"></a>Złe rozmieszczenie broni</b></font></p>
+      <p align="left"><font color="#FFFFFF">W dobrej mapie bronie i amunicja są 
+      rozrzucone na całym poziomie. Są jednak mapy gdzie cała broń jest w jednym 
+      miejscu... To samo tyczy się amunicji i medpakietów. Po prostu zero grywalności.</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia: 
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/29217_2.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22372_15.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/30732_5.jpg">3</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF">&nbsp;<b><a name="5"></a>Brak ścieżki dla botów</b></font></p>
+      <p align="left"><font color="#FFFFFF">Ścieżka dla botów to zestaw punktów 
+      na mapie, gdzie chodzą gracze komputerowi, czyli boty. Gdy takiej ścieżki 
+      nie ma, bot skacze jak oszalały i nie da się z nim grać (biorąc po uwagę 
+      ilość serwerów CTF z ludźmi). Taka mapa jest głównie przystosowana do gry 
+      w kilka (żywych) osób, a nie zawsze jest taka okazja.</font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="center"><font color="#FFFFFF">&nbsp;</font></p>
+      <p align="center"><font color="#FFFFFF"><b><a name="6"></a>Nierealny teren</b></font></p>
+      <p align="left"><font color="#FFFFFF">Ten błąd się zdarza na mapach z 
+      otwartą przestrzenią lub w jaskiniach. Teren to po prostu góry i doliny znajdujące się na i 
+      wokół mapy. Popatrz na zdjęcia i zobacz jak niektóre mapy są brzydkie. Po 
+      prostu no comment.</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia: 
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/29608_7.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22605_1.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22605_4.jpg">3</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25077_7.jpg">4</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/25077_21.jpg">5</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="right">&nbsp;</p>
+      <p align="center"><font color="#FFFFFF">&nbsp;<b><a name="7"></a>Brak tekstur</b></font></p>
+      <p align="left"><font color="#FFFFFF">Czyli jeden z najgorszych błędów. 
+      Częsty, gdy ktoś robi mapę i nie wie, które tekstury są w JA od początku, 
+      a które sobie ściągnął. Gdy nie dołączy własnych tekstur, fragmenty na 
+      których ma być dana tekstura stają się szare... I mapa znów się robi 
+      brzydka.</font></p>
+      <p align="left"><font color="#FFFFFF">Zdjęcia: 
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/28841_6.jpg">1</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/21788_2.jpg">2</a>
+      <a target="_blank" href="http://jediknight2.filefront.com/screenshots/38/files2/22818_5.jpg">
+      3</a></font></p>
+      <p align="right"><font color="#FFFFFF"><a href="#Postacie">do góry</a></font></p>
+      <p align="right">&nbsp;</p>
+      <p align="right">&nbsp;</p>
+      <p align="right">&nbsp;</p>
+    </td>
+    <td width="25%" valign="top" align="left">
+ <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna4);
+ </SCRIPT>
+    </td>
+  </tr>
+  <tr>
+ <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna3);
+ </SCRIPT>
+  </tr>
+</table>
+
+<div id="obiekt" style="position:absolute;left:250px;top:-100px;width:110px;z-index:1">
+<img src=inquisitor1.gif width="40" height="40">
+</div>
+
+
+</body>
+
+</html>

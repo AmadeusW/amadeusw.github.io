@@ -1,0 +1,6 @@
+<table width=\"380\" height=\"70\" border=\"0\">
+  <tr>
+    <td width=\"380\" height=\"70\">Najbli¿szy trening odbêdzie siê <strong>2 kwietnia</strong> w <strong>sobotê</strong> o <strong>19:00</strong> na serwerze <strong>NoHonor-GunsFFA</strong> oraz   o <strong>20:00</strong> na serwerze <strong>Wild Jedi CTF </strong><br>
+<div algin=\"right\"><a href=http://members.lycos.co.uk/jediforum/viewtopic.php?t=444><img src=chat_icon.gif width=33 heigth=20 target=\"_blank\" border=0></a></div></td>
+  </tr>
+</table>

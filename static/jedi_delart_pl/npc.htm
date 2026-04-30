@@ -1,0 +1,385 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="pl">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<META NAME="Authoring_tool" CONTENT="CS Pajączek 2000 PRO v4.8.1">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Jedi Academy - Lista NPC</title>
+<LINK href="styl.css" type=text/css rel=stylesheet>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="kursor.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript1.2" LANGUAGE="JavaScript" SRC="zewnetrzny.js"></SCRIPT>
+
+
+<script>
+<!--
+/* 
+No Right Click. Written by PerlScriptsJavaScripts.com
+Copyright http://www.perlscriptsjavascripts.com 
+Free and commercial Perl and JavaScripts     
+*/
+
+isNN = document.layers ? 1 : 0; 
+
+function noContext(){return false;}
+
+function noContextKey(e) {
+    if(isNN){
+        if (e.keyCode == 96){ return (false);}
+    } else {
+        if (event.keyCode == 96){ return (false);}
+    }
+}
+
+function noClick(e){
+    if(isNN){
+        if(e.which > 1) {return false;}
+    } else { 
+        if(event.button > 1){return false;}
+    }
+}
+
+if(isNN){ 
+    document.captureEvents(Event.MOUSEDOWN);
+}
+
+document.oncontextmenu = noContext;
+document.onkeypress    = noContextKey;
+document.onmousedown   = noClick;
+document.onmouseup     = noClick;
+
+// -->
+</script>
+
+</head>
+
+<BODY bgcolor="#000000" onLoad="Start()" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"
+ondragstart="return false" onselectstart="return false" text="#FFFFFF">
+
+
+<table border="0" width="100%" height="540" bgcolor="#000000">
+  <tr>
+    <td width="100%" colspan="5" bgcolor="#000000" valign="bottom" align="center">
+  <script language="JavaScript">
+// ==============================================
+// Copyright 2004 by CodeLifter.com
+// Free for all; but please leave in this header.
+// ==============================================
+
+var Quotation=new Array() // do not change this!
+
+// Set up the quotations to be shown, below.
+// To add more quotations, continue with the
+// pattern, adding to the array.  Remember
+// to increment the Quotation[x] index!
+
+Quotation[0] = "<img border=\"0\" src=\"banner/1.jpg\">";
+Quotation[1] = "<img border=\"0\" src=\"banner/2.jpg\">";
+Quotation[2] = "<img border=\"0\" src=\"banner/3.jpg\">";
+Quotation[3] = "<img border=\"0\" src=\"banner/4.jpg\">";
+Quotation[4] = "<img border=\"0\" src=\"banner/5.jpg\">";
+Quotation[5] = "<img border=\"0\" src=\"banner/6.jpg\">";
+
+var Q = Quotation.length;
+var whichQuotation=Math.round(Math.random()*(Q-1));
+function showQuotation(){document.write(Quotation[whichQuotation]);}
+showQuotation();
+  </script>
+
+  </tr>
+  <tr>
+    <td width="25%" align="center" colspan="2" valign="middle">
+      <p></p>
+    </td>
+    <TD vAlign=center align=center width="50%">
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="200" HEIGHT="30" id="16" ALIGN="">
+ <PARAM NAME=movie VALUE="tytoly\16.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000> 
+  <EMBED src="tytoly\16.swf" quality=high bgcolor=#000000  WIDTH="200" HEIGHT="30" NAME="16" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>
+    
+</TD>
+    <td width="25%" colspan="2" align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="25%" valign="top" align="left">&nbsp;
+         <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna5);
+    </SCRIPT>
+         </td>
+    <td width="50%" height="800" bgcolor="#000048" colspan="3" valign="top" bordercolor="#FFFFFF">
+      <p align="left"><font color="#FFFFFF"><br>
+      </font></p>
+      <p align="center"><img border="0" src="pojazdy.gif" width="250" height="150"></p>
+      <p align="center">Aby zespawnować pojazd, wpisz do konsoli<br>
+      <font color="#FFFF00">npc spawn vehicle </font><font color="#00FFFF">&lt;nazwa&gt;</font></p>
+      <table border="3" width="100%" bordercolorlight="#000048" bordercolordark="#000048" bordercolor="#000048">
+        <tr>
+          <td width="50%" align="left"><font color="#00FFFF">Nazwa</font></td>
+          <td width="50%" align="left"> <font color="#00FFFF">Opis</font></td>
+        </tr>
+        <tr>
+          <td width="50%">atst_vehicle</td>
+          <td width="50%"> All Terrain Scout transport</td>
+        </tr>
+        <tr>
+          <td width="50%">lambdashuttle</td>
+          <td width="50%"> Statek typu lambda</td>
+        </tr>
+        <tr>
+          <td width="50%">rancor_vehicle</td>
+          <td width="50%"> Rancor</td>
+        </tr>
+        <tr>
+          <td width="50%">swoop</td>
+          <td width="50%"> Swoop do SP</td>
+        </tr>
+        <tr>
+          <td width="50%">swoop_mp</td>
+          <td width="50%"> Swoop do MP</td>
+        </tr>
+        <tr>
+          <td width="50%">tauntaun</td>
+          <td width="50%"> Osiodłany Taun taun</td>
+        </tr>
+        <tr>
+          <td width="50%">tie-bomber</td>
+          <td width="50%"> Bombowiec TIE</td>
+        </tr>
+        <tr>
+          <td width="50%">tie-fighter</td>
+          <td width="50%"> Myśliwiec TIE</td>
+        </tr>
+        <tr>
+          <td width="50%">wampa-vehicle</td>
+          <td width="50%"> Wampa</td>
+        </tr>
+        <tr>
+          <td width="50%">wildtauntaun</td>
+          <td width="50%"> Taun taun</td>
+        </tr>
+        <tr>
+          <td width="50%">x-wing</td>
+          <td width="50%"> X-Wing</td>
+        </tr>
+        <tr>
+          <td width="50%">yt-1300</td>
+          <td width="50%"> Millennium Falcon (nie działa)</td>
+        </tr>
+        <tr>
+          <td width="50%">z-95&nbsp;</td>
+          <td width="50%"> Z-95 headhunter</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p align="left">&nbsp;</p>
+      <p class="MsoNormal" style="mso-margin-top-alt:auto;margin-bottom:12.0pt" align="center"><img border="0" src="npc.gif" width="250" height="150"></p>
+      <p class="MsoNormal" style="mso-margin-top-alt:auto;margin-bottom:12.0pt" align="center">Aby
+      zespawnować NPC, wpisz do konsoli<br>
+      <font color="#FFFF00">npc spawn </font><font color="#00FFFF">&lt;nazwa&gt;</font></p>
+      <div align="center">
+        <center>
+        <table border="5" width="100%" bordercolorlight="#000048" bordercolordark="#000048" bordercolor="#000048">
+          <tr>
+            <td width="100%">alora<br>
+              alora_dual<br>
+              assassin_droid<br>
+              atst<br>
+              bartender<br>
+              bespincop<br>
+              boba_fett<br>
+              chewie<br>
+              cultist<br>
+              cultist_destroyer<br>
+              cultist_drain<br>
+              cultist_grip<br>
+              cultist_lightning<br>
+              cultist_saber<br>
+              cultist_saber_2<br>
+              cultist_saber_throw<br>
+              cultist_saber_med<br>
+              cultist_saber_med2<br>
+              cultist_saber_med_throw<br>
+              cultist_saber_med_throw2<br>
+              cultist_saber_strong<br>
+              cultist_saber_strong2<br>
+              cultist_saber_strong_throw<br>
+              cultist_saber_strong_throw2<br>
+              cultist_saber_all<br>
+              cultist_saber_all2<br>
+              cultist_all_throw<br>
+              cultist_all_throw2<br>
+              cultist_saber_powers<br>
+              cultistcommando<br>
+              desann<br>
+              elder<br>
+              elder2<br>
+              galak<br>
+              galak_mech<br>
+              glider<br>
+              gonk<br>
+              gran<br>
+              gran2<br>
+              granboxer<br>
+              granshooter<br>
+              hazardtrooper<br>
+              hazardtrooperconcussion<br>
+              hazardtrooperofficer<br>
+              howler<br>
+              human_merc<br>
+              human_merc_bow<br>
+              human_merc_key<br>
+              human_merc_rep<br>
+              human_merc_flc<br>
+              human_merc_cnc<br>
+              lannik_racto<br>
+              impcommander<br>
+              imperial<br>
+              impofficer<br>
+              impworker<br>
+              impworker2<br>
+              impworker3<br>
+              interrogator<br>
+              jan<br>
+              jawa<br>
+              jawa_armed&nbsp;&nbsp; // nie działa<br>
+              jedi<br>
+              jedi_hf1<br>
+              jedi_hf2<br>
+              jedi_hm1<br>
+              jedi_hm2<br>
+              jedi_kdm1<br>
+              jedi_kdm2<br>
+              jedi_rm1<br>
+              jedi_rm2<br>
+              jedi_tf1<br>
+              jedi_tf2<br>
+              jedi_zf1<br>
+              jedi_zf2<br>
+              jedi_random<br>
+              jedif<br>
+              jedimaster<br>
+              jeditrainer<br>
+              kyle<br>
+              kyle_boss<br>
+              lando<br>
+              luke<br>
+              mark1<br>
+              mark2<br>
+              merchant<br>
+              minemonster<br>
+              monmothma<br>
+              morgankatarn<br>
+              mouse<br>
+              noghri<br>
+              nulldiver<br>
+              player<br>
+              prisoner<br>
+              probe<br>
+              protocol<br>
+              protocol_imp<br>
+              r2d2<br>
+              r2d2_imp<br>
+              r5d2<br>
+              ragnos<br>
+              rancor<br>
+              mutant_rancor<br>
+              rax<br>
+              rebel<br>
+              rebel2<br>
+              reborn<br>
+              reborn_dual<br>
+              reborn_new<br>
+              reborn_staff<br>
+              reborn_twin<br>
+              rebornmaster<br>
+              rebornmasterstaff<br>
+              rebornmasterdual<br>
+              vkothos<br>
+              dkothos<br>
+              rebornacrobat<br>
+              rebornboss<br>
+              rebornchiss<br>
+              rebornfencer<br>
+              rebornforceuser<br>
+              rebornrodian<br>
+              reborntrandoshan<br>
+              rebornweequy<br>
+              reelo<br>
+              remote<br>
+              remote_sp<br>
+              rockettrooper<br>
+              rockettrooper_w<br>
+              rockettrooper2<br>
+              rocks<br>
+              rodian<br>
+              rodian2<br>
+              rosh_penin<br>
+              rosh_penin_noforce<br>
+              rosh_dark<br>
+              saber_droid<br>
+              saber_droid_training<br>
+              saboteur<br>
+              saboteurcommando<br>
+              saboteurpistol<br>
+              saboteursniper<br>
+              sand_creature<br>
+              sand_creature_fast<br>
+              seeker<br>
+              sentry<br>
+              shadowtrooper<br>
+              snowtrooper<br>
+              stcommander<br>
+              stofficer<br>
+              stofficeralt<br>
+              stormpilot<br>
+              stormtrooper<br>
+              stormtrooper2<br>
+              swamptrooper<br>
+              swamptrooper2<br>
+              tavion<br>
+              tavion_new<br>
+              tavion_sith_sword<br>
+              tavion_scepter<br>
+              trandoshan<br>
+              tusken<br>
+              tuskensniper<br>
+              ugnaught<br>
+              wampa<br>
+              weequay<br>
+              weequay2<br>
+              weequay3<br>
+              weequay4</td>
+          </tr>
+          <tr>
+            <td width="100%">&nbsp;</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      <p>&nbsp;</p>
+      <p>&nbsp;&nbsp; </p>
+    </td>
+    <td width="25%" valign="top" align="left">
+ <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna4);
+ </SCRIPT>
+    </td>
+  </tr>
+  <tr>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+document.write(zmienna3);
+</SCRIPT>
+  </tr>
+</table>
+
+<div id="obiekt" style="position:absolute;left:250px;top:-100px;width:110px;z-index:1">
+<img src=inquisitor1.gif width="40" height="40">
+</div>
+
+
+</body>
+
+</html>
