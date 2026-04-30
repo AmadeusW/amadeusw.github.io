@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Creation-date" CONTENT="2002-03-17T17:36:57Z">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Author" CONTENT="Bogdan Błaszczak">
+<TITLE>Wstawka z zewnętrznego pliku</TITLE>
+<STYLE TYPE="text/css">
+<!--
+body {background-color:#BCC6D0;scrollbar-base-color:#708090}
+.t1,ul,td {color:black;font:normal bold 13px Courier,Arial}
+h4 {color:black;font:normal bold 16px Courier,Arial}
+.styl1 {color:red;font:normal bold 14pt Tahoma,Verdana}
+.styl2 {color:blue;font:normal bold 9pt Tahoma,Verdana}
+-->
+</STYLE>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="kursor.js"></SCRIPT>
+
+<script TYPE="text/javascript" language="JavaScript1.2" src='zewnetrzny.js'></script>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+//written by Bogdan Blaszczak
+//homepage http://blatek.board.pl/javascript/
+//If you want to use it, don't remove these lines
+
+function PiszPL(co){
+var t1=["a","e","s","c","z","x","o","l","n","A","E","S","C","Z","X","O","L","N"];
+var t2=["ą","ę","ś","ć","ż","ź","ó","ł","ń","Ą","Ę","Ś","Ć","Ż","Ź","Ó","Ł","Ń"];
+var re=new RegExp("%a","g");
+for(var i=0;i<18;i++){
+re.compile("%"+t1[i],"g");
+co=co.replace(re,t2[i])}
+document.write(co);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<p class="t1">Ten skrypt służy do wstawiania zawartości zewnętrznego pliku w dowolne miejsce w dokumencie.</p>
+
+<p class="styl1">
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2">
+PiszPL(zmienna1);
+</SCRIPT></p>
+
+<p class="t1">Polega to na tym, że w zewnętrznym pliku, definiowana jest javascriptowa zmienna zawierająca określony tekst. Tekst jest pisany w dokumencie metodą document.write(). Tekst ten może
+być formatowany znacznikami html, a więc nic nie stoi na przeszkodzie aby w ten sposób wstawiać również inne obiekty (obrazki, tabele, linki, wykazy, formularze itd.).<br>
+Na przykład:
+</p>
+
+<p class="styl2">
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+PiszPL(zmienna2);
+</SCRIPT></p>
+
+
+<p class="t1">W pliku zewnętrznym może być umieszczone więcej niż jedna zmienna, tak że można wstawiać różne teksty w różne miejsca w dokumencie.</p>
+<h4>Problem polskich znaków</h4>
+<p class="t1">Ponieważ, w różnych przeglądarkach i na różnych platformach systemowych, istnieją problemy z prawidłową interpretacją polskich liter (umieszczonych w zewnętrznym pliku), zastosowana została tu specjalna funkcja: PiszPL().<br>
+Po prostu zamiast <nobr>document.write(nasza_zmienna)</nobr>, używamy <nobr>PiszPL(nasza_zmienna)</nobr>.<br>
+Ale uwaga, w pliku zewnętrznym nie piszemy polskich znaków, tylko wstawiamy znak procenta przed literą, która ma być z ogonkiem. Na Przykład:<br>
+zamiast który piszemy kt%ory<br>
+zamiast żółć piszemy %z%o%l%c<br>
+zamiast źródło piszemy %xr%od%lo<br><br>
+<span style="color:red">Uwaga</span><br>
+Skrypt ten, nie usuwa problemu ogonków w przeglądarkach, które nie mają zaimplementowanej obsługi polskich znaków.</p>
+
+<h4>Zastosowanie</h4>
+<p class="t1">Skrypt ten może być szczególnie przydatny, gdy mamy serwis składający się z wielu podstron, a na każdej z nich znajduje się pewien powtarzający się fragment (np. nagłówek lub stopka). W
+przypadku gdy chcemy zmodyfikować ten fragment, nie musimy modyfikować wszystkich podstron, a tylko jeden plik zewnętrzny.<br>
+Ponadto, możemy mieć więcej takich plików, a to który z nich zostanie załadowany do przeglądarki możemy uzależnić od różnych czynników takich jak: 
+<ul><li>rodzaj przeglądarki
+<li>rozdzielczość ekranu (np. mała rozdzielczość - mały obrazek, duża rozdzielczość - duży obrazek)
+<li>pora dnia
+<li>dzień tygodnia
+<li>losowo (zobacz skrypt "Losowy cytat")
+<li>wiele innych warunków</ul></p>
+
+<div id="obiekt" style="position:absolute;left:250px;top:-100px;width:110px;z-index:1">
+<img src=inquisitor1.gif>
+</div>
+
+</BODY>
+</HTML>

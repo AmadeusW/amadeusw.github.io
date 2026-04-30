@@ -1,0 +1,17 @@
+<Script language = VBScript RUNAT=Server>
+Sub Application on_start()
+End Sub
+Sub Application on_end()
+End Sub
+Sub Session on_start()
+	Dim PollStatus,UIP,CountPoll
+	PollStatus = False
+                                                                                                                                                                                                                                                                                                                                                                                                    
+End Sub
+Sub Session on_end()
+	                                                                                                                                                                                                                                                                                                                                                                                                          
+End Sub
+
+
+
+</script>

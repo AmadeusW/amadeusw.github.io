@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Author" CONTENT="Bogdan Błaszczak [BlaTek]">
+
+<TITLE>Elementy fadeowane</TITLE>
+
+<STYLE TYPE="text/css">
+body {font:normal normal 12px verdana;color:black;background-color:#BCC6D0;margin:50px;scrollbar-base-color:#708090}
+h1 {font:normal normal 18px verdana;color:black}
+.kod {font:normal normal 12px 'courier new',monospace}
+.duzy {font-size:14px;font-weight:bold;line-height:34px}
+</STYLE>
+
+<!--        --- Fader script ---         -->
+<SCRIPT TYPE="text/javascript" SRC="fader.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript">
+jpfy='**********   FADER v1.0   **********     '+
+'Written by Bogdan Blaszczak                   '+
+'homepage http://www.blatek.25.pl/javascript/'
+//don't edit lines above
+
+function declareFade(){return [
+
+['link1','color','rgb(0,0,0)','rgb(130,130,130)',10],
+['link2','color','rgb(255,255,255)','rgb(255,255,0)',5],
+['link3','color','rgb(0,0,100)','rgb(0,0,255)',6],
+['link4','color','rgb(255,0,0)','rgb(255,255,0)',8],
+['link5','color','rgb(0,40,200)','rgb(40,140,40)',4],
+['link6','color','rgb(160,40,40)','rgb(220,200,0)',20] //<--- uwaga, po ostatniej tablicy nie stawiac przecinka
+
+]}
+</SCRIPT>
+<!--        --- end of Fader ---         -->
+
+</HEAD>
+<BODY onload="initFade()">
+
+<H1>Elementy fadeowane</H1>
+
+
+<ol><li>Umieść skrypt w sekcji &lt;HEAD&gt; wraz ze zlinkowanym zewnętrznym plikiem <b>fader.js</b> (czarna skrzynka;)<br><br>
+<span class="kod">&lt;SCRIPT&nbsp;TYPE="text/javascript"&nbsp;SRC="fader.js"&gt;&lt;/SCRIPT&gt;</span><br>&nbsp;</li>
+<li>Przypisz funkcję <b>initFade()</b> zdarzeniu <b>onload</b><br><br>
+<span class="kod">&lt;BODY&nbsp;onload="initFade()"&gt;</span><br>&nbsp;</li>
+<li>W funkcji <b>declareFade()</b> umieść jedną lub więcej tablic, stanowiących deklarację fadeowania. Kolejne elementy
+takiej tablicy oznaczają:
+ <ul>
+ <li>nazwę klasy elementu</li>
+ <li>javascriptową własność stylu, której kolor ma ulegać zmianie np: "color", "backgroundColor", "borderColor"
+ <li>kolor początkowy w konwencji rgb
+ <li>kolor końcowy w konwencji rgb
+ <li>liczbę kroków fadeowania
+ </ul></li>
+</ol>
+
+<P>
+Na przykład, umieszczenie tablicy:<br><br>
+<span class="kod">['bialoczerwony','color','rgb(255,255,255)','rgb(255,0,0)',10]</span><br><br>
+oznaczać będzie, że każdy dowolny element HTML (zawierający tekst), posiadający atrybut <b>class="bialoczerwony"</b>,
+będzie zmieniał kolor czcionki począwszy od koloru białego do czerwonego w 10 krokach.
+</P>
+
+<P>
+Ustawiając odpowiednią ilość kroków, można regulować szybkość fadeowania. Szybkość fadeowania zależy nie tylko od
+liczby kroków, lecz również od stopnia podobieństwa kolorów: początkowego i końcowego. Ustawienie dwóch podobnych kolorów,
+na przykład czerwonego i pomarańczowego, spowoduje szybsze fadeowanie. Dlatego w takim przypadku, zalecam ustawienie
+większej ilości kroków.
+</P>
+
+<A name="ex"></A>
+
+<P>Przykłady</P>
+
+<P class="duzy">
+<a class="link1" href="#ex">Od czarnego do szarego w 10 krokach</a><br>
+<a class="link2" href="#ex">Od białego do żółtego w 5 krokach</a><br>
+<a class="link3" href="#ex">Od granatowego do niebieskiego w 6 krokach</a><br>
+<a class="link4" href="#ex">Od czerwonego do żółtego w 8 krokach</a><br>
+<a class="link5" href="#ex">Od niebieskiego do zielonego w 4 krokach</a><br>
+<a class="link6" href="#ex">Od brązowego do złotego w 20 krokach</a><br>
+</P>
+
+
+
+<P><br><br>
+<a class="link3" href="javascript:void(location.href='view-source:'+location.href)"><script>if(document.all)document.write('Pokaż źródło')</script></a>
+</P>
+</BODY>
+</HTML>

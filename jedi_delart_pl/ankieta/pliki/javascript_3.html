@@ -1,0 +1,992 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" Content="text/html; charset=ISO-8859-2">
+<LINK REL=stylesheet HREF="../style.css" TYPE="text/css">
+<title>Poradnik Zoom - Kurs JavaScript - Obiekty</title>
+</head>
+
+
+
+
+<body topmargin="10" leftmargin="10">
+
+<H1>
+
+<b><center>Obiekty</b></center>
+<A name=rozdzial1><P>1. Obiekt window</P></A>
+<P>Obiekt window jest obiektem najwyższego poziomu w dokumencie 
+HTML.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>frames[]</TD>
+<TD vAlign=top><H1>macierz ramek potomnych w oknie; porządek w 
+macierzy odpowiada porządkowi definiowania w dokumencie</TD></TR>
+<TR>
+<TD vAlign=top><H1>frames.length</TD>
+<TD vAlign=top><H1>liczba zdefiniowanych ramek</TD></TR>
+<TR>
+<TD vAlign=top><H1>self</TD>
+<TD vAlign=top><H1>bieżące okno</TD></TR>
+<TR>
+<TD vAlign=top><H1>parent</TD>
+<TD vAlign=top><H1>okno rodzicielskie ramki potomnej w zestawie 
+zdefiniowanym znacznikiem &lt;FRAMESET&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>top</TD>
+<TD vAlign=top><H1>okno najwyższego rzędu, które jest 
+właścicielem wszystkich widocznych ramek; okna 'top' są swymi 
+własnymi rodzicami</TD></TR>
+<TR>
+<TD vAlign=top><H1>status</TD>
+<TD vAlign=top><H1>komunikat pojawiający się w pasku stanu okna 
+przeglądarki</TD></TR>
+<TR>
+<TD vAlign=top><H1>defaultStatus</TD>
+<TD vAlign=top><H1>komunikat pojawiający się w pasku stanu okna 
+przeglądarki standardowo, które oczekuje na wprowadzenie jakichś danych 
+przez użytkownika</TD></TR>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD vAlign=top><H1>wewnętrzny identyfikator okna otwartego metodą 
+window.open() (może być niezdefiniowany)</TD></TR></TBODY></TABLE>
+<P><U><H1>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>alert("komunikat")</TD>
+<TD vAlign=top><H1>wyświetla okienko dialogowe "JavaScript 
+Alert" z podanym komunikatem</TD></TR>
+<TR>
+<TD vAlign=top><H1>confirm("komunikat")</TD>
+<TD vAlign=top><H1>wyświetla okno dialogowe 
+"Confirm" (tj. okienko z przyciskiem OK i przyciskiem CANCEL) 
+z podanym komunikatem; zwraca TRUE po użyciu przycisku OK, zaś FALSE po 
+użyciu przycisku CANCEL</TD></TR>
+<TR>
+<TD vAlign=top><H1>prompt("komunikat")</TD>
+<TD vAlign=top><H1>wyświetla okno dialogowe "Prompt"
+z podanym komunikatem, które oczekuje na wprowadzenie jakichś danych przez 
+użytkownika</TD></TR>
+<TR>
+<TD vAlign=top><H1>open("URL","nazwa")</TD>
+<TD vAlign=top><H1>otwiera na ekranie nowe okno, nadaje mu 
+wewnętrzny identyfikator "nazwa" i ściąga do niego dokument 
+wskazany lokalizatorem "URL"</TD></TR>
+<TR>
+<TD vAlign=top><H1>close()</TD>
+<TD vAlign=top><H1>zamyka okno z dokumentem, w którym znajduje 
+się instrukcja użycia tej metody ("samobójstwo okna")</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<H1><A name=rozdzial2>
+2. Obiekt frame.</P></A>
+<P>Obiekt frame (ramka) to okno znajdujące się wewnątrz okna 
+głównego w przeglądarce. Właściwości i metody są bardzo podobne do właściwości i 
+metod obiektu window (brak jest jedynie właściwości 
+name, status oraz defaultStatus).</P>
+<p>&nbsp;</p>
+<A name=rozdzial3>
+<P>3. Obiekt location.</P></A>
+<P>Obiekt location zawiera informacje o bieżącym adresie URL.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>href</TD>
+<TD><H1>łańcuch zawierający cały adres URL dokumentu</TD></TR>
+<TR>
+<TD vAlign=top><H1>protocol</TD>
+<TD><H1>łańcuch zawierający początek adresy URL wraz z pierwszym 
+dwukropkiem; przykładową wartością może być "http:" 
+(HyperText Transfer Protocol) lub wartość "javascript:" 
+(określa kod JavaScript)</TD></TR>
+<TR>
+<TD vAlign=top><H1>host</TD>
+<TD><H1>łańcuch zawierający nazwę serwera, nazwę domeny, np. 
+'www.domena.pl'</TD></TR>
+<TR>
+<TD vAlign=top><H1>hostname</TD>
+<TD><H1>łańcuch zawierający pełną nazwę serwera łącznie z numerem 
+portu, przykład 'www.domena.pl:80'</TD></TR>
+<TR>
+<TD vAlign=top><H1>port</TD>
+<TD><H1>łańcuch określający używany przez serwer port 
+komunikacyjny; jeśli nie zostanie określona wartość portu, wtedy przyjmie 
+on wartość 80; port jest numerem kanału wejściowego na serwer</TD></TR>
+<TR>
+<TD vAlign=top><H1>pathname</TD>
+<TD><H1>łańcuch zawierający część adresy URL, tj. po trzecim 
+ukośniku, np. '~user\katalog\index.html'</TD></TR>
+<TR>
+<TD vAlign=top><H1>hash</TD>
+<TD><H1>łańcuch rozpoczynający się od '<SPAN>#</SPAN>', który 
+określa nazwę zakotwiczenia w dokumencie; powoduje przejście do 
+zakotwiczenia bez odświeżania dokumentu</TD></TR>
+<TR>
+<TD vAlign=top><H1>search</TD>
+<TD><H1>łańcuch rozpoczynający się znakiem '?', 
+który określa zapytanie w adresie URL; może on wyglądać następująco: 
+'?x=3&amp;y=7'</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial4>
+<P><H1>4. Obiekt document.</P></A>
+<P>Obiekt zawiera informacje o aktualnie otwartym dokumencie.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>title</TD>
+<TD><H1>łańcuch określający tytuł dokumentu; jeśli tytuł nie 
+został zdefiniowany jego wartość jest null</TD></TR>
+<TR>
+<TD vAlign=top><H1>location</TD>
+<TD><H1>łańcuch zawierający pełny adres URL aktualnie otwartego dokumentu</TD></TR>
+<TR>
+<TD vAlign=top><H1>lastModified</TD>
+<TD><H1>łańcuch zawierający datę ostatniej modyfikacji dokumentu; 
+jest on formatu <SPAN>Date</SPAN>; jeśli serwer nie wyśle tej informacji 
+do klienta, JavaScript ustawia wartość na <SPAN>0</SPAN> (tj. 1 styczeń 
+1970 GMT)</TD></TR>
+<TR>
+<TD vAlign=top><H1>referrer</TD>
+<TD><H1>zawiera adres URL, spod którego wywołany został bieżący 
+dokument</TD></TR>
+<TR>
+<TD vAlign=top><H1>bgColor</TD>
+<TD><H1>łańcuch określający kolor tła dokumentu; jest wyrażony w 
+postaci wartości szesnastkowej, określającej poziom intensywności kolorów 
+RGB (np. #FF0000 - kolor czerwony); jest odpowiednikiem 
+atrybutu BGCOLOR znacznika &lt;BODY&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>fgColor</TD>
+<TD><H1>łańcuch określający kolor tekstu w dokumencie; jest 
+wyrażony w postaci wartości szesnastkowej, określającej poziom 
+intensywności kolorów RGB (np. #000000 - kolor czarny); jest 
+odpowiednikiem atrybutu TEXT znacznika 
+&lt;BODY&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>linkColor</TD>
+<TD><H1>łańcuch określający kolor odsyłaczy hipertekstowych w 
+dokumencie; jest wyrażony w postaci wartości szesnastkowej, określającej 
+poziom intensywności kolorów RGB (np. #0000FF - kolor 
+niebieski); jest odpowiednikiem atrybutu LINK znacznika 
+&lt;BODY&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>vlinkColor</TD>
+<TD><H1>łańcuch określający kolor odwiedzonych odsyłaczy 
+hipertekstowych; jest wyrażony w postaci wartości szesnastkowej, 
+określającej poziom intensywności kolorów RGB (np. #00FF00 - 
+kolor zielony); jest odpowiednikiem atrybutu VLINK znacznika 
+&lt;BODY&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>alinkColor</TD>
+<TD><H1>łańcuch określający kolor aktywnego odsyłacza 
+hipertekstowego (odsyłacz nad którym znajduje się aktualnie kursor 
+myszki); jest wyrażony w postaci wartości szesnastkowej, określającej 
+poziom intensywności kolorów RGB (np. #0000FF - kolor 
+niebieski); jest odpowiednikiem atrybutu ALINK znacznika 
+&lt;BODY&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>forms[]</TD>
+<TD><H1>tablica zawierająca pozycję każdego formularza; przykład 
+użycia w przypadku formularza o nazwie <B>formularz1</B>:<BR>- 
+document.forms["formularz1"]<BR>- document.forms[0]<BR>- 
+document.formularz1<BR>kolejność numeracji formularzy w tablicy jest taka 
+sama jak kolejność ich umieszczenia w dokumencie HTML</TD></TR>
+<TR>
+<TD vAlign=top><H1>forms.length</TD>
+<TD><H1>przechowuje wartość ilości formularzy w dokumencie</TD></TR>
+<TR>
+<TD vAlign=top><H1>links[]</TD>
+<TD><H1>tablica zawierająca pozycję każdego obiektu 
+Area (&lt;AREA HREF=""&gt; &lt;/AREA&gt;) i Link
+(&lt;A HREF=""&gt; &lt;/A&gt;), tj. odsyłaczy, w dokumencie; każdemu 
+odsyłaczowi odpowiada jeden obiekt Area lub obiekt 
+Link</TD></TR>
+<TR>
+<TD vAlign=top><H1>links.length</TD>
+<TD><H1>przechowuje wartość ilości odsyłaczy (obiektów 
+Link i Area) w dokumencie</TD></TR>
+<TR>
+<TD vAlign=top><H1>anchors[]</TD>
+<TD><H1>tablica zawierająca pozycję każdego zakotwiczenia (&lt;A 
+NAME=""&gt; &lt;/A&gt;)</TD></TR>
+<TR>
+<TD vAlign=top><H1>anchors.length</TD>
+<TD><H1>przechowuje wartość ilości zakotwiczeń w 
+dokumencie</TD></TR></TBODY></TABLE>
+<H1><P><U><SPAN>Metody</SPAN></U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>write("łańcuch")</TD>
+<TD><H1>wypisuje wyrażenie HTML (łańcuch, który może zawierać 
+znaczniki HTML, w tym przypadku jest to łańcuch zawierający napis: 
+łańcuch) w dokumencie w bieżącym oknie</TD></TR>
+<TR>
+<TD vAlign=top><H1>writeln("łańcuch")</TD>
+<TD><H1>działa podobnie jak write("łańcuch"), z tą 
+jednak różnicą, że na końcu dodaje znak przejścia do następnej linii; 
+HTML ignoruje przejście do nowej linii chyba, że znajduje się 
+to wewnątrz znacznika &lt;PRE&gt; 
+&lt;/PRE&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>clear()</TD>
+<TD><H1>czyści zawartość bieżącego okna</TD></TR>
+<TR>
+<TD vAlign=top><H1>close()</TD>
+<TD><H1>powoduje zamknięcie bieżącego okna</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial5>
+<H1><P>5. Obiekt form.</P></A>
+<P>Pozwala użytkownikowi wprowadzić tekst i dokonać wyboru przy pomocy elementów 
+formularza, tj. przyciski, przełączniki, pola tekstowe, listy wyboru. Odpowiada 
+znacznikowi &lt;FORM&gt; w dokumencie HTML. Każdy formularz posiada 
+osobny obiekt form.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>łańcuch określający nazwę formularza; odpowiada 
+atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>method</TD>
+<TD><H1>łańcuch określający sposób wysyłania formularza do 
+serwera; odpowiada atrybutowi METHOD</TD></TR>
+<TR>
+<TD vAlign=top><H1>action</TD>
+<TD><H1>łańcuch określający docelowy adres URL, pod który 
+zostanie wysłany formularz; odpowiada atrybutowi ACTION</TD></TR>
+<TR>
+<TD vAlign=top><H1>target</TD>
+<TD><H1>łańcuch określający nazwę okna do którego zostanie 
+przesłana odpowiedź po wypełnieniu i wysłaniu formularza; odpowiada 
+atrybutowi TARGET</TD></TR>
+<TR>
+<TD vAlign=top><H1>elements[indeks]</TD>
+<TD><H1>tablica obiektów (elementów) formularza takich jak 
+przyciski, przełączniki, klucze pola tekstowe, listy wyboru</TD></TR>
+<TR>
+<TD vAlign=top><H1>length</TD>
+<TD><H1>zawiera informację o ilości elementów w formularzu; można 
+otrzymać tą samą informację wpisując: 
+form.elements.length</TD></TR></TBODY></TABLE>
+<H1><P><U><SPAN>Metody</SPAN></U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>submit()</TD>
+<TD vAlign=top><H1>symuluje wciśnięcie przycisku typu 
+submit; powoduje wysłanie formularza; nie wywołuje zdarzenia 
+onSubmit()</TD></TR>
+<TR>
+<TD vAlign=top><H1>reset()</TD>
+<TD vAlign=top><H1>symuluje wciśnięcie przycisku typu 
+reset w formularzu; ustawia wszystkie wartości elementów 
+formularza na wartości domyślne; nie wywołuje zdarzenia 
+onReset()</TD></TR></TBODY></TABLE>
+<P><H1><U><SPAN>Obsługa zdarzeń</SPAN></U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onSubmit()</TD>
+<TD><H1>wykonywane w momencie wciśnięcia przycisku typu 
+submit</TD></TR>
+<TR>
+<TD vAlign=top><H1>onReset()</TD>
+<TD><H1>wykonywane w momencie wciśnięcia przycisku typu 
+reset</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial6>
+<H1><P>6. Obiekt text i textarea.</P></A>
+<P>Obiekty TEXT i TEXTAREA są elementami formularz 
+pozwalającymi użytkownikowi wprowadzić dowolny tekst. W przypadku obiektu 
+TEXT ograniczeniem jest tylko jedna linia tekstu. 
+TEXTAREA to pole formularza, które umożliwia wprowadzenie inforacji 
+tekstowej bez ograniczeń co do ilości linii.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>łańcuch przechowujący nazwę elementu; odpowiada 
+atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>value</TD>
+<TD><H1>łańcuch przechowujący bieżącą zawartość tekstową 
+znajdującą się w oknie tekstowym elementu</TD></TR>
+<TR>
+<TD vAlign=top><H1>defaultValue</TD>
+<TD><H1>łańcuch przechowujący domyślną (początkową) wartość 
+tekstową wyświetlaną w elemencie formularza; odpowiada atrybutowi 
+VALUE</TD></TR></TBODY></TABLE>
+<P><H1><U>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>focus()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go, ale nie zmienia 
+jego stanu); nie wywołuje zdarzenia onFocus</TD></TR>
+<TR>
+<TD vAlign=top><H1>blur()</TD>
+<TD><H1>usuwa aktywność bieżącego elementu (nie zmienia jego 
+stanu); nie wywołuje zdarzenia onBlur</TD></TR>
+<TR>
+<TD vAlign=top><H1>select()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go) i umieszcza w 
+polu tekstowym kursor; nie wywołuje zdarzenia 
+onSelect</TD></TR></TBODY></TABLE>
+<P><U><H1>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onFocus()</TD>
+<TD><H1>wykonywane kiedy użytkownik podświetli (aktywuje) bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onBlur()</TD>
+<TD><H1>wykonywane kiedy użytkownik deaktywuje bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onSelect()</TD>
+<TD><H1>wykonywane w momencie kliknięcia myszą na polu tekstowym 
+elementu</TD></TR>
+<TR>
+<TD vAlign=top><H1>onChange()</TD>
+<TD><H1>wykonywane kiedy wystąpi jakakolwiek zmiana w polu 
+elementu zakończona opuszczeniem tego elementu</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<H1><A name=rozdzial7>
+<P>7. Obiekt checkbox.</P></A>
+<P>Checkbox jest elementem formularza pozwalającym użytkownikowi 
+jego włączenie lub wyłączenie. Jest zdefiniowany znacznikiem: &lt;input 
+type="checkbox"&gt;.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>łańcuch zawierający nazwę bieżącego elementu; jest 
+odpowiednikiem atrybutu NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>value</TD>
+<TD><H1>łańcuch który przyjmuje wartość ON jeśli 
+bieżący element (tj. checkbox) jest włączony i wartość OFF 
+jeśli element jest wyłączony (niezaznaczony); odpowiada atrybutowi 
+VALUE</TD></TR>
+<TR>
+<TD vAlign=top><H1>checked</TD>
+<TD><H1>zawiera wartość boolowską określającą stan bieżącego 
+elementu (TRUE - włączony [zaznaczony], FALSE - 
+wyłączony [niezaznaczony])</TD></TR>
+<TR>
+<TD vAlign=top><H1>defaultValue</TD>
+<TD><H1>określa stan początkowy bieżącego elementu 
+(włączony/wyłączony)</TD></TR></TBODY></TABLE>
+<P><U><H1>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>click()</TD>
+<TD><H1>symuluje kliknięcie myszą na bieżącym elemencie, ale nie 
+wywołuje zdarzenia onClick</TD></TR>
+<TR>
+<TD vAlign=top><H1>focus()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go, ale nie zmienia 
+jego stanu); nie wywołuje zdarzenia onFocus</TD></TR>
+<TR>
+<TD vAlign=top><H1>blur()</TD>
+<TD><H1>usuwa aktywność bieżącego elementu (nie zmienia jego 
+stanu); nie wywołuje zdarzenia onBlur</TD></TR></TBODY></TABLE>
+<P><U><H1>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onClick()</TD>
+<TD><H1>wykonywane kiedy użytkownik kliknie na bieżącym 
+elemencie</TD></TR>
+<TR>
+<TD vAlign=top><H1>onFocus()</TD>
+<TD><H1>wykonywane kiedy użytkownik podświetli (aktywuje) bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onBlur()</TD>
+<TD><H1>wykonywane kiedy użytkownik deaktywuje bieżący 
+element</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial8>
+<H1><P>8. Obiekt radio.</P></A>
+<P>Element formularza umożliwiający wybór tylko jednego elementu z listy przez 
+użytkownika wypełniającego formularz.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>zawiera łańcuch przechowujący nazwę elementu; odpowiada 
+atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>length</TD>
+<TD></TD></TR>
+<TR>
+<TD vAlign=top><H1>value</TD>
+<TD><H1>zawiera łańcuch przechowujący wartość danego elementu; 
+odpowiada atrybutowi VALUE</TD></TR>
+<TR>
+<TD vAlign=top><H1>checked</TD>
+<TD><H1>wartość boolowska pozwalająca programowo zaznaczyć 
+bieżący element formularza</TD></TR>
+<TR>
+<TD vAlign=top><H1>defaultChecked</TD>
+<TD><H1>wartość boolowska, która określa domyślne 
+zaznaczenie/odznaczenie elementu; odpowiada atrybutowi 
+CHECKED</TD></TR></TBODY></TABLE>
+<P><U><H1>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>click()</TD>
+<TD><H1>symuluje kliknięcie myszą na bieżącym elemencie, ale nie 
+wywołuje zdarzenia onClick</TD></TR></TBODY></TABLE>
+<P><U><H1>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onClick()</TD>
+<TD><H1>wykonywane kiedy użytkownik kliknie na bieżącym 
+elemencie</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<H1><A name=rozdzial9>
+<P>9. Obiekt select.</P></A>
+<P>Element SELECT to lista wyboru, która umożliwia użytkownikowi 
+wypełniającemu formularz dokonanie wyboru jednego lub więcej elementów z 
+listy.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>length</TD>
+<TD><H1>zawiera liczbę odpowiadającą ilości dostępnych pozycji do 
+wyboru z bieżącej listy; jest to to samo co zapis: 
+options.length</TD></TR>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>zawiera łańcuch przechowujący nazwę listy wyboru; 
+odpowiada atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>selectIndex</TD>
+<TD><H1>przechowuje wartość wybranej pozycji z listy lub wartość 
+pierwszej wybranej pozycji z listy, jeśli wybranych jest ich więcej niż 
+jedna</TD></TR>
+<TR>
+<TD vAlign=top><H1>options</TD>
+<TD><H1>tablica zawierająca pozycje wszystkich elementów bieżącej 
+listy wyboru</TD></TR>
+<TR>
+<TD vAlign=top><H1>options[].text</TD>
+<TD><H1>zawiera łańcuch który będzie wyświetlany w liście wyboru 
+jako nazwa pozycji w liście</TD></TR>
+<TR>
+<TD vAlign=top><H1>options[].value</TD>
+<TD><H1>zawiera wartość jaka zostanie przesłana do serwera w 
+momencie wybrania bieżącej pozycji i wysłaniu formularza</TD></TR>
+<TR>
+<TD vAlign=top><H1>options[].selected</TD>
+<TD><H1>wartość boolowska określająca stan wyboru bieżącej 
+pozycji listy wyboru</TD></TR></TBODY></TABLE>
+<TABLE border=0 cellSpacing=0 style="MARGIN-LEFT: 5px">
+<TBODY>
+<TR>
+<TD vAlign=top><H1>options[].defaultSelected</TD>
+<TD style="MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><H1>zawiera 
+wartość boolowską określającą czy pozycja domyślnie (początkowo) jest 
+zaznaczona/odznaczona</TD></TR></TBODY></TABLE>
+<P><H1><U>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>focus()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go, ale nie zmienia 
+jego stanu); nie wywołuje zdarzenia onFocus</TD></TR>
+<TR>
+<TD vAlign=top><H1>blur()</TD>
+<TD><H1>usuwa aktywność bieżącego elementu (nie zmienia jego 
+stanu); nie wywołuje zdarzenia onBlur</TD></TR></TBODY></TABLE>
+<P><H1><U>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onFocus()</TD>
+<TD><H1>wykonywane kiedy użytkownik podświetli (aktywuje) bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onBlur()</TD>
+<TD><H1>wykonywane kiedy użytkownik deaktywuje bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onChange()</TD>
+<TD><H1>wykonywane kiedy użytkownik zmieni stan (wartość) 
+bieżącego elementu</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial10>
+<P><H1>10. Obiekty button, submit oraz reset.</P></A>
+<P>Elementy formularza występujące w postaci przycisków.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>value</TD>
+<TD><H1>zawiera łańcuch przechowujący wartość reprezentyjącą 
+bieżący element (przycisk); odpowiada atrybutowi VALUE</TD></TR>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>zawiera łańcuch określający nazwę bieżącego elementu; 
+odpowiada atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>type</TD>
+<TD><H1>określa rodzaj (typ) przycisku, np.: BUTTON, 
+SUBMIT, RESET; odpowiada atrybutowi 
+TYPE</TD></TR></TBODY></TABLE>
+<P><U><H1>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>focus()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go, ale nie zmienia 
+jego stanu); nie wywołuje zdarzenia onFocus</TD></TR>
+<TR>
+<TD vAlign=top><H1>blur()</TD>
+<TD><H1>usuwa aktywność bieżącego elementu (nie zmienia jego 
+stanu); nie wywołuje zdarzenia <SPAN>onBlur</SPAN></TD></TR>
+<TR>
+<TD vAlign=top><H1>click()</TD>
+<TD><H1>symuluje kliknięcie myszą na bieżącym elemencie, ale nie 
+wywołuje zdarzenia onClick</TD></TR></TBODY></TABLE>
+<P><U><H1>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onFocus()</TD>
+<TD><H1>wykonywane kiedy użytkownik podświetli (aktywuje) bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onBlur()</TD>
+<TD><H1>wykonywane kiedy użytkownik deaktywuje bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onClick()</TD>
+<TD><H1>wykonywane kiedy użytkownik kliknie na bieżącym 
+elemencie</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial11>
+<P><H1>11. Obiekt password.</P></A>
+<P>Pole tekstowe formularza, które w momencie wpisania jakiejkolwiek wartośći 
+wyświetla wszystkie znaki jako *. Jest to pole, które może posłużyć 
+do wprowadzania hasła dostępu.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>defaultValue</TD>
+<TD><H1>zawiera łańcuch przechowujący wartość domyślną 
+(początkową) elementu formularza; odpowiada atrybutowi 
+VALUE</TD></TR>
+<TR>
+<TD vAlign=top><H1>value</TD>
+<TD><H1>zawiera aktualny łańcuch znajdujący się w polu tekstowym 
+bieżącego elementu</TD></TR>
+<TR>
+<TD vAlign=top><H1>name</TD>
+<TD><H1>zawiera łańcuch określający nazwę elementu; odpowiada 
+atrybutowi NAME</TD></TR>
+<TR>
+<TD vAlign=top><H1>type</TD>
+<TD><H1>określa rodzaj elementu formularza; w tym przypadku 
+wartością jest PASSWORD; odpowiada atrybutowi 
+TYPE</TD></TR></TBODY></TABLE>
+<P><H1><U>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>focus()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go, ale nie zmienia 
+jego stanu); nie wywołuje zdarzenia onFocus</TD></TR>
+<TR>
+<TD vAlign=top><H1>blur()</TD>
+<TD><H1>usuwa aktywność bieżącego elementu (nie zmienia jego 
+stanu); nie wywołuje zdarzenia onBlur</TD></TR>
+<TR>
+<TD vAlign=top><H1>select()</TD>
+<TD><H1>uaktywnia bieżący element (podświetla go) i umieszcza w 
+polu tekstowym kursor; nie wywołuje zdarzenia 
+onSelect</TD></TR></TBODY></TABLE>
+<P><H1><U>Obsługa zdarzeń</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>onFocus()</TD>
+<TD><H1>wykonywane kiedy użytkownik podświetli (aktywuje) bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onBlur()</TD>
+<TD><H1>wykonywane kiedy użytkownik deaktywuje bieżący 
+element</TD></TR>
+<TR>
+<TD vAlign=top><H1>onSelect()</TD>
+<TD><H1>wykonywane w momencie kliknięcia myszą na polu tekstowym 
+elementu</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial12>
+<H1><P>12. Obiekty navigator.</P></A>
+<P>Obiekt navigator przechowuje informacje na temat używanej 
+przeglądarki, jej wersji, itp.</P>
+<P><U><H1>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>appCodeName</TD>
+<TD><H1>określa "<SPAN>codename</SPAN>" przeglądarki; w przypadku 
+IE oraz Netscape jest to wartość "Mozilla"</TD></TR>
+<TR>
+<TD vAlign=top><H1>appVersion</TD>
+<TD><H1>określa numer wersji przeglądarki</TD></TR>
+<TR>
+<TD vAlign=top><H1>userAgent</TD>
+<TD><H1>przechowuje informacje na temat przeglądarki, tj. 
+"codename", wersja, system operacyjny, itd.</TD></TR>
+<TR>
+<TD vAlign=top><H1>appName</TD>
+<TD><H1>określa nazwę przeglądarki</TD></TR>
+<TR>
+<TD vAlign=top><H1>mimeTypes</TD>
+<TD><H1>tablica wszystkich MIME obsługiwanych przez 
+przeglądarkę</TD></TR>
+<TR>
+<TD vAlign=top><H1>platform</TD>
+<TD><H1>określa typ środowiska, w którym jest uruchomiona 
+przeglądarka (np. Win32, Win16, Mac68k, MacPPC, środowiska Unix)</TD></TR>
+<TR>
+<TD vAlign=top><H1>plugins</TD>
+<TD><H1>tablica wszystkich zainstalowanych plug-inów 
+przeglądarki</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial13>
+<H1><P>13. Obiekt string.</P></A>
+<P>Obiekt string przechowuje dane w postaci łańcucha znakowego.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>length</TD>
+<TD><H1>zwraca wartość liczbową charakteryzującą ilość znaków w 
+łańcuchu</TD></TR></TBODY></TABLE>
+<P><H1><U>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>big()</TD>
+<TD><H1>zwiększa rozmiar czcionki; odpowiednik znacznika 
+&lt;BIG&gt;; przykład
+<TABLE border=0>
+<TBODY>
+<TR>
+<TD vAlign=top></TD>
+<TD vAlign=top><H1>tekst = "Cześć!"</TD>
+<TD vAlign=top></TD></TR>
+<TR>
+<TD vAlign=top></TD>
+<TD vAlign=top><H1>tekst.big();</TD>
+<TD vAlign=top><H1>// zwraca łańcuch 
+"&lt;BIG&gt;Cześć!&lt;/BIG&gt;"</TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD vAlign=top><H1>blink()</TD>
+<TD><H1>tekst migający; odpowiednik znacznika 
+&lt;BLINK&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>bold()</TD>
+<TD><H1>tekst pogrubiony; odpowiednik znacznika 
+&lt;B&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>fixed()</TD>
+<TD></TD></TR>
+<TR>
+<TD vAlign=top><H1>italics()</TD>
+<TD><H1>tekst pochylony; odpowiednik znacznika 
+&lt;I&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>small()</TD>
+<TD><H1>zmniejsza rozmiar czcionki; odpowiednik znacznika 
+&lt;SMALL&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>sub()</TD>
+<TD><H1>odpowiednik znacznika &lt;SUB&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>strike()</TD>
+<TD><H1>tekst przekreślony; odpowiednik znacznika 
+&lt;STRIKE&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>sup()</TD>
+<TD><H1>odpowiednik znacznika 
+&lt;SUP&gt;</TD></TR></TBODY></TABLE>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>fontColor(kolor)</TD>
+<TD vAlign=top><H1>ustawia kolor czcionki (tekstu) na wartość 
+kolor; odpowiednik znacznika &lt;FONT 
+COLOR="#..."&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>fontSize(rozmiar)</TD>
+<TD vAlign=top><H1>ustawia rozmiar czcionki na wartość 
+rozmiar; odpowiednik znacznika &lt;FONT 
+SIZE=...&gt;</TD></TR>
+<TR>
+<TD vAlign=top><H1>charAt(indeks)</TD>
+<TD vAlign=top><H1>zwraca znak z pozycji określonej przez 
+indeks</TD></TR>
+<TR>
+<TD vAlign=top><H1>indexOf(podłańcuch [,indeks])</TD>
+<TD vAlign=top><H1>przeszukuje łańcuch w poszukiwaniu 
+podłańcucha i zwraca pozycję pierwszego znalezionego znaku; 
+jeśli podana jest wartość indeks, to rozpoczyna 
+przeszukiwanie od pozycji określonej przez indeks; jeśli nie 
+znajdzie odpowiednika podłańcucha to zwraca wartość 
+-1; przykład:
+<TABLE border=0>
+<TBODY>
+<TR>
+<TD></TD>
+<TD><H1>"niebieski".indexOf("nieb")</TD>
+<TD><H1>// zwróci 0</TD></TR>
+<TR>
+<TD></TD>
+<TD><H1>"niebieski".indexOf("nieba")</TD>
+<TD><H1>// zwróci -1</TD></TR>
+<TR>
+<TD></TD>
+<TD><H1>"niebieski".indexOf("ski")</TD>
+<TD><H1>// zwróci 6</TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD vAlign=top><H1>lastindexOf(podłańcuch [,indeks])</TD>
+<TD vAlign=top><H1>jej działanie jej podobne do 
+indexOf(podłańcuch [, indeks]), lecz zaczyna przeszukiwanie 
+odbywa się w kierunku przeciwnym, czyli od końca</TD></TR>
+<TR>
+<TD vAlign=top><H1>substring(indeksA, indeksB)</TD>
+<TD vAlign=top><H1>zwraca podłańcuch wycięty z łańcucha od 
+pozycji indeksA do pozycji indeksB; przypadki:
+<TABLE border=0>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>-</TD>
+<TD vAlign=top><H1>jeśli indeksA &lt; 0, to 
+indeksA jest równy 0</TD></TR>
+<TR>
+<TD vAlign=top><H1>-</TD>
+<TD vAlign=top><H1>jeśli indeksB &gt; długość 
+łańcucha (nazwaŁańcucha.length), to indeksB jest równy 
+długości łańcucha</TD></TR>
+<TR>
+<TD vAlign=top><H1>-</TD>
+<TD vAlign=top><H1>jeśli indeksA = 
+indeksB, to zwrócony podłańcuch jest łańcuchem 
+pustym</TD></TR>
+<TR>
+<TD vAlign=top><H1>-</TD>
+<TD vAlign=top><H1>jeśli indeksB został 
+pominięty, to podłańcuch będzie zawierał znaki od pozycji 
+indeksA do końca łańcucha</TD></TR>
+<TR>
+<TD vAlign=top><H1>-</TD>
+<TD vAlign=top><H1>jeśli indeksA &gt; 
+indeksB, to JavaScript1.2 wygeneruje błąd (out of 
+memory), pozostałe wersje zwracają łańcuch rozpoczynający się od 
+pozycji indeksB, a kończący na pozycji indeksA - 
+1</TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD vAlign=top><H1>toLowerCase()</TD>
+<TD vAlign=top><H1>konwertuje znaki w łańcuchu na małe 
+litery</TD></TR>
+<TR>
+<TD vAlign=top><H1>toUpperCase()</TD>
+<TD vAlign=top><H1>konwertuje znaki w łańcuchu na wielkie 
+litery</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial14>
+<H1><P>14. Obiekt Date.</P></A>
+<P>Obiekt Date pozwala operować datą oraz czasem. W celu stworzenia 
+obiektu typu data/czas musimy posłużyć się konstruktorem Date w 
+następujący sposób:</P>
+<H1><P>new Date();<BR>new 
+Date(milisekundy);<BR>new 
+Date(łańcuch_Data);<BR>new Date(rok, 
+miesiąc, dzień [, godzina, minuta, sekunda, milisekunda]);</P>
+<P><H1><I>milisekundy</I> - wartość liczbowa określająca ilość milisekund, jakie 
+upłynęły od dnia 1 stycznia 1970, 00:00:00<BR><I>łańcuch_Data</I> - łańcuch 
+reprezentujący datę<BR><I>rok, miesiąc, dzień</I> - wartości całkowite 
+reprezentujące część daty; miesiąc przyjmuje wartości 0-11 (0-styczeń, 1-luty, 
+..., 11-grudzień)<BR><I>godzina, minuta, sekunda, milisekunda</I> - wartości 
+całkowite przedstawiające część daty</P>
+<P>W przypadku, gdy konstruktor nie będzie posiadał argumentów, np.:</P>
+<P>dzisiaj = new Date();</P>
+<P>zwrócona wartość będzie dotyczyła daty/czasu bieżącego.</P>
+<P><U><H1>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>getDay()</TD>
+<TD><H1>zwraca dzień tygodnia</TD></TR>
+<TR>
+<TD vAlign=top><H1>getDate()</TD>
+<TD><H1>zwraca dzień miesiąca</TD></TR>
+<TR>
+<TD vAlign=top><H1>getHours()</TD>
+<TD><H1>zwraca wartość reprezentującą godzinę</TD></TR>
+<TR>
+<TD vAlign=top><H1>getMinutes()</TD>
+<TD><H1>zwraca wartość reprezentującą minuty</TD></TR>
+<TR>
+<TD vAlign=top><H1>getMonth()</TD>
+<TD><H1>zwraca wartość reprezentującą numer miesiąca</TD></TR>
+<TR>
+<TD vAlign=top><H1>getSeconds()</TD>
+<TD><H1>zwraca wartość reprezentującą sekundy</TD></TR>
+<TR>
+<TD vAlign=top><H1>getTime()</TD>
+<TD><H1>zwraca wartość numeryczną określającą czas; wartość w 
+milisekundach</TD></TR>
+<TR>
+<TD vAlign=top><H1>getYear()</TD>
+<TD><H1>zwraca rok</TD></TR>
+<TR>
+<TD vAlign=top><H1>setDate()</TD>
+<TD><H1>ustawia dzień miesiąca</TD></TR>
+<TR>
+<TD vAlign=top><H1>setHour()</TD>
+<TD><H1>ustawia godzinę</TD></TR>
+<TR>
+<TD vAlign=top><H1>setMinutes()</TD>
+<TD><H1>ustawia minutę</TD></TR>
+<TR>
+<TD vAlign=top><H1>setMonth()</TD>
+<TD><H1>ustawia miesiąc</TD></TR>
+<TR>
+<TD vAlign=top><H1>setSeconds()</TD>
+<TD><H1>ustawia sekundy</TD></TR>
+<TR>
+<TD vAlign=top><H1>setTime()</TD>
+<TD><H1>ustawia wartość obiektu Date; wartość w 
+milisekundach</TD></TR>
+<TR>
+<TD vAlign=top><H1>setYear()</TD>
+<TD><H1>ustawia rok</TD></TR>
+<TR>
+<TD vAlign=top><H1>toGMTString()</TD>
+<TD><H1>zwraca datę w systemie GMT</TD></TR>
+<TR>
+<TD vAlign=top><H1>toLocaleString()</TD>
+<TD><H1>zwraca datę w formacie lokalnym</TD></TR>
+<TR>
+<TD vAlign=top><H1>parse(date)</TD>
+<TD><H1>zwraca ilość milisekund, jakie upłynęły od 1 stycznia 
+1970, 00:00:00</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<A name=rozdzial15>
+<H1><P>15. Obiekt Math.</P></A>
+<P>Obiekt Math przechowuje wartości i funkcje matematyczne 
+pozwalające wykonywać podstawowe operacje matematyczne.</P>
+<P><U>Właściwości</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>LN10</TD>
+<TD><H1>stała wartość; logarytm naturalny z 10</TD>
+<TD><H1>=</TD>
+<TD><H1>2.302585...</TD></TR>
+<TR>
+<TD vAlign=top><H1>LN2</TD>
+<TD><H1>stała wartość; logarytm naturalny z 2</TD>
+<TD><H1>=</TD>
+<TD><H1>0.693147...</TD></TR>
+<TR>
+<TD vAlign=top><H1>PI</TD>
+<TD><H1>stała wartość; liczba pi</TD>
+<TD><H1>=</TD>
+<TD><H1>3.141592...</TD></TR>
+<TR>
+<TD vAlign=top><H1>SQRT1_2</TD>
+<TD><H1>stała wartość; pierwiastek kwadratowy z 1/2</TD>
+<TD><H1>=</TD>
+<TD><H1>0.707107...</TD></TR>
+<TR>
+<TD vAlign=top><H1>SQRT2</TD>
+<TD><H1>stała wartość; pierwiastek kwadratowy z 2</TD>
+<TD><H1>=</TD>
+<TD><H1>1.414213...</TD></TR></TBODY></TABLE>
+<P><H1><U>Metody</U></P>
+<TABLE border=0 cellSpacing=5>
+<TBODY>
+<TR>
+<TD vAlign=top><H1>abs(x)</TD>
+<TD><H1>przekazuje wartość bezwzględną x</TD></TR>
+<TR>
+<TD vAlign=top><H1>acos(x)</TD>
+<TD><H1>przekazuje arcus cosinus x</TD></TR>
+<TR>
+<TD vAlign=top><H1>asin(x)</TD>
+<TD><H1>przekazuje arcus sinus x</TD></TR>
+<TR>
+<TD vAlign=top><H1>atan(x)</TD>
+<TD><H1>przekazuje arcus tangens x</TD></TR>
+<TR>
+<TD vAlign=top><H1>ceil(x)</TD>
+<TD><H1>przekazuje najmniejszą liczbę całkowitą większą niż lub 
+równą x</TD></TR>
+<TR>
+<TD vAlign=top><H1>cos(x)</TD>
+<TD><H1>przekazuje cosinus x</TD></TR>
+<TR>
+<TD vAlign=top><H1>exp(x)</TD>
+<TD><H1>przekazuje e (stała Eulera) podniesione do potęgi x</TD></TR>
+<TR>
+<TD vAlign=top><H1>floor(x)</TD>
+<TD><H1>przekazuje największą liczbę całkowitą mniejszą niż lub 
+równą x</TD></TR>
+<TR>
+<TD vAlign=top><H1>log(x)</TD>
+<TD><H1>przekazuje logarytm naturalny x</TD></TR>
+<TR>
+<TD vAlign=top><H1>max(x, y)</TD>
+<TD><H1>przekazuje większą z liczb x, y</TD></TR>
+<TR>
+<TD vAlign=top><H1>min(x, y)</TD>
+<TD><H1>przekazuje mniejszą z liczb x, y</TD></TR>
+<TR>
+<TD vAlign=top><H1>pow(x, y)</TD>
+<TD><H1>przekazuje <SPAN>x</SPAN> do potęgi <SPAN>y</SPAN></TD></TR>
+<TR>
+<TD vAlign=top><H1>round(x)</TD>
+<TD><H1>przekazuje x zaokrąglone do najbliższej 
+liczby całkowitej</TD></TR>
+<TR>
+<TD vAlign=top><H1>sin(x)</TD>
+<TD><H1>przekazuje sinus x</TD></TR>
+<TR>
+<TD vAlign=top><H1>sqrt(x)</TD>
+<TD><H1>przekazuje pierwiastek kwadratowy z x</TD></TR>
+<TR>
+<TD vAlign=top><H1>tan(x)</TD>
+<TD><H1>przekazuje tangens x</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+
+
+<P ALIGN="CENTER"><HR>
+<p><P ALIGN="CENTER"><b>Autor:</b> <a href="mailto:stelmi@friko2.onet.pl">Krzysztof Stelmach</a><br>
+Strona pochodzi z <a href="http://www.asp.z.pl/">http://www.asp.z.pl/</a></P></p>
+<HR>
+
+
+</body>
+</html>

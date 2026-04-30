@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Creation-date" CONTENT="2002-03-17T14:25:53Z">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Author" CONTENT="Bogdan Błaszczak">
+<TITLE>Animowana galeria</TITLE>
+<STYLE TYPE="text/css">
+<!--
+BODY {background-color:burlywood;background-image:url(grafika/piasek.jpg);color:#707070;font-weight:bold }
+#cien {position:absolute;left:270px;width:105px;top:-100px;z-index:1}
+#obiekt {position:absolute;left:250px;width:70px;top:-80px;z-index:2}
+#napis {position:absolute;left:80px;top:320px;z-index:3;
+	    color:#FF0000;font:italic bold 36pt Arial,Times}
+#napis1 {position:absolute;left:93px;top:330px;z-index:0;
+	    color:#978771;font:italic bold 36pt Arial,Times}
+.napis {color:#FF0000;font:italic bold 36pt Arial,Times}
+.napis1 {color:#978771;font:italic bold 36pt Arial,Times}
+#autor {position:absolute;left:20px;top:390px;z-index:1;
+	    color:#000050;font:italic bold 14pt Times}
+#autor1 {position:absolute;left:30px;top:398px;z-index:0;
+		 color:#877761;font:italic bold 14pt Times}
+.linki {position:absolute;z-index:3}
+.linki1 {position:absolute;text-decoration:underline;z-index:0}
+a:link    {font-weight:bold} 
+a:visited {font-weight:bold} 
+a:hover   {font-weight:bold} 
+-->
+</STYLE>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="galeria.js"></SCRIPT>
+
+</HEAD>
+<BODY>
+
+<div id="cien">
+<img src="grafika/cien.gif" width="105" height="70">
+</div>
+
+<div id="obiekt">
+<TABLE border="3" cellpadding="0" cellspacing="2"><TR><TD bgcolor="black" width="90" height="60">
+<img src="grafika/thumbs/1.jpg" width="90" height="60" name="thumb1" alt="Miniatura"></TD>
+</TR></TABLE>
+</div>
+
+<div id="napis">Samochody</div>
+<div id="napis1">Samochody</div>
+
+<div class="linki1" style="left:45px;top:45px;width:70px">
+zdjęcie 1<br><br><hr NOSHADE><br>
+zdjęcie 2<br><br><hr NOSHADE><br>
+zdjęcie 3<br><br><hr NOSHADE><br>
+zdjęcie 4<br><br><hr NOSHADE><br>
+</div>
+
+<div class="linki1" style="left:245px;top:45px;width:70px">
+zdjęcie 5<br><br><hr NOSHADE><br>
+zdjęcie 6<br><br><hr NOSHADE><br>
+zdjęcie 7<br><br><hr NOSHADE><br>
+zdjęcie 8<br><br><hr NOSHADE><br>
+</div>
+
+<div class="linki1" style="left:445px;top:45px;width:70px">
+zdjęcie 9<br><br><hr NOSHADE><br>
+zdjęcie 10<br><br><hr NOSHADE><br>
+zdjęcie 11<br><br><hr NOSHADE><br>
+zdjęcie 12<br><br><hr NOSHADE>
+</div>
+
+<!-- "javascript:Inf()" zastąp odpowiednimi adresami URL -->
+<div class="linki" style="left:30px;top:30px;width:70px">
+<A HREF="javascript:Inf()" OnMouseOver="Hop(95,2); WstawT(1,'Volkswagen&nbsp;Golf','zdjecie 486x341 px, 41 kB');return true;" OnMouseOut="Mout()">zdjęcie 1</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(95,60); WstawT(2,'Peugeot&nbsp;306','zdjecie 486x332 px, 51 kB'); return true;" OnMouseOut="Mout()">zdjęcie 2</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(95,132); WstawT(3,'Alfa&nbsp;Romeo&nbsp;146','zdjecie 486x340 px, 22 kB'); return true;" OnMouseOut="Mout()">zdjęcie 3</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(95,204); WstawT(4,'Nissan&nbsp;Almera','zdjecie 486x323 px, 43 kB'); return true;" OnMouseOut="Mout()">zdjęcie 4</A><br><br><hr><br>
+</div>
+
+<div class="linki" style="left:230px;top:30px;width:70px">
+<A HREF="javascript:Inf()" OnMouseOver="Hop(295,2); WstawT(5,'Skoda&nbsp;Felicia&nbsp;Fun','zdjecie 487x319 px, 38 kB'); return true;" OnMouseOut="Mout()">zdjęcie 5</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(295,60); WstawT(6,'Fiat&nbsp;Marea','zdjecie 486x330 px, 44 kB'); return true;" OnMouseOut="Mout()">zdjęcie 6</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(295,132); WstawT(7,'Mazda&nbsp;626','zdjecie 486x321 px, 39 kB'); return true;" OnMouseOut="Mout()">zdjęcie 7</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(295,204); WstawT(8,'Mercedes&nbsp;A','zdjecie 485x343 px, 58 kB'); return true;" OnMouseOut="Mout()">zdjęcie 8</A><br><br><hr><br>
+</div>
+
+<div class="linki" style="left:430px;top:30px;width:70px">
+<A HREF="javascript:Inf()" OnMouseOver="Hop(504,2); WstawT(9,'Nissan&nbsp;Patrol','zdjecie 485x327 px, 41 kB'); return true;" OnMouseOut="Mout()">zdjęcie 9</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(504,60); WstawT(10,'Volkswagen&nbsp;Polo','zdjecie 486x336 px, 40 kB'); return true;" OnMouseOut="Mout()">zdjęcie 10</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(504,132); WstawT(11,'Porsche&nbsp;Twin&nbsp;Turbo','zdjecie 474x320 px, 26 kB'); return true;" OnMouseOut="Mout()">zdjęcie 11</A><br><br><hr><br>
+<A HREF="javascript:Inf()" OnMouseOver="Hop(504,204); WstawT(12,'Volvo&nbsp;V40','zdjecie 399x306 px, 28 kB'); return true;" OnMouseOut="Mout()">zdjęcie 12</A><br><br><hr>
+</div>
+</BODY>
+</HTML>

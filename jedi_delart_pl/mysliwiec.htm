@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Anfy" content="">
+<title>Jedi Academy - Lot my&#347;liwcem imperium</title>
+<bgsound src="loop.wav" loop="-1">
+
+<script>
+<!--
+/* 
+No Right Click. Written by PerlScriptsJavaScripts.com
+Copyright http://www.perlscriptsjavascripts.com 
+Free and commercial Perl and JavaScripts     
+*/
+
+isNN = document.layers ? 1 : 0; 
+
+function noContext(){return false;}
+
+function noContextKey(e) {
+    if(isNN){
+        if (e.keyCode == 96){ return (false);}
+    } else {
+        if (event.keyCode == 96){ return (false);}
+    }
+}
+
+function noClick(e){
+    if(isNN){
+        if(e.which > 1) {return false;}
+    } else { 
+        if(event.button > 1){return false;}
+    }
+}
+
+if(isNN){ 
+    document.captureEvents(Event.MOUSEDOWN);
+}
+
+document.oncontextmenu = noContext;
+document.onkeypress    = noContextKey;
+document.onmousedown   = noClick;
+document.onmouseup     = noClick;
+
+// -->
+</script>
+
+
+
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<table width=100% height=90%>
+<tr>
+<td align=center valign=center>
+<font size="5" color="#FFFF00">Lot my&#347;liwcem imperium</font>
+<p>Sterowanie:<br>
+Ruch myszk&#261; - skr&#281;canie, przyspieszanie, zwalnianie<br>
+Klikni&#281;cie - normalna pr&#281;dko&#347;&#263;<br>
+<applet archive="voxel.jar" code="voxel.class" width="400" height="400">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="shadow" value="6">
+<param name="statusmsg" value="Jedi Academy - Lot my&#347;liwcem imperium">
+<param name="numpal" value="27">
+<param name="backr" value="0">
+<param name="backg" value="0">
+<param name="backb" value="0">
+<param name="horizon" value="350">
+<param name="mapimg" value="NO">
+<param name="overimg" value="fighter2.gif">
+<param name="overimgX" value="150">
+<param name="overimgY" value="80">
+<param name="textscroll" value="NO">
+<param name="regcode" value="NO">
+<param name="reglink" value="NO">
+<param name="regnewframe" value="NO">
+<param name="res" value="1">
+<param name="roughness" value="400">
+<param name="regframename" value="_blank">
+<param name="memdelay" value="1000">
+<param name="priority" value="3">
+<param name="MinSYNC" value="10">
+<param name="fixnetscape" value="NO">
+Twoja przegl&#261;darka nie obs&#322;uguje technologii JAVA
+</applet>
+</p>
+</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

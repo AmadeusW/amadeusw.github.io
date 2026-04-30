@@ -1,0 +1,20 @@
+*************************************************
+****** Jedi Livecast (a JediLive PHP Clon) ******
+*************************************************
+
+Step 1: copy the files class.jk2.php, server_query.php and config.php to the directory storing your other php scripts
+Step 2: edit config.php to set up the look and feel
+Step 3: open the php script you want to use 'Jedi Livecast' (must be in the same directory) and add the following lines where you want the table containing the serverinfos to appear:
+
+<?
+include('server_query.php');
+query_server('195.149.21.44','28071');
+?>
+
+Step 4: Replace the IP/Port with your server's IP/Port
+
+If there is a problem look out for 'Jedi|Kain' at Quakenet or mail t.frey@balcab.ch
+
+PS: I know, my english is great 8)
+
+

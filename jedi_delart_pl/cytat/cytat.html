@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Creation-date" CONTENT="2003-11-22T10:55:45Z">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Author" CONTENT="Bogdan Błaszczak">
+<TITLE>Losowy cytat</TITLE>
+<STYLE TYPE="text/css">
+<!--
+body {background-color:#BCC6D0;background-image:url(../../grafika1/tlo_js1.gif);scrollbar-base-color:#708090}
+.cyt {color:blue;font:italic bold 18px Courier,Times,Verdana}
+.t1 {color:black;font:normal bold 13px Courier,Arial}
+h4 {color:black;font:normal bold 16px Courier,Arial}
+-->
+</STYLE>
+
+<SCRIPT TYPE="text/javascript">
+//written by Bogdan Blaszczak
+//homepage http://blatek.25.pl/javascript/
+//If you want to use it, don't remove these lines
+
+function Cytat(){
+cytat="Tekst, który ukaże się przy błędnym odczycie zewnętrznego pliku. "+
+	  "Tu też najlepiej umieścić któryś z cytatów."
+var ilosc=4;
+var los=Math.ceil(Math.random()*ilosc);
+if(!los)los=1;
+document.write('<script TYPE=\"text/javascript\" language=\"JavaScript\" src=\"cytaty/'+los+'.js\"><\/script>');
+}
+Cytat();
+
+function PiszPL(co){
+var t1=["a","e","s","c","z","x","o","l","n","A","E","S","C","Z","X","O","L","N"];
+var t2=["ą","ę","ś","ć","ż","ź","ó","ł","ń","Ą","Ę","Ś","Ć","Ż","Ź","Ó","Ł","Ń"];
+var re=new RegExp("%a","g");
+for(var i=0;i<9;i++){
+re.compile("%"+t1[i],"g");
+co=co.replace(re,t2[i])}
+document.write(co);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<p class="t1">Losowy cytat:</p>
+
+<p class="cyt">
+<SCRIPT TYPE="text/javascript">
+PiszPL(cytat)
+</SCRIPT>
+</p>
+
+<p class="t1">Tekst powyżej zostaje wybrany losowo przy każdym załadowaniu (odświeżeniu) strony. Poszczególne
+cytaty są zapisane w zewnętrznych plikach nazwanych po kolei 1.js, 2.js, 3.js itd. i umieszczonych w katalogu "cytaty".<br><br>
+Zaletą tego rozwiązania jest to, że przeglądarka użytkownika nigdy nie pobiera wszystkich cytatów jednocześnie, lecz za każdym razem zawartość tylko jednego pliku. 
+A więc jest to optymalne rozwiązanie w przypadku bardzo dużej ilości cytatów.<br><br>
+Należy tylko pamiętać, aby ustawić odpowiednią wartość zmiennej "ilosc", odpowiadającą liczbie plików js w katalogu "cytaty".
+</p>
+<h4>Problem polskich znaków</h4>
+<p class="t1">Ponieważ, w różnych przeglądarkach i na różnych platformach systemowych, istnieją problemy z prawidłową interpretacją polskich liter (umieszczonych w zewnętrznym pliku), zastosowana została tu specjalna funkcja: PiszPL().<br>
+Po prostu zamiast <nobr>document.write(nasza_zmienna)</nobr>, używamy <nobr>PiszPL(nasza_zmienna)</nobr>.<br>
+Ale uwaga, w plikach zewnętrznych nie piszemy polskich znaków, tylko wstawiamy znak procenta przed literą, która ma być z ogonkiem. Na Przykład:<br>
+zamiast który piszemy kt%ory<br>
+zamiast żółć piszemy %z%o%l%c<br>
+zamiast źródło piszemy %xr%od%lo<br><br>
+<span style="color:red">Uwaga</span><br>
+Skrypt ten, nie usuwa problemu ogonków w przeglądarkach, które nie mają zaimplementowanej obsługi polskich znaków.</p>
+</BODY>
+</HTML>
