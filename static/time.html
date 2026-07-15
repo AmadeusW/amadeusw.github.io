@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+  Adapted from:
+  Minimalist Time Scale (Inspired by blinry.org and harmoniccode) by Andrey Mazepas
+  https://clocks.dev/clock/824d7b87d123
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    .watch-container {
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      overflow: hidden;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .dial-bg { fill: #000; }
+    .hand {
+      stroke: #ff7043;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+    .tick { stroke-linecap: round; }
+    .tick.major { stroke-width: 2.5; stroke: #e0e0e0; }
+    .tick.medium { stroke-width: 1.5; stroke: #cfcfcf; }
+    .tick.minor { stroke-width: 0.8; stroke: #8a8a8a; }
+    .hour-text {
+      fill: #f2f2f2;
+      font-size: 34px;
+      font-weight: 400;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+  </style>
+</head>
+<body>
+<div class="watch-container" id="container">
+  <svg id="clock-svg" preserveAspectRatio="none"></svg>
+</div>
+
+<script>
+  const center = 250;
+  const radius = 240;
+  const hand_length = 240;
+  const zoom = 3.5;
+
+  const svg = document.getElementById('clock-svg');
+  const container = document.getElementById('container');
+
+  // Build static elements once
+  const ns = 'http://www.w3.org/2000/svg';
+
+  function el(tag, attrs) {
+    const e = document.createElementNS(ns, tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    return e;
+  }
+
+  // Dial background
+  svg.appendChild(el('circle', { cx: center, cy: center, r: 245, class: 'dial-bg' }));
+
+  // Ticks
+  const TICKS_PER_HOUR = 12;
+  for (let idx = 0; idx < 12 * TICKS_PER_HOUR; idx++) {
+    const h = Math.floor(idx / TICKS_PER_HOUR);
+    const i = idx % TICKS_PER_HOUR;
+    const angle = ((h * 30 + i * 2.5 - 90) * Math.PI) / 180;
+    let tickLength = 10, tickClass = 'minor';
+    if (i === 0) { tickLength = 28; tickClass = 'major'; }
+    else if (i === 3 || i === 6 || i === 9) { tickLength = 18; tickClass = 'medium'; }
+    svg.appendChild(el('line', {
+      x1: center + radius * Math.cos(angle),
+      y1: center + radius * Math.sin(angle),
+      x2: center + (radius - tickLength) * Math.cos(angle),
+      y2: center + (radius - tickLength) * Math.sin(angle),
+      class: `tick ${tickClass}`
+    }));
+  }
+
+  // Hour labels
+  for (let h = 0; h < 12; h++) {
+    const angle = ((h * 30 - 90) * Math.PI) / 180;
+    const label = h === 0 ? 12 : h;
+    const t = el('text', {
+      x: center + (radius - 45) * Math.cos(angle),
+      y: center + (radius - 45) * Math.sin(angle),
+      class: 'hour-text'
+    });
+    t.textContent = label;
+    svg.appendChild(t);
+  }
+
+  // Hand (will be updated each frame)
+  const hand = el('line', { class: 'hand', x1: center, y1: 390, x2: center, y2: -350 });
+  svg.appendChild(hand);
+
+  function update() {
+    const now = new Date();
+    const hh = now.getHours();
+    const mm = now.getMinutes();
+    const ss = now.getSeconds() + now.getMilliseconds() / 1000;
+
+    const totalHours = (hh % 12) + mm / 60 + ss / 3600;
+    const rotationAngle = totalHours * 30;
+
+    hand.setAttribute('transform', `rotate(${rotationAngle}, ${center}, ${center})`);
+
+    // Compute zoomed viewBox centred on hand tip
+    const angleRad = ((rotationAngle - 90) * Math.PI) / 180;
+    const handTipX = center + (hand_length - 20) * Math.cos(angleRad);
+    const handTipY = center + (hand_length - 20) * Math.sin(angleRad);
+
+    const w = container.clientWidth || 500;
+    const h2 = container.clientHeight || 500;
+    const screenAspect = w / h2 || 1;
+    const viewSize = 500 / zoom;
+    const viewWidth = screenAspect >= 1 ? viewSize * screenAspect : viewSize;
+    const viewHeight = screenAspect >= 1 ? viewSize : viewSize / screenAspect;
+    const viewBoxX = handTipX - viewWidth / 2;
+    const viewBoxY = handTipY - viewHeight / 2;
+
+    svg.setAttribute('viewBox', `${viewBoxX} ${viewBoxY} ${viewWidth} ${viewHeight}`);
+
+    requestAnimationFrame(update);
+  }
+
+  update();
+</script>
+</body>
+</html>
