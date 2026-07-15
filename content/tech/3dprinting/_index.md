@@ -31,6 +31,12 @@ When I got into 3D printing, I found these pointers useful:
 0.05mm tolerance for snug fit.
 ```
 
+## Bridging
+Based on [Make Wonderful Things's research](https://www.youtube.com/watch?v=eaasEkFULKE),
+- Speed\Bridges: `10`mm/s
+- Advanced\Bridge flow ratio: `1.2`
+- For even better results, see [follow up video and use OrcaSlicer](https://www.youtube.com/watch?v=Mrs2kAuRCBk)
+
 ## Notes
  - Tensile strength: the print is the weakest in the Z dimension, where layers adhere to one another. When your piece needs to be strong in multiple dimensions, consider splitting it into multiple parts and printing them such that the strongest forces act on the XY pane. See grill hooks below.
 - Fillet vastly increases strength of a corner in the Z dimension (across layer lines)

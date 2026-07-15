@@ -14,8 +14,8 @@ When done, stir and let sit for a few minutes.
     <h3>{{<ingredient `large servings oatmeal` 2 >}}</h3>
     <p>
         {{<ingredient `steel cut oats` 0.5 cups >}}
-        {{<ingredient water 2 cups >}}
         {{<ingredient `10 grain cereal` 0.25 cups >}}
+        {{<ingredient water 2 cups >}}
         {{<ingredient `oat milk` 0.3 cups >}}
         {{<ingredient salt 6 grinds >}}
         {{<ingredient raisins 0.3 cups >}}
