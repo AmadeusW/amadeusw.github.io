@@ -1,7 +1,7 @@
 ---
-title: 'Cookery'
+title: 'Recipes'
 date: 2022-12-18
-weight: 8
+weight: 3
 ---
 
-Recipes and culinary experiments
+Recipes, experiments and all the cookery
