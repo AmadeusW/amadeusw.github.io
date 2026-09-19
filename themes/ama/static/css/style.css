@@ -164,3 +164,39 @@ kbd {
     display: inline;
     list-style-type: none;
 }
+
+pre.code-snippet {
+    position: relative;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #000;
+    background: #f8f8f8;
+    color: #000;
+    font: 0.8rem 'Cascadia Code', monospace;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.copy-code-button:hover {
+    background: #fff;
+}
+
+.copy-code-button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.copy-code-button[data-state="copied"] {
+    border-color: #060;
+    color: #060;
+}
+
+.copy-code-button[data-state="error"] {
+    border-color: #600;
+    color: #600;
+}
