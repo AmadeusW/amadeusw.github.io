@@ -27,6 +27,42 @@ header#title {
     margin: 25px 0;
 }
 
+body.home {
+    max-width: none;
+    padding: 0;
+}
+
+body.home > header#title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    width: min(calc(100% - 32px), calc(75rem - 32px));
+    transform: translateX(-50%);
+}
+
+body.home > header#title h2 {
+    margin-top: 0;
+}
+
+body.home > article > #postpicture {
+    display: block;
+    width: 100%;
+}
+
+body.home > article > #postpicture img {
+    width: 100%;
+    max-width: none;
+}
+
+body.home > article > main,
+body.home > article > .postList,
+body.home > footer {
+    width: min(calc(100% - 32px), calc(75rem - 32px));
+    margin-right: auto;
+    margin-left: auto;
+}
+
 h1,h2,h3,h4,h5,h6 {
     margin-bottom: 0;
     line-height: 1.15
