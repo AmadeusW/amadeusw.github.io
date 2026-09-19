@@ -8,3 +8,6 @@ languageCode = 'en-us'
   footerName = '//AW'
   summary = "projects programming travel"
 
+[security]
+  allowContent = ['^text/markdown$', '^text/html$']
+
