@@ -1,1 +1,10 @@
-<img src="{{.Page.Site.BaseURL}}{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+{{- $u := urls.Parse .Destination -}}
+{{- if $u.IsAbs -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+{{- else -}}
+  {{- with .Page.Resources.Get .Destination -}}
+<img src="{{ .RelPermalink }}" alt="{{ $.Text }}"{{ with $.Title }} title="{{ . }}"{{ end }}>
+  {{- else -}}
+<img src="{{ .Destination | relURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+  {{- end -}}
+{{- end -}}

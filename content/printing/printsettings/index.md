@@ -14,6 +14,9 @@ Based on [Make Wonderful Things's research](https://www.youtube.com/watch?v=eaas
 - Advanced\Bridge flow ratio: `1.2`
 - For even better results, see [follow up video and use OrcaSlicer](https://www.youtube.com/watch?v=Mrs2kAuRCBk)
 
+Perfect unsupported bridge with these settings:
+![Perfect unsupported bridge](unsupported_bridge.jpg)
+
 ## Clog prevention
 
 ### Clog cause
