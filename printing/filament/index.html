@@ -1,0 +1,19 @@
+<!doctype html><html lang=en><head><title>Filament · Amadeo's</title>
+<link rel=stylesheet href=//amadeusw.com//css/style.css><script src=/js/copy-code.js defer></script><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Temperatures and other settings for various filaments"></head><body><header id=title><a href=//amadeusw.com/><h2>Amadeo's website</h2></a></header><article class=printing><header id=postheader class=accent_printing><ul id=breadcrumbs><li><a href=/printing/>3D printing</a> ▹</li><li><strong><a href=/printing/filament/>Filament</a></strong></li></ul></header><main><h1 id=temperature>Temperature</h1><h3 id=regular-pla>Regular PLA</h3><p>Temp: 200–215°C
+Cooling: ~100% fan from layer 2–3 onward</p><h3 id=silk-pla>Silk PLA</h3><p>Temp: 215–230°C (5–15°C above regular)
+Cooling: 40–60% fan — lean toward the low end on an enclosed printer like the Core One
+Use overhang/bridge-specific fan boost rather than raising overall fan %
+Too much cooling → grainy/dulled finish instead of gloss</p><h1 id=translucent-pla>Translucent PLA</h1><p>Temp: 215–230°C, toward the higher end of the PLA range — more heat improves layer fusion, which cuts down internal light scattering and boosts clarity
+Layer height: go thinner (0.1–0.15mm) — fewer/smaller air gaps between layers means better light transmission
+Cooling: low, similar to silk (~40–50%) — aggressive cooling roughens the surface and re-introduces scattering/cloudiness
+Print speed: <strong>slower</strong> than regular PLA — gives layers more time to fuse before solidifying, which matters more here than for opaque materials
+Design considerations: thin walls (often single-wall/vase mode) and 0% infill for backlit parts — infill lines show through and kill the translucent effect
+Outer wall temp bump (if your slicer supports per-feature temps): pushing just the visible perimeter a few degrees hotter than infill gets a glassier finish without over-melting the bulk of the print</p><h3 id=matte-pla>Matte PLA</h3><p>Temp: 190–205°C (lower end of PLA range)
+Cooling: ~100%, same as regular — helps lock in the matte texture
+Under-cooling → faint glossy patches (opposite failure mode from silk)</p><h3 id=wood-fill-pla>Wood-fill PLA</h3><p>Temp: 195–215°C, lower-middle of range — higher temps scorch the wood particles
+Cooling: 80–100%
+Nozzle: 0.4mm minimum, 0.6mm+ preferred; hardened steel if used regularly (mildly abrasive)
+Print speed: ~60–80% of normal PLA speed
+Retraction: moderate, not aggressive (reduces carbonization buildup)
+Moisture: dry before printing if filament&rsquo;s been out of a dry box >1–2 days</p><h1 id=other-settings>Other settings</h1><h2 id=tpu---reduce-stringing>TPU - reduce stringing</h2><ul><li>Avoid crossing perimeters: true</li><li>Wipe while retracting: false → true</li><li>Other layer temp: 210 → 205°C (keep first layer at 220)</li><li>Seam position: Aligned → Nearest</li><li>Coasting: enable if available (Print Settings → Advanced)</li><li>Leave retraction length/speed at 1mm / 30mm/s for now</li><li>If stringing persists at one specific spot after seam change: retraction length 1mm → ~1.3mm</li></ul><h2 id=wood-fill-stringing-fixes>Wood-fill stringing fixes</h2><ul><li>Retraction distance: +0.5–1mm (direct drive) / +2–3mm (Bowden)</li><li>Retraction speed: 35–45mm/s</li><li>Enable coasting</li><li>Enable wipe-on-retract</li><li>Minimize travel moves (avoid-crossing-perimeters / combing)</li><li>Extrusion multiplier: 98–99%</li><li>Calibrate pressure/linear advance specifically for wood-fill</li></ul></main></article><footer><span><a href=/about/>//AW</a></span>
+<span><a href=#>Scroll to top</a></span></footer></body></html>
