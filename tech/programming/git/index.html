@@ -2,16 +2,18 @@
 <link rel=stylesheet href=//amadeusw.com//css/style.css><script src=/js/copy-code.js defer></script><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Get in the flow in git"></head><body><header id=title><a href=//amadeusw.com/><h2>Amadeo's website</h2></a></header><article class=tech><header id=postheader class=accent_tech><ul id=breadcrumbs><li><a href=/tech/>Tech tips</a> ▹</li><li><strong><a href=/tech/programming/git/>Git setup</a></strong></li></ul></header><main><h2 id=config>Config</h2><pre tabindex=0><code>git config merge.conflictstyle diff3
 git config diff.wsErrorHighlight all
 git config push.autoSetupRemote true
-</code></pre><ul><li><code>merge.conflictstyle diff3</code> adds original code to the diff view, this helps arrive at correct resolution when resolving a conflict</li><li><code>diff.wsErrorHighlight all</code> Displays whitespace in diff</li><li><code>push.autoSetupRemote true</code> automates the first push of a branch</li></ul><h2 id=aliases>Aliases</h2><p>I feel at home with these aliases:</p><pre tabindex=0><code>git config --global alias.st &#34;status --short&#34;
-git config --global alias.last &#34;log --stat -1 HEAD&#34;
-git config --global alias.ls &#34;log --pretty=format:&#39;%Cgreen %H %Creset%cr%Cred by %cn%Creset%n%s%n&#39; --stat --graph&#34;
-git config --global alias.put &#34;!git add .; git commit -m&#34;
-git config --global alias.branches &#34;branch -avv  --sort=-committerdate&#34;
-git config --global alias.diffs &#34;diff -z --cached --color-moved&#34;
-git config --global alias.diffl &#34;diff  --color-moved HEAD~ HEAD&#34;
-git config --global alias.d &#34;!git diff -z  --color-moved --unified=0; echo &#39;Summary:&#39;; git status --short&#34;
-git config --global alias.please &#34;push --force-with-lease&#34;
-git config --global alias.pub &#34;!f() { branch=$(git rev-parse --abbrev-ref HEAD); git push --set-upstream origin $branch; }; f&#34;
+</code></pre><ul><li><code>merge.conflictstyle diff3</code> adds original code to the diff view, this helps arrive at correct resolution when resolving a conflict</li><li><code>diff.wsErrorHighlight all</code> Displays whitespace in diff</li><li><code>push.autoSetupRemote true</code> automates the first push of a branch</li></ul><h2 id=aliases>Aliases</h2><p>I feel at home with these aliases.
+Run <code>git config --global --edit</code> and paste these under <code>[alias]</code> section:</p><pre tabindex=0><code>        st = &#34;status --short&#34;
+        last = &#34;log --stat -1 HEAD&#34;
+        ls = &#34;log --pretty=format:&#39;%Cgreen %H %Creset%cr%Cred by %cn%Creset%n%s%n&#39; --stat --graph&#34;
+        branches = &#34;branch -avv  --sort=-committerdate&#34;
+        please = &#34;push --force-with-lease&#34;
+        diffs = &#34;diff -z --cached --color-moved&#34;
+        diffl = &#34;diff  --color-moved HEAD~ HEAD&#34;
+        put = &#34;!git add .; git commit -m&#34;
+        d = &#34;!git diff -z  --color-moved --unified=0 &amp;&amp; echo &#39;Summary:&#39; &amp;&amp; git status --short&#34;
+</code></pre><p>on Windows, use these variants. They lack unix&rsquo;s <code>&&</code> which runs second command only if first succeeded.</p><pre tabindex=0><code>put = &#34;!git add .; git commit -m&#34;
+d = &#34;!git diff -z  --color-moved --unified=0; echo &#39;Summary:&#39;; git status --short&#34;
 </code></pre><p>The only thing to watch out for is that speedy <code>git put</code> eagerly commits all changes in the working tree, including any unexpected or overlooked changes.</p><h2 id=line-endings>Line endings</h2><p>On Windows, convert CRLF to LF on commit, and LF to CRLF on checkout:
 bash</p><pre tabindex=0><code>git config --global core.autocrlf true
 </code></pre><p>On Linux, convert CRLF to LF on commit only, to fix any CLRF line endings:
