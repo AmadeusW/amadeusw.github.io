@@ -1,1 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iot on Amadeo's</title><link>//amadeusw.com/tags/iot/</link><description>Recent content in Iot on Amadeo's</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 28 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="//amadeusw.com/tags/iot/index.xml" rel="self" type="application/rss+xml"/><item><title>Custom resource files in UWP</title><link>//amadeusw.com/tech/dotnet/custom-resource-files-in-uwp-windows-10/</link><pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/custom-resource-files-in-uwp-windows-10/</guid><description>Storing secrets in UWP apps</description></item><item><title>Soldering audio jack (phone connector)</title><link>//amadeusw.com/tech/hardware/solder-audio-jack/</link><pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/hardware/solder-audio-jack/</guid><description>Comes in handy when your speakers have a non-removable cable.</description></item><item><title>Connect Windows 10 to ADC using SPI</title><link>//amadeusw.com/tech/dotnet/connect-to-adc-using-spi-in-windows-10/</link><pubDate>Sat, 05 Dec 2015 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/connect-to-adc-using-spi-in-windows-10/</guid><description>How to access the Windows.Devices.Spi namespace</description></item><item><title>Remote debugging IoT in VS, asked for PIN</title><link>//amadeusw.com/tech/dotnet/access-denied-pin-is-required-to-connect/</link><pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/access-denied-pin-is-required-to-connect/</guid><description>Once I tried to flash Windows onto Raspberry PI and had to deal with this issue when debugging.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iot on Amadeo's</title><link>//amadeusw.com/tags/iot/</link><description>Recent content in Iot on Amadeo's</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="//amadeusw.com/tags/iot/index.xml" rel="self" type="application/rss+xml"/><item><title>Custom resource files in UWP</title><link>//amadeusw.com/tech/dotnet/custom-resource-files-in-uwp-windows-10/</link><pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/custom-resource-files-in-uwp-windows-10/</guid><description>Storing secrets in UWP apps</description></item><item><title>Home network topology</title><link>//amadeusw.com/tech/hardware/network/</link><pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/hardware/network/</guid><description>&lt;h1 id="home-network-topology">Home network topology&lt;/h1>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart TD
+ %% Internet &amp;amp; Core Gateway
+ WAN[&amp;#34;WAN (ISP Modem)&amp;#34;] --&amp;gt; PFSENSE[&amp;#34;pfSense Router &amp;amp; Firewall&amp;#34;]
+
+ %% Router points to the 3 VLANs
+ subgraph VLANS [&amp;#34;VLAN Segmentation &amp;amp; Policies&amp;#34;]
+ direction TB
+ VLAN_PRIV[&amp;#34;&amp;lt;b&amp;gt;Private VLAN&amp;lt;/b&amp;gt;&amp;lt;br/&amp;gt;Private SSID&amp;lt;br/&amp;gt;&amp;lt;i&amp;gt;(Full WAN access &amp;amp;bull; Access to all other VLANs)&amp;lt;/i&amp;gt;&amp;#34;]
+ VLAN_IOT[&amp;#34;&amp;lt;b&amp;gt;IoT / Guest VLAN&amp;lt;/b&amp;gt;&amp;lt;br/&amp;gt;IOT/Guest SSID&amp;lt;br/&amp;gt;&amp;lt;i&amp;gt;(WAN access only &amp;amp;bull; Isolated from other VLANs)&amp;lt;/i&amp;gt;&amp;#34;]
+ VLAN_TV[&amp;#34;&amp;lt;b&amp;gt;TV VLAN&amp;lt;/b&amp;gt;&amp;lt;br/&amp;gt;TV SSID with no external access&amp;lt;br/&amp;gt;&amp;lt;i&amp;gt;(NO external WAN access &amp;amp;bull; Isolated from other VLANs)&amp;lt;/i&amp;gt;&amp;#34;]
+
+ %% Inter-VLAN Access Rules
+ VLAN_PRIV ==&amp;gt;|&amp;#34;Full Access&amp;#34;| VLAN_IOT
+ VLAN_PRIV ==&amp;gt;|&amp;#34;Full Access&amp;#34;| VLAN_TV
+ end
+
+ PFSENSE --&amp;gt;|&amp;#34;Routes to&amp;#34;| VLAN_PRIV
+ PFSENSE --&amp;gt;|&amp;#34;Routes to&amp;#34;| VLAN_IOT
+ PFSENSE --&amp;gt;|&amp;#34;Routes to (Blocks WAN)&amp;#34;| VLAN_TV
+
+ %% Wired Infrastructure: All ports go to Private Network
+ subgraph WIRED [&amp;#34;Wired Network&amp;#34;]
+ direction TB
+ SWITCH[&amp;#34;Wired Switch&amp;lt;br/&amp;gt;&amp;lt;i&amp;gt;(Tagged Private)&amp;lt;/i&amp;gt;&amp;#34;]
+ NAS[&amp;#34;NAS&amp;#34;]
+ HA[&amp;#34;Home Assistant&amp;#34;]
+ COMPUTERS[&amp;#34;Trusted devices&amp;#34;]
+
+ SWITCH --&amp;gt; NAS
+ SWITCH --&amp;gt; HA
+ SWITCH --&amp;gt; COMPUTERS
+ end
+
+ VLAN_PRIV --&amp;gt; SWITCH
+
+ %% Wireless Infrastructure: AP broadcasts 3 SSIDs for all VLANs
+ subgraph WIRELESS [&amp;#34;Wireless Network&amp;#34;]
+ direction TB
+ AP[&amp;#34;Wireless Access Point&amp;lt;br/&amp;gt;&amp;lt;b&amp;gt;Broadcasts 4 SSIDs tagged:&amp;lt;/b&amp;gt;&amp;lt;br/&amp;gt;&amp;amp;bull; Private VLAN&amp;lt;br/&amp;gt;&amp;amp;bull; IOT/Guest VLAN&amp;lt;br/&amp;gt;&amp;amp;bull; TV restricted VLAN&amp;lt;br/&amp;gt;&amp;amp;bull; Camera VLAN&amp;#34;]
+
+ AP -.- PHONES
+ AP -.- IOT_DEVS
+ AP -.- TV
+ end
+
+ PFSENSE --&amp;gt;|&amp;#34;802.1Q Trunk (All VLANs)&amp;#34;| AP
+
+ %% Styling
+ classDef default fill:#1f232a,stroke:#3b4252,color:#eceff4
+ classDef infra fill:#2e3440,stroke:#88c0d0,stroke-width:2px,color:#eceff4
+ classDef vlanPriv fill:#243328,stroke:#a3be8c,stroke-width:2px,color:#eceff4
+ classDef vlanIot fill:#352c24,stroke:#d08770,stroke-width:2px,color:#eceff4
+ classDef vlanTv fill:#332228,stroke:#bf616a,stroke-width:2px,color:#eceff4
+ classDef devices fill:#2e3440,stroke:#81a1c1,stroke-width:1.5px,color:#eceff4
+
+ class WAN,PFSENSE infra
+ class VLAN_PRIV vlanPriv
+ class VLAN_IOT vlanIot
+ class VLAN_TV vlanTv
+ class SWITCH,AP,NAS,HA,COMPUTERS,PHONES,IOT_DEVS,TV devices
+&lt;/code>&lt;/pre>&lt;h2 id="network-overview--rules">Network Overview &amp;amp; Rules&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>VLANs &amp;amp; Routing&lt;/strong>: The pfSense router creates separate VLANs:
+&lt;ul>
+&lt;li>&lt;strong>Private VLAN&lt;/strong>: Unrestricted WAN internet access and full routing access to all other VLANs.&lt;/li>
+&lt;li>&lt;strong>IoT / Guest VLAN&lt;/strong>: Outbound WAN internet access only; blocked from accessing other VLANs.&lt;/li>
+&lt;li>&lt;strong>Camera VLAN&lt;/strong>: No access to internet or any other part of network. Accessible from Private VLAN.&lt;/li>
+&lt;li>&lt;strong>TV VLAN&lt;/strong>: No access to internet or any other part of network.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Wired Switch&lt;/strong>: All wired switch ports connect directly into the Private Network (hosting Synology NAS, Home Assistant, Printer, and Computers).&lt;/li>
+&lt;li>&lt;strong>Access Point&lt;/strong>: Broadcasts distinct SSIDs corresponding to all 4 VLANs and tags packet for correct routing.&lt;/li>
+&lt;li>&lt;strong>Wireless Devices&lt;/strong>: Their data is tagged according to which SSID they joined.&lt;/li>
+&lt;/ul></description></item><item><title>Soldering audio jack (phone connector)</title><link>//amadeusw.com/tech/hardware/solder-audio-jack/</link><pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/hardware/solder-audio-jack/</guid><description>Comes in handy when your speakers have a non-removable cable.</description></item><item><title>Connect Windows 10 to ADC using SPI</title><link>//amadeusw.com/tech/dotnet/connect-to-adc-using-spi-in-windows-10/</link><pubDate>Sat, 05 Dec 2015 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/connect-to-adc-using-spi-in-windows-10/</guid><description>How to access the Windows.Devices.Spi namespace</description></item><item><title>Remote debugging IoT in VS, asked for PIN</title><link>//amadeusw.com/tech/dotnet/access-denied-pin-is-required-to-connect/</link><pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate><guid>//amadeusw.com/tech/dotnet/access-denied-pin-is-required-to-connect/</guid><description>Once I tried to flash Windows onto Raspberry PI and had to deal with this issue when debugging.</description></item></channel></rss>
