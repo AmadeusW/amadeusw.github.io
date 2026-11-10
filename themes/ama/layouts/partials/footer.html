@@ -2,3 +2,9 @@
     <span><a href="{{ .Site.Params.baseURL }}/about/">{{ .Site.Params.footerName }}</a></span>
     <span><a href="#">Scroll to top</a></span>
 </footer>
+{{- if .Store.Get "hasMermaid" }}
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+</script>
+{{- end }}
